@@ -1,0 +1,8 @@
+C:\Users\Adrian\documents\visual studio 2017\Projects\generic_hid_cs_v62\generic_hid_cs_v62\bin\Debug\ReflowController.exe.config
+C:\Users\Adrian\documents\visual studio 2017\Projects\generic_hid_cs_v62\generic_hid_cs_v62\bin\Debug\ReflowController.exe
+C:\Users\Adrian\documents\visual studio 2017\Projects\generic_hid_cs_v62\generic_hid_cs_v62\bin\Debug\ReflowController.pdb
+C:\Users\Adrian\documents\visual studio 2017\Projects\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\ReflowController.FrmMain.resources
+C:\Users\Adrian\documents\visual studio 2017\Projects\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\ReflowController.Properties.Resources.resources
+C:\Users\Adrian\documents\visual studio 2017\Projects\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\Reflow Controller.csproj.GenerateResource.Cache
+C:\Users\Adrian\documents\visual studio 2017\Projects\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\ReflowController.exe
+C:\Users\Adrian\documents\visual studio 2017\Projects\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\ReflowController.pdb

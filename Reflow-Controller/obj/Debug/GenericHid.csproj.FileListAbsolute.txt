@@ -1,0 +1,9 @@
+C:\Users\Adrian\Downloads\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\GenericHid.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Downloads\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\GenericHid.FrmMain.resources
+C:\Users\Adrian\Downloads\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\GenericHid.Properties.Resources.resources
+C:\Users\Adrian\Downloads\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\GenericHid.csproj.GenerateResource.Cache
+C:\Users\Adrian\Downloads\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\GenericHid.exe
+C:\Users\Adrian\Downloads\generic_hid_cs_v62\generic_hid_cs_v62\bin\Debug\GenericHid.exe.config
+C:\Users\Adrian\Downloads\generic_hid_cs_v62\generic_hid_cs_v62\bin\Debug\GenericHid.exe
+C:\Users\Adrian\Downloads\generic_hid_cs_v62\generic_hid_cs_v62\bin\Debug\GenericHid.pdb
+C:\Users\Adrian\Downloads\generic_hid_cs_v62\generic_hid_cs_v62\obj\Debug\GenericHid.pdb
