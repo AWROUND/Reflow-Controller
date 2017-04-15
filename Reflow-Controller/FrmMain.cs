@@ -200,13 +200,9 @@ namespace ReflowController
 		private RadioButton radInputOutputInterrupt;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
-        private ToolStripStatusLabel toolStripStatusLabel2;
+        private ToolStripStatusLabel CommStatustoolStripStatusLabel;
         private Button button1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private GroupBox groupBox1;
         private TextBox OvenText;
         private TextBox FanText;
@@ -224,20 +220,30 @@ namespace ReflowController
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox StageText;
-        private ToolStripStatusLabel toolStripStatusLabel3;
-        private ToolStripStatusLabel toolStripStatusLabel4;
-        private ToolStripStatusLabel toolStripStatusLabel5;
-        private ToolStripStatusLabel toolStripStatusLabel6;
-        private ToolStripStatusLabel toolStripStatusLabel7;
-        private ToolStripStatusLabel toolStripStatusLabel8;
-        private ToolStripStatusLabel toolStripStatusLabel9;
-        private ToolStripStatusLabel toolStripStatusLabel10;
+        private ToolStripStatusLabel KptoolStripStatusLabel;
+        private ToolStripStatusLabel KitoolStripStatusLabel;
+        private ToolStripStatusLabel KdtoolStripStatusLabel;
+        private ToolStripStatusLabel CycleTimetoolStripStatusLabel;
+        private ToolStripStatusLabel pTermtoolStripStatusLabel;
+        private ToolStripStatusLabel iTermtoolStripStatusLabel;
+        private ToolStripStatusLabel dTermtoolStripStatusLabel;
+        private ToolStripStatusLabel OutputtoolStripStatusLabel;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
         private Button cmdSendOutputReportInterrupt;
 
 		[System.Diagnostics.DebuggerStepThrough()]
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.FraBytesReceived = new System.Windows.Forms.GroupBox();
             this.TxtBytesReceived = new System.Windows.Forms.TextBox();
@@ -264,13 +270,17 @@ namespace ReflowController
             this.radInputOutputInterrupt = new System.Windows.Forms.RadioButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.CommStatustoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.KptoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.KitoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.KdtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.CycleTimetoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pTermtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.iTermtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dTermtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.OutputtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.OvenText = new System.Windows.Forms.TextBox();
             this.FanText = new System.Windows.Forms.TextBox();
@@ -288,14 +298,10 @@ namespace ReflowController
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.StageText = new System.Windows.Forms.TextBox();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FraBytesToSend.SuspendLayout();
             this.fraInputReportBufferSize.SuspendLayout();
             this.fraDeviceIdentifiers.SuspendLayout();
@@ -580,15 +586,15 @@ namespace ReflowController
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3,
-            this.toolStripStatusLabel4,
-            this.toolStripStatusLabel5,
-            this.toolStripStatusLabel6,
-            this.toolStripStatusLabel7,
-            this.toolStripStatusLabel8,
-            this.toolStripStatusLabel9,
-            this.toolStripStatusLabel10});
+            this.CommStatustoolStripStatusLabel,
+            this.KptoolStripStatusLabel,
+            this.KitoolStripStatusLabel,
+            this.KdtoolStripStatusLabel,
+            this.CycleTimetoolStripStatusLabel,
+            this.pTermtoolStripStatusLabel,
+            this.iTermtoolStripStatusLabel,
+            this.dTermtoolStripStatusLabel,
+            this.OutputtoolStripStatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 734);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(972, 22);
@@ -601,11 +607,60 @@ namespace ReflowController
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(129, 17);
             this.toolStripStatusLabel1.Text = "Communication Status";
             // 
-            // toolStripStatusLabel2
+            // CommStatustoolStripStatusLabel
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            this.CommStatustoolStripStatusLabel.Name = "CommStatustoolStripStatusLabel";
+            this.CommStatustoolStripStatusLabel.Size = new System.Drawing.Size(118, 17);
+            this.CommStatustoolStripStatusLabel.Text = "toolStripStatusLabel2";
+            // 
+            // KptoolStripStatusLabel
+            // 
+            this.KptoolStripStatusLabel.MergeAction = System.Windows.Forms.MergeAction.Replace;
+            this.KptoolStripStatusLabel.Name = "KptoolStripStatusLabel";
+            this.KptoolStripStatusLabel.Size = new System.Drawing.Size(29, 17);
+            this.KptoolStripStatusLabel.Text = "Kp=";
+            // 
+            // KitoolStripStatusLabel
+            // 
+            this.KitoolStripStatusLabel.Name = "KitoolStripStatusLabel";
+            this.KitoolStripStatusLabel.Size = new System.Drawing.Size(25, 17);
+            this.KitoolStripStatusLabel.Text = "Ki=";
+            // 
+            // KdtoolStripStatusLabel
+            // 
+            this.KdtoolStripStatusLabel.Name = "KdtoolStripStatusLabel";
+            this.KdtoolStripStatusLabel.Size = new System.Drawing.Size(29, 17);
+            this.KdtoolStripStatusLabel.Text = "Kd=";
+            // 
+            // CycleTimetoolStripStatusLabel
+            // 
+            this.CycleTimetoolStripStatusLabel.Name = "CycleTimetoolStripStatusLabel";
+            this.CycleTimetoolStripStatusLabel.Size = new System.Drawing.Size(99, 17);
+            this.CycleTimetoolStripStatusLabel.Text = "Cycle time (sec)=";
+            // 
+            // pTermtoolStripStatusLabel
+            // 
+            this.pTermtoolStripStatusLabel.Name = "pTermtoolStripStatusLabel";
+            this.pTermtoolStripStatusLabel.Size = new System.Drawing.Size(49, 17);
+            this.pTermtoolStripStatusLabel.Text = "pTerm=";
+            // 
+            // iTermtoolStripStatusLabel
+            // 
+            this.iTermtoolStripStatusLabel.Name = "iTermtoolStripStatusLabel";
+            this.iTermtoolStripStatusLabel.Size = new System.Drawing.Size(45, 17);
+            this.iTermtoolStripStatusLabel.Text = "iTerm=";
+            // 
+            // dTermtoolStripStatusLabel
+            // 
+            this.dTermtoolStripStatusLabel.Name = "dTermtoolStripStatusLabel";
+            this.dTermtoolStripStatusLabel.Size = new System.Drawing.Size(49, 17);
+            this.dTermtoolStripStatusLabel.Text = "dTerm=";
+            // 
+            // OutputtoolStripStatusLabel
+            // 
+            this.OutputtoolStripStatusLabel.Name = "OutputtoolStripStatusLabel";
+            this.OutputtoolStripStatusLabel.Size = new System.Drawing.Size(53, 17);
+            this.OutputtoolStripStatusLabel.Text = "Output=";
             // 
             // button1
             // 
@@ -619,36 +674,37 @@ namespace ReflowController
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(524, 16);
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.Location = new System.Drawing.Point(525, 16);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(429, 593);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView1.Size = new System.Drawing.Size(435, 593);
             this.dataGridView1.TabIndex = 20;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Time";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Current Temp";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Setpoint";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Heater";
-            this.Column4.Name = "Column4";
             // 
             // groupBox1
             // 
@@ -680,6 +736,7 @@ namespace ReflowController
             this.OvenText.Name = "OvenText";
             this.OvenText.Size = new System.Drawing.Size(100, 20);
             this.OvenText.TabIndex = 69;
+            this.OvenText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FanText
             // 
@@ -687,6 +744,7 @@ namespace ReflowController
             this.FanText.Name = "FanText";
             this.FanText.Size = new System.Drawing.Size(100, 20);
             this.FanText.TabIndex = 68;
+            this.FanText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox14
             // 
@@ -694,6 +752,7 @@ namespace ReflowController
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(100, 20);
             this.textBox14.TabIndex = 67;
+            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox13
             // 
@@ -737,6 +796,7 @@ namespace ReflowController
             this.TemperatureText.Name = "TemperatureText";
             this.TemperatureText.Size = new System.Drawing.Size(100, 20);
             this.TemperatureText.TabIndex = 62;
+            this.TemperatureText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SetpointText
             // 
@@ -744,6 +804,7 @@ namespace ReflowController
             this.SetpointText.Name = "SetpointText";
             this.SetpointText.Size = new System.Drawing.Size(100, 20);
             this.SetpointText.TabIndex = 61;
+            this.SetpointText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox7
             // 
@@ -751,6 +812,7 @@ namespace ReflowController
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 60;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox6
             // 
@@ -758,6 +820,7 @@ namespace ReflowController
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 59;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox5
             // 
@@ -801,61 +864,47 @@ namespace ReflowController
             this.StageText.Name = "StageText";
             this.StageText.Size = new System.Drawing.Size(100, 20);
             this.StageText.TabIndex = 54;
+            this.StageText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // toolStripStatusLabel3
+            // Column1
             // 
-            this.toolStripStatusLabel3.AutoSize = false;
-            this.toolStripStatusLabel3.MergeAction = System.Windows.Forms.MergeAction.Replace;
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(30, 17);
-            this.toolStripStatusLabel3.Text = "Kp=";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.HeaderText = "     Time";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 120;
             // 
-            // toolStripStatusLabel4
+            // Column2
             // 
-            this.toolStripStatusLabel4.AutoSize = false;
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(30, 17);
-            this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column2.HeaderText = "   Current Temp  °C";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 120;
             // 
-            // toolStripStatusLabel5
+            // Column3
             // 
-            this.toolStripStatusLabel5.AutoSize = false;
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(30, 17);
-            this.toolStripStatusLabel5.Text = "Ki=";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.HeaderText = "     Setpoint °C";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 120;
             // 
-            // toolStripStatusLabel6
+            // Column4
             // 
-            this.toolStripStatusLabel6.AutoSize = false;
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(30, 17);
-            this.toolStripStatusLabel6.Text = "toolStripStatusLabel6";
-            // 
-            // toolStripStatusLabel7
-            // 
-            this.toolStripStatusLabel7.AutoSize = false;
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(30, 17);
-            this.toolStripStatusLabel7.Text = "Kd=";
-            // 
-            // toolStripStatusLabel8
-            // 
-            this.toolStripStatusLabel8.AutoSize = false;
-            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(30, 17);
-            this.toolStripStatusLabel8.Text = "toolStripStatusLabel8";
-            // 
-            // toolStripStatusLabel9
-            // 
-            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
-            this.toolStripStatusLabel9.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel9.Text = "toolStripStatusLabel9";
-            // 
-            // toolStripStatusLabel10
-            // 
-            this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
-            this.toolStripStatusLabel10.Size = new System.Drawing.Size(124, 17);
-            this.toolStripStatusLabel10.Text = "toolStripStatusLabel10";
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column4.HeaderText = "    Heater";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 76;
             // 
             // FrmMain
             // 
@@ -1065,12 +1114,12 @@ namespace ReflowController
 
                     case FormActions.ChangeBackgroundRed:
 
-                        toolStripStatusLabel2.BackColor = System.Drawing.Color.Red;
+                        CommStatustoolStripStatusLabel.BackColor = System.Drawing.Color.Red;
                         break;
 
                     case FormActions.ChangeBackgroundGreen:
 
-                        toolStripStatusLabel2.BackColor = System.Drawing.Color.Green;
+                        CommStatustoolStripStatusLabel.BackColor = System.Drawing.Color.Green;
                         break;
                 }
 			}
@@ -1198,6 +1247,7 @@ namespace ReflowController
             String byteValue = null;
             Byte[] inputReportBuffer = null;
             State = 1;
+            int time = 1;
 
             while (State != 0)
             {
@@ -1376,6 +1426,29 @@ namespace ReflowController
                 //if (elapsed == "0000") elapsed = "N/A";
                 //StageTimeLabel.Text = elapsed;
 
+                //Add time and temperature values
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[time - 1].Cells[0].Value = time - 1;
+                dataGridView1.Rows[time - 1].Cells[1].Value = Temperature;
+                dataGridView1.Rows[time - 1].Cells[2].Value = Setpoint;
+
+                //Track heater On/Off actions. Off = 0 and High = 20
+                if (Convert.ToString(Oven) == "0") dataGridView1.Rows[time - 1].Cells[3].Value = "0";
+                if (Convert.ToString(Oven) == "1") dataGridView1.Rows[time - 1].Cells[3].Value = "35";
+
+                //Keep cursor on current row data
+                dataGridView1.CurrentCell = dataGridView1.Rows[time - 1].Cells[0];
+
+                KptoolStripStatusLabel.Text = "Kp = " + Convert.ToString(Kp);
+                KitoolStripStatusLabel.Text = "Ki = " + Convert.ToString(Ki);
+                KdtoolStripStatusLabel.Text = "Kd = " + Convert.ToString(Kd);
+                CycleTimetoolStripStatusLabel.Text = "Cycle Time (Secs) = " + Convert.ToString(CycleTime);
+                pTermtoolStripStatusLabel.Text = "pTerm = " + Convert.ToString(PTerm);
+                iTermtoolStripStatusLabel.Text = "iTerm = " + Convert.ToString(ITerm);
+                dTermtoolStripStatusLabel.Text = "dTerm = " + Convert.ToString(DTerm);
+                OutputtoolStripStatusLabel.Text = "Output = " + Convert.ToString(Output);
+
+                time++;
             }
 
         }
@@ -1737,7 +1810,7 @@ namespace ReflowController
 						}
 						MyMarshalDataToForm(FormActions.AddItemToListBox, "--------");
 						MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
-                        toolStripStatusLabel2.Text = "Controller connected";
+                        CommStatustoolStripStatusLabel.Text = "Controller connected";
                         MyMarshalDataToForm(FormActions.ChangeBackgroundGreen, "");
                     }
 				}
@@ -1745,7 +1818,7 @@ namespace ReflowController
 				{
 					MyMarshalDataToForm(FormActions.AddItemToListBox, "My device not found (WMI)");
 					MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
-                    toolStripStatusLabel2.Text = "Controller not found";
+                    CommStatustoolStripStatusLabel.Text = "Controller not found";
                     MyMarshalDataToForm(FormActions.ChangeBackgroundRed, "");
                 }
 				return _deviceDetected;
