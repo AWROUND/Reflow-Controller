@@ -180,13 +180,6 @@ namespace ReflowController
 		public System.Windows.Forms.ComboBox CboByte1;
 		public System.Windows.Forms.ComboBox CboByte0;
 		public System.Windows.Forms.GroupBox FraBytesToSend;
-		public System.Windows.Forms.ListBox LstResults;
-		// NOTE: The following procedure is required by the Windows Form Designer
-		// It can be modified using the Windows Form Designer.
-		// Do not modify it using the code editor.   
-		internal System.Windows.Forms.GroupBox fraInputReportBufferSize;
-		internal System.Windows.Forms.TextBox txtInputReportBufferSize;
-		internal System.Windows.Forms.Button cmdInputReportBufferSize;
 		private Button cmdGetInputReportInterrupt;
 		public GroupBox fraInterruptTransfers;
         private StatusStrip statusStrip1;
@@ -197,15 +190,15 @@ namespace ReflowController
         private GroupBox groupBox1;
         private TextBox OvenText;
         private TextBox FanText;
-        private TextBox textBox14;
+        private TextBox AuxText;
         private TextBox textBox13;
         private TextBox textBox12;
         private TextBox textBox11;
         private TextBox textBox10;
         private TextBox TemperatureText;
         private TextBox SetpointText;
-        private TextBox textBox7;
-        private TextBox textBox6;
+        private TextBox StageTimeText;
+        private TextBox ElapsedTimeText;
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
@@ -248,10 +241,6 @@ namespace ReflowController
             this.ChkAutoincrement = new System.Windows.Forms.CheckBox();
             this.CboByte1 = new System.Windows.Forms.ComboBox();
             this.CboByte0 = new System.Windows.Forms.ComboBox();
-            this.LstResults = new System.Windows.Forms.ListBox();
-            this.fraInputReportBufferSize = new System.Windows.Forms.GroupBox();
-            this.cmdInputReportBufferSize = new System.Windows.Forms.Button();
-            this.txtInputReportBufferSize = new System.Windows.Forms.TextBox();
             this.cmdSendOutputReportInterrupt = new System.Windows.Forms.Button();
             this.cmdGetInputReportInterrupt = new System.Windows.Forms.Button();
             this.fraInterruptTransfers = new System.Windows.Forms.GroupBox();
@@ -279,15 +268,15 @@ namespace ReflowController
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.OvenText = new System.Windows.Forms.TextBox();
             this.FanText = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.AuxText = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.TemperatureText = new System.Windows.Forms.TextBox();
             this.SetpointText = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.StageTimeText = new System.Windows.Forms.TextBox();
+            this.ElapsedTimeText = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -296,7 +285,6 @@ namespace ReflowController
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.FraBytesToSend.SuspendLayout();
-            this.fraInputReportBufferSize.SuspendLayout();
             this.fraInterruptTransfers.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -386,47 +374,6 @@ namespace ReflowController
             this.CboByte0.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CboByte0.Size = new System.Drawing.Size(101, 22);
             this.CboByte0.TabIndex = 2;
-            // 
-            // LstResults
-            // 
-            this.LstResults.BackColor = System.Drawing.SystemColors.Window;
-            this.LstResults.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LstResults.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LstResults.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.LstResults.HorizontalScrollbar = true;
-            this.LstResults.ItemHeight = 14;
-            this.LstResults.Location = new System.Drawing.Point(0, 440);
-            this.LstResults.Name = "LstResults";
-            this.LstResults.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LstResults.Size = new System.Drawing.Size(440, 32);
-            this.LstResults.TabIndex = 0;
-            // 
-            // fraInputReportBufferSize
-            // 
-            this.fraInputReportBufferSize.Controls.Add(this.cmdInputReportBufferSize);
-            this.fraInputReportBufferSize.Controls.Add(this.txtInputReportBufferSize);
-            this.fraInputReportBufferSize.Location = new System.Drawing.Point(248, 16);
-            this.fraInputReportBufferSize.Name = "fraInputReportBufferSize";
-            this.fraInputReportBufferSize.Size = new System.Drawing.Size(208, 96);
-            this.fraInputReportBufferSize.TabIndex = 9;
-            this.fraInputReportBufferSize.TabStop = false;
-            this.fraInputReportBufferSize.Text = "Input Report Buffer Size";
-            // 
-            // cmdInputReportBufferSize
-            // 
-            this.cmdInputReportBufferSize.Location = new System.Drawing.Point(96, 32);
-            this.cmdInputReportBufferSize.Name = "cmdInputReportBufferSize";
-            this.cmdInputReportBufferSize.Size = new System.Drawing.Size(96, 56);
-            this.cmdInputReportBufferSize.TabIndex = 1;
-            this.cmdInputReportBufferSize.Text = "Change Buffer Size";
-            this.cmdInputReportBufferSize.Click += new System.EventHandler(this.cmdInputReportBufferSize_Click);
-            // 
-            // txtInputReportBufferSize
-            // 
-            this.txtInputReportBufferSize.Location = new System.Drawing.Point(16, 40);
-            this.txtInputReportBufferSize.Name = "txtInputReportBufferSize";
-            this.txtInputReportBufferSize.Size = new System.Drawing.Size(56, 20);
-            this.txtInputReportBufferSize.TabIndex = 0;
             // 
             // cmdSendOutputReportInterrupt
             // 
@@ -659,15 +606,15 @@ namespace ReflowController
             // 
             this.groupBox1.Controls.Add(this.OvenText);
             this.groupBox1.Controls.Add(this.FanText);
-            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.AuxText);
             this.groupBox1.Controls.Add(this.textBox13);
             this.groupBox1.Controls.Add(this.textBox12);
             this.groupBox1.Controls.Add(this.textBox11);
             this.groupBox1.Controls.Add(this.textBox10);
             this.groupBox1.Controls.Add(this.TemperatureText);
             this.groupBox1.Controls.Add(this.SetpointText);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.StageTimeText);
+            this.groupBox1.Controls.Add(this.ElapsedTimeText);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox3);
@@ -695,13 +642,13 @@ namespace ReflowController
             this.FanText.TabIndex = 68;
             this.FanText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox14
+            // AuxText
             // 
-            this.textBox14.Location = new System.Drawing.Point(328, 91);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 67;
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.AuxText.Location = new System.Drawing.Point(328, 91);
+            this.AuxText.Name = "AuxText";
+            this.AuxText.Size = new System.Drawing.Size(100, 20);
+            this.AuxText.TabIndex = 67;
+            this.AuxText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox13
             // 
@@ -755,21 +702,21 @@ namespace ReflowController
             this.SetpointText.TabIndex = 61;
             this.SetpointText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox7
+            // StageTimeText
             // 
-            this.textBox7.Location = new System.Drawing.Point(116, 65);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 60;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.StageTimeText.Location = new System.Drawing.Point(116, 65);
+            this.StageTimeText.Name = "StageTimeText";
+            this.StageTimeText.Size = new System.Drawing.Size(100, 20);
+            this.StageTimeText.TabIndex = 60;
+            this.StageTimeText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox6
+            // ElapsedTimeText
             // 
-            this.textBox6.Location = new System.Drawing.Point(116, 91);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 59;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ElapsedTimeText.Location = new System.Drawing.Point(116, 91);
+            this.ElapsedTimeText.Name = "ElapsedTimeText";
+            this.ElapsedTimeText.Size = new System.Drawing.Size(100, 20);
+            this.ElapsedTimeText.TabIndex = 59;
+            this.ElapsedTimeText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox5
             // 
@@ -841,13 +788,11 @@ namespace ReflowController
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.LstResults);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TxtBytesReceived);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.fraInterruptTransfers);
-            this.Controls.Add(this.fraInputReportBufferSize);
             this.Controls.Add(this.FraBytesReceived);
             this.Controls.Add(this.FraBytesToSend);
             this.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -858,8 +803,6 @@ namespace ReflowController
             this.Closed += new System.EventHandler(this.frmMain_Closed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.FraBytesToSend.ResumeLayout(false);
-            this.fraInputReportBufferSize.ResumeLayout(false);
-            this.fraInputReportBufferSize.PerformLayout();
             this.fraInterruptTransfers.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -890,39 +833,25 @@ namespace ReflowController
 		private Boolean _transferInProgress;
 		private TransferTypes _transferType;
 
-        private string state;
+
         private Byte State;
-        private string temperature;
         private Byte Temperature;
-        private string setpoint;
         private Byte Setpoint;
-        private string oven;
         private Byte Oven;
-        private string fan;
         private Byte Fan;
-        private string elapsed1;
         private Byte Elapsed1;
-        private string elapsed2;
         private Byte Elapsed2;
-        private string start;
         private Byte Start;
-        private string kp;
         private Byte Kp;
-        private string ki;
         private Byte Ki;
-        private string kd;
         private Byte Kd;
-        private string cycleTime;
         private Byte CycleTime;
-        private string pTerm;
         private Byte PTerm;
-        private string iTerm;
         private Byte ITerm;
-        private string dTerm;
         private Byte DTerm;
-        private string output;
         private Byte Output;
         private int time;
+        private Byte Command;
 
         private static System.Timers.Timer _periodicTransfers;
 
@@ -1003,14 +932,9 @@ namespace ReflowController
 
 				switch (action)
 				{
-					case FormActions.AddItemToListBox:
-
-						LstResults.Items.Add(formText);
-						break;
-
 					case FormActions.DisableInputReportBufferSize:
 
-						cmdInputReportBufferSize.Enabled = false;
+						//cmdInputReportBufferSize.Enabled = false;
 						break;
 
 					case FormActions.EnableGetInputReportInterruptTransfer:
@@ -1020,7 +944,7 @@ namespace ReflowController
 
 					case FormActions.EnableInputReportBufferSize:
 
-						cmdInputReportBufferSize.Enabled = true;
+						//cmdInputReportBufferSize.Enabled = true;
 						break;
 
 					case FormActions.EnableSendOutputReportInterrupt:
@@ -1028,14 +952,9 @@ namespace ReflowController
 						cmdSendOutputReportInterrupt.Enabled = true;
 						break;
 
-					case FormActions.ScrollToBottomOfListBox:
-
-						LstResults.SelectedIndex = LstResults.Items.Count - 1;
-						break;
-
 					case FormActions.SetInputReportBufferSize:
 
-						txtInputReportBufferSize.Text = formText;
+						//txtInputReportBufferSize.Text = formText;
 						break;
 
                     case FormActions.ChangeBackgroundRed:
@@ -1147,7 +1066,7 @@ namespace ReflowController
 			{
 				if (_transferInProgress)
 				{
-					DisplayTransferInProgressMessage();
+					//DisplayTransferInProgressMessage();
 				}
 				else
 				{
@@ -1172,27 +1091,6 @@ namespace ReflowController
 		///  Set the number of Input reports the HID driver will store.
 		///  </summary>
 
-		private void cmdInputReportBufferSize_Click(Object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					SetInputReportBufferSize();
-				}
-			}
-			catch
-				(Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
 				
 		/// <summary>
 		/// Request to send an Output report using an interrupt transfer.		
@@ -1206,7 +1104,7 @@ namespace ReflowController
 			{
 				if (_transferInProgress)
 				{
-					DisplayTransferInProgressMessage();
+					//DisplayTransferInProgressMessage();
 				}
 				else
 				{
@@ -1330,61 +1228,8 @@ namespace ReflowController
 			}
 		}
 
-		///  <summary>
-		///  Displays received or written report data.
-		///  </summary>
-		///  
-		///  <param name="buffer"> contains the report data. </param>			
-		///  <param name="currentReportType" > "Input", "Output", or "Feature"</param>
-		///  <param name="currentReadOrWritten" > "read" for Input and IN Feature reports, "written" for Output and OUT Feature reports.</param>
+		
 
-		private void DisplayReportData(Byte[] buffer, ReportTypes currentReportType, ReportReadOrWritten currentReadOrWritten)
-		{
-			try
-			{
-				Int32 count;
-
-				LstResults.Items.Add(currentReportType.ToString() + " report has been " + currentReadOrWritten.ToString().ToLower() + ".");
-
-				//  Display the report data received in the form's list box.
-
-				LstResults.Items.Add(" Report ID: " + String.Format("{0:X2} ", buffer[0]));
-				LstResults.Items.Add(" Report Data:");
-
-				TxtBytesReceived.Text = "";
-
-				for (count = 1; count <= buffer.Length - 1; count++)
-				{
-					//  Display bytes as 2-character Hex strings.
-
-					String byteValue = String.Format("{0:X2} ", buffer[count]);
-
-					LstResults.Items.Add(" " + byteValue);
-
-					//  Display the received bytes in the text box.
-
-					TxtBytesReceived.SelectionStart = TxtBytesReceived.Text.Length;
-					//TxtBytesReceived.SelectedText = byteValue + Environment.NewLine;
-                    TxtBytesReceived.SelectedText = byteValue;
-                }
-				ScrollToBottomOfListBox();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
-		///  Display a message if the user clicks a button when a transfer is in progress.
-		///  </summary>
-		/// 
-		private void DisplayTransferInProgressMessage()
-		{
-			AccessForm(FormActions.AddItemToListBox, "Command not executed because a transfer is in progress.");
-			ScrollToBottomOfListBox();
-		}
 
 		
 		/// <summary>
@@ -1627,42 +1472,6 @@ namespace ReflowController
 
 		
 
-		
-
-		private void GetBytesToSend()
-		{
-			try
-			{
-				//  Get the bytes to send in a report from the combo boxes.
-				//  Increment the values if the autoincrement check box is selected.
-
-				if (ChkAutoincrement.Checked)
-				{
-					if (CboByte0.SelectedIndex < 255)
-					{
-						CboByte0.SelectedIndex = CboByte0.SelectedIndex + 1;
-					}
-					else
-					{
-						CboByte0.SelectedIndex = 0;
-					}
-					if (CboByte1.SelectedIndex < 255)
-					{
-						CboByte1.SelectedIndex = CboByte1.SelectedIndex + 1;
-					}
-					else
-					{
-						CboByte1.SelectedIndex = 0;
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
 		///  <summary>
 		///  Find and display the number of Input buffers
 		///  (the number of Input reports the HID driver will store). 
@@ -1707,37 +1516,46 @@ namespace ReflowController
 		{
 			try
 			{
-				//  Create a dropdown list box for each byte to send in a report.
-				//  Display the values as 2-character hex strings.
+                TemperatureText.Text = "000" + "\u00b0" + "C";
+                SetpointText.Text = "000" + "\u00b0" + "C";
+                StageTimeText.Text = "N/A";
+                StageText.Text = "WAITING";
+                ElapsedTimeText.Text = "00:00:00";
+                OvenText.Text = "OFF";
+                FanText.Text = "OFF";
+                AuxText.Text = "OFF";
 
-				Int16 count;
-				for (count = 0; count <= 255; count++)
-				{
-					String byteValue = String.Format("{0:X2} ", count);
-					FrmMy.CboByte0.Items.Insert(count, byteValue);
-					FrmMy.CboByte1.Items.Insert(count, byteValue);
-				}
+                ////  Create a dropdown list box for each byte to send in a report.
+                ////  Display the values as 2-character hex strings.
 
-				//  Select a default value for each box
+                //Int16 count;
+                //for (count = 0; count <= 255; count++)
+                //{
+                //	String byteValue = String.Format("{0:X2} ", count);
+                //	FrmMy.CboByte0.Items.Insert(count, byteValue);
+                //	FrmMy.CboByte1.Items.Insert(count, byteValue);
+                //}
 
-				FrmMy.CboByte0.SelectedIndex = 0;
-				FrmMy.CboByte1.SelectedIndex = 128;
+                ////  Select a default value for each box
 
-				//  Check the autoincrement box to increment the values each time a report is sent.
+                //FrmMy.CboByte0.SelectedIndex = 0;
+                //FrmMy.CboByte1.SelectedIndex = 128;
 
-				ChkAutoincrement.CheckState = CheckState.Checked;
+                ////  Check the autoincrement box to increment the values each time a report is sent.
 
-				//  Don't allow the user to select an input report buffer size until there is
-				//  a handle to a HID.
+                //ChkAutoincrement.CheckState = CheckState.Checked;
 
-				cmdInputReportBufferSize.Focus();
-				cmdInputReportBufferSize.Enabled = false;
+                ////  Don't allow the user to select an input report buffer size until there is
+                ////  a handle to a HID.
 
-				LstResults.Items.Add("For a more detailed event log, view debug statements in Visual Studio's Output window:");
-				LstResults.Items.Add("Click Build > Configuration Manager > Active Solution Configuration > Debug > Close.");
-				LstResults.Items.Add("Then click View > Output.");
-				LstResults.Items.Add("");
-			}
+                //cmdInputReportBufferSize.Focus();
+                //cmdInputReportBufferSize.Enabled = false;
+
+                //LstResults.Items.Add("For a more detailed event log, view debug statements in Visual Studio's Output window:");
+                //LstResults.Items.Add("Click Build > Configuration Manager > Active Solution Configuration > Debug > Close.");
+                //LstResults.Items.Add("Then click View > Output.");
+                //LstResults.Items.Add("");
+            }
 			catch (Exception ex)
 			{
 				DisplayException(Name, ex);
@@ -1981,13 +1799,13 @@ namespace ReflowController
 
 					if (success)
 					{
-						DisplayReportData(inputReportBuffer, ReportTypes.Input, ReportReadOrWritten.Read);
+						//DisplayReportData(inputReportBuffer, ReportTypes.Input, ReportReadOrWritten.Read);
 					}
 					else
 					{
 						CloseCommunications();
 						MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
-						ScrollToBottomOfListBox();
+						//ScrollToBottomOfListBox();
 					}
 				}
 			}
@@ -2022,10 +1840,6 @@ namespace ReflowController
 					_deviceHandleObtained = FindTheHid();
 				}
 
-				if (_deviceHandleObtained)
-				{
-					GetBytesToSend();
-				}
 				//  Don't attempt to exchange reports if valid handles aren't available
 				//  (as for a mouse or keyboard.)
 
@@ -2044,13 +1858,12 @@ namespace ReflowController
 						outputReportBuffer[0] = 0;
 
 						//  Store the report data following the report ID.
-						//  Use the data in the combo boxes on the form.
+						
+						outputReportBuffer[1] = Command;
 
-						outputReportBuffer[1] = Convert.ToByte(CboByte0.SelectedIndex);
-
-						if (outputReportBuffer.GetUpperBound(0) > 1)
+                        if (outputReportBuffer.GetUpperBound(0) > 1)
 						{
-							outputReportBuffer[2] = Convert.ToByte(CboByte1.SelectedIndex);
+							outputReportBuffer[2] = 0;
 						}
 
 						//  Write a report.
@@ -2107,13 +1920,13 @@ namespace ReflowController
 						}
 						if (success)
 						{
-							DisplayReportData(outputReportBuffer, ReportTypes.Output, ReportReadOrWritten.Written);
+							//DisplayReportData(outputReportBuffer, ReportTypes.Output, ReportReadOrWritten.Written);
 						}
 						else
 						{
 							CloseCommunications();
 							AccessForm(FormActions.AddItemToListBox, "The attempt to write an Output report failed.");
-							ScrollToBottomOfListBox();
+							//ScrollToBottomOfListBox();
 						}
 					}
 				}
@@ -2126,42 +1939,13 @@ namespace ReflowController
 			catch (Exception ex)
 			{
 				DisplayException(Name, ex);
-				throw;
+                throw;
 			}
 		}
 
         
 
-        ///  <summary>
-        ///  Scroll to the bottom of the list box and trim as needed.
-        ///  </summary>
-
-        private void ScrollToBottomOfListBox()
-		{
-			try
-			{
-				LstResults.SelectedIndex = LstResults.Items.Count - 1;
-
-				//  If the list box is getting too large, trim its contents by removing the earliest data.
-
-				if (LstResults.Items.Count > 1000)
-				{
-					Int32 count;
-					for (count = 1; count <= 500; count++)
-					{
-						LstResults.Items.RemoveAt(4);
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-
-		/// <summary>
+        /// <summary>
 		/// Request to send an Output report or get an Input report.
 		/// </summary>
 
@@ -2197,47 +1981,6 @@ namespace ReflowController
 				throw;
 			}
 		}
-
-		///  <summary>
-		///  Set the number of Input buffers (the number of Input reports 
-		///  the host will store) from the value in the text box.
-		///  </summary>
-
-		private void SetInputReportBufferSize()
-		{
-			try
-			{
-				if (!_transferInProgress)
-				{
-					//  Get the number of buffers from the text box.
-
-					Int32 numberOfInputBuffers = Convert.ToInt32(txtInputReportBufferSize.Text);
-
-					//  Set the number of buffers.
-
-					_myHid.SetNumberOfInputBuffers(_hidHandle, numberOfInputBuffers);
-
-					//  Verify and display the result.
-
-					GetInputReportBufferSize();
-				}
-				else
-				{
-					DisplayTransferInProgressMessage();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		
-
-	
-
-		
 
 		///  <summary>
 		///  Provides a central mechanism for exception handling.
@@ -2284,8 +2027,9 @@ namespace ReflowController
         /// Project: Reflow Controller
         /// 
         /// ***********************************************************************
-        /// 
-
+        /// Project specific code
+        /// ***********************************************************************
+        ///  </summary>
 
         ///  <summary>
         ///  Perform startup operations.
@@ -2375,7 +2119,8 @@ namespace ReflowController
 
 
         ///  <summary>
-        ///  Log and display input from reflow controller board.
+        ///  Start reflow cycle
+        ///  Log and display input recieved from reflow controller board.
         ///  </summary>
 
         private async void Reflow_ClickAsync(Object sender, EventArgs e)
@@ -2386,6 +2131,11 @@ namespace ReflowController
             Byte[] inputReportBuffer = null;
             State = 1;  //Need to fix this so that start and stop works properly
             time = 1;
+
+            Command = 0;  //Start reflow cycle command
+            _transferType = TransferTypes.Interrupt;
+            RequestToSendOutputReport();
+
 
             while (State != 0)
             {
@@ -2493,13 +2243,13 @@ namespace ReflowController
 
                         if (success)
                         {
-                            DisplayReportData(inputReportBuffer, ReportTypes.Input, ReportReadOrWritten.Read);
+                           // DisplayReportData(inputReportBuffer, ReportTypes.Input, ReportReadOrWritten.Read);
                         }
                         else
                         {
                             CloseCommunications();
                             MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
-                            ScrollToBottomOfListBox();
+                            //ScrollToBottomOfListBox();
                         }
                     }
 
