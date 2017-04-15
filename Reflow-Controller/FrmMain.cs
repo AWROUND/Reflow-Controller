@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
+using System.Text;
 
 namespace ReflowController
 {
@@ -228,10 +229,16 @@ namespace ReflowController
         private ToolStripStatusLabel iTermtoolStripStatusLabel;
         private ToolStripStatusLabel dTermtoolStripStatusLabel;
         private ToolStripStatusLabel OutputtoolStripStatusLabel;
+        private Button button2;
+        private Button button3;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
         private Button cmdSendOutputReportInterrupt;
 
 		[System.Diagnostics.DebuggerStepThrough()]
@@ -298,10 +305,16 @@ namespace ReflowController
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.StageText = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FraBytesToSend.SuspendLayout();
             this.fraInputReportBufferSize.SuspendLayout();
             this.fraDeviceIdentifiers.SuspendLayout();
@@ -332,12 +345,12 @@ namespace ReflowController
             this.TxtBytesReceived.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtBytesReceived.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBytesReceived.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtBytesReceived.Location = new System.Drawing.Point(16, 520);
+            this.TxtBytesReceived.Location = new System.Drawing.Point(0, 478);
             this.TxtBytesReceived.MaxLength = 0;
             this.TxtBytesReceived.Multiline = true;
             this.TxtBytesReceived.Name = "TxtBytesReceived";
             this.TxtBytesReceived.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TxtBytesReceived.Size = new System.Drawing.Size(440, 96);
+            this.TxtBytesReceived.Size = new System.Drawing.Size(440, 34);
             this.TxtBytesReceived.TabIndex = 5;
             // 
             // FraBytesToSend
@@ -407,7 +420,7 @@ namespace ReflowController
             this.LstResults.Location = new System.Drawing.Point(0, 440);
             this.LstResults.Name = "LstResults";
             this.LstResults.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LstResults.Size = new System.Drawing.Size(440, 74);
+            this.LstResults.Size = new System.Drawing.Size(440, 32);
             this.LstResults.TabIndex = 0;
             // 
             // fraInputReportBufferSize
@@ -664,7 +677,7 @@ namespace ReflowController
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 676);
+            this.button1.Location = new System.Drawing.Point(525, 679);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 19;
@@ -688,7 +701,11 @@ namespace ReflowController
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
@@ -724,7 +741,7 @@ namespace ReflowController
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.StageText);
-            this.groupBox1.Location = new System.Drawing.Point(525, 611);
+            this.groupBox1.Location = new System.Drawing.Point(12, 591);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(435, 120);
             this.groupBox1.TabIndex = 54;
@@ -866,6 +883,26 @@ namespace ReflowController
             this.StageText.TabIndex = 54;
             this.StageText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(525, 630);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 55;
+            this.button2.Text = "Clear Data";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.ClearData_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(651, 629);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(87, 23);
+            this.button3.TabIndex = 56;
+            this.button3.Text = "Save Log File";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.SaveLogFileButton_Click);
+            // 
             // Column1
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -906,9 +943,35 @@ namespace ReflowController
             this.Column4.ReadOnly = true;
             this.Column4.Width = 76;
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "pTerm";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "iTerm";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "dTerm";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Output";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
             // FrmMain
             // 
             this.ClientSize = new System.Drawing.Size(972, 756);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.LstResults);
             this.Controls.Add(this.fraSendAndGetContinuous);
@@ -997,6 +1060,7 @@ namespace ReflowController
         private Byte DTerm;
         private string output;
         private Byte Output;
+        private int time;
 
         private static System.Timers.Timer _periodicTransfers;
 
@@ -1247,7 +1311,7 @@ namespace ReflowController
             String byteValue = null;
             Byte[] inputReportBuffer = null;
             State = 1;
-            int time = 1;
+            time = 1;
 
             while (State != 0)
             {
@@ -1435,6 +1499,11 @@ namespace ReflowController
                 //Track heater On/Off actions. Off = 0 and High = 20
                 if (Convert.ToString(Oven) == "0") dataGridView1.Rows[time - 1].Cells[3].Value = "0";
                 if (Convert.ToString(Oven) == "1") dataGridView1.Rows[time - 1].Cells[3].Value = "35";
+
+                dataGridView1.Rows[time - 1].Cells[4].Value = PTerm;
+                dataGridView1.Rows[time - 1].Cells[5].Value = ITerm;
+                dataGridView1.Rows[time - 1].Cells[6].Value = DTerm;
+                dataGridView1.Rows[time - 1].Cells[7].Value = Output;
 
                 //Keep cursor on current row data
                 dataGridView1.CurrentCell = dataGridView1.Rows[time - 1].Cells[0];
@@ -2629,11 +2698,114 @@ namespace ReflowController
 			}
 		}
 
-		///  <summary>
-		///  Scroll to the bottom of the list box and trim as needed.
-		///  </summary>
+        private void ClearData_Click(object sender, EventArgs e)
+        {
+            //Clear data grid contents
+            this.dataGridView1.Rows.Clear();
 
-		private void ScrollToBottomOfListBox()
+            //Reset time variable
+            time = 1;
+
+            ////Clear all the curve items and recreate the chart
+            //zedGraphControl1.GraphPane.CurveList.Clear();
+
+            ////Reset chart control
+            //zedGraphControl1.Invalidate();
+            //CreateChart();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Button to export gridview data to CSV file
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void SaveLogFileButton_Click(object sender, EventArgs e)
+        {
+            SaveLogFile();
+        }
+
+
+        private void SaveLogFile()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            //Variable to store contents from each datagrid cell
+            string data = string.Empty;
+            State = 0;
+
+            //Only export if disconnected from serial port
+            if ((State == 0))
+            {
+                //Ensure we are not attempting to export an empty log file
+                if (dataGridView1.Rows.Count != 1)
+                {
+                    //Set the default directory path and file extension
+                    string path = Environment.CurrentDirectory + @"\Logs";
+
+                    saveFileDialog.InitialDirectory = path;
+                    saveFileDialog.Filter = "CSV (*.csv)|*.csv";
+
+                    //Make sure the directory exist or create one
+                    if (!(Directory.Exists(path)))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+                    {
+                        //Create a file stream write object
+                        using (StreamWriter myFile = new StreamWriter(saveFileDialog.FileName, false, Encoding.Default))
+                        {
+                            //Get the column header text first
+                            foreach (DataGridViewColumn dataColumns in dataGridView1.Columns)
+                            {
+                                data += dataColumns.HeaderText + ",";
+                            }
+
+                            //Get row data
+                            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                            {
+                                for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++)
+                                {
+                                    if (!string.IsNullOrEmpty(dataGridView1[j, i].Value.ToString()))
+                                    {
+                                        if (j > 0)
+                                        {
+                                            data += "," + dataGridView1[j, i].Value.ToString();
+                                        }
+
+                                        else
+                                        {
+                                            if (string.IsNullOrEmpty(data))
+                                            {
+                                                data = dataGridView1[j, i].Value.ToString();
+                                            }
+
+                                            else
+                                            {
+                                                data += Environment.NewLine + dataGridView1[j, i].Value.ToString();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            //Write data to file and close file
+                            myFile.Write(data);
+                            myFile.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+        ///  <summary>
+        ///  Scroll to the bottom of the list box and trim as needed.
+        ///  </summary>
+
+        private void ScrollToBottomOfListBox()
 		{
 			try
 			{
@@ -2857,5 +3029,7 @@ namespace ReflowController
 				return _transDefaultFormFrmMain;
 			}
 		}
-	}
+
+       
+    }
 }
