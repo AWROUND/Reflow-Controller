@@ -207,6 +207,31 @@ namespace ReflowController
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private GroupBox groupBox1;
+        private TextBox OvenText;
+        private TextBox FanText;
+        private TextBox textBox14;
+        private TextBox textBox13;
+        private TextBox textBox12;
+        private TextBox textBox11;
+        private TextBox textBox10;
+        private TextBox TemperatureText;
+        private TextBox SetpointText;
+        private TextBox textBox7;
+        private TextBox textBox6;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox StageText;
+        private ToolStripStatusLabel toolStripStatusLabel3;
+        private ToolStripStatusLabel toolStripStatusLabel4;
+        private ToolStripStatusLabel toolStripStatusLabel5;
+        private ToolStripStatusLabel toolStripStatusLabel6;
+        private ToolStripStatusLabel toolStripStatusLabel7;
+        private ToolStripStatusLabel toolStripStatusLabel8;
+        private ToolStripStatusLabel toolStripStatusLabel9;
+        private ToolStripStatusLabel toolStripStatusLabel10;
         private Button cmdSendOutputReportInterrupt;
 
 		[System.Diagnostics.DebuggerStepThrough()]
@@ -246,6 +271,31 @@ namespace ReflowController
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.OvenText = new System.Windows.Forms.TextBox();
+            this.FanText = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.TemperatureText = new System.Windows.Forms.TextBox();
+            this.SetpointText = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.StageText = new System.Windows.Forms.TextBox();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
             this.FraBytesToSend.SuspendLayout();
             this.fraInputReportBufferSize.SuspendLayout();
             this.fraDeviceIdentifiers.SuspendLayout();
@@ -253,6 +303,7 @@ namespace ReflowController
             this.fraSendAndGetContinuous.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // FraBytesReceived
@@ -305,7 +356,7 @@ namespace ReflowController
             this.ChkAutoincrement.Cursor = System.Windows.Forms.Cursors.Default;
             this.ChkAutoincrement.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkAutoincrement.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ChkAutoincrement.Location = new System.Drawing.Point(8, 96);
+            this.ChkAutoincrement.Location = new System.Drawing.Point(6, 95);
             this.ChkAutoincrement.Name = "ChkAutoincrement";
             this.ChkAutoincrement.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ChkAutoincrement.Size = new System.Drawing.Size(201, 35);
@@ -347,7 +398,7 @@ namespace ReflowController
             this.LstResults.ForeColor = System.Drawing.SystemColors.WindowText;
             this.LstResults.HorizontalScrollbar = true;
             this.LstResults.ItemHeight = 14;
-            this.LstResults.Location = new System.Drawing.Point(16, 427);
+            this.LstResults.Location = new System.Drawing.Point(0, 440);
             this.LstResults.Name = "LstResults";
             this.LstResults.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LstResults.Size = new System.Drawing.Size(440, 74);
@@ -481,7 +532,7 @@ namespace ReflowController
             this.fraSendAndGetContinuous.Controls.Add(this.cmdPeriodicTransfers);
             this.fraSendAndGetContinuous.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fraSendAndGetContinuous.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(194, 296);
+            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(161, 296);
             this.fraSendAndGetContinuous.Name = "fraSendAndGetContinuous";
             this.fraSendAndGetContinuous.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fraSendAndGetContinuous.Size = new System.Drawing.Size(295, 112);
@@ -529,7 +580,15 @@ namespace ReflowController
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel4,
+            this.toolStripStatusLabel5,
+            this.toolStripStatusLabel6,
+            this.toolStripStatusLabel7,
+            this.toolStripStatusLabel8,
+            this.toolStripStatusLabel9,
+            this.toolStripStatusLabel10});
             this.statusStrip1.Location = new System.Drawing.Point(0, 734);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(972, 22);
@@ -550,12 +609,13 @@ namespace ReflowController
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 622);
+            this.button1.Location = new System.Drawing.Point(12, 676);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 19;
             this.button1.Text = "Reflow";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Reflow_ClickAsync);
             // 
             // dataGridView1
             // 
@@ -565,9 +625,9 @@ namespace ReflowController
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(516, 16);
+            this.dataGridView1.Location = new System.Drawing.Point(524, 16);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(444, 281);
+            this.dataGridView1.Size = new System.Drawing.Size(429, 593);
             this.dataGridView1.TabIndex = 20;
             // 
             // Column1
@@ -590,20 +650,228 @@ namespace ReflowController
             this.Column4.HeaderText = "Heater";
             this.Column4.Name = "Column4";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.OvenText);
+            this.groupBox1.Controls.Add(this.FanText);
+            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.textBox13);
+            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.TemperatureText);
+            this.groupBox1.Controls.Add(this.SetpointText);
+            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.StageText);
+            this.groupBox1.Location = new System.Drawing.Point(525, 611);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(435, 120);
+            this.groupBox1.TabIndex = 54;
+            this.groupBox1.TabStop = false;
+            // 
+            // OvenText
+            // 
+            this.OvenText.Location = new System.Drawing.Point(328, 39);
+            this.OvenText.Name = "OvenText";
+            this.OvenText.Size = new System.Drawing.Size(100, 20);
+            this.OvenText.TabIndex = 69;
+            // 
+            // FanText
+            // 
+            this.FanText.Location = new System.Drawing.Point(328, 65);
+            this.FanText.Name = "FanText";
+            this.FanText.Size = new System.Drawing.Size(100, 20);
+            this.FanText.TabIndex = 68;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(328, 91);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(100, 20);
+            this.textBox14.TabIndex = 67;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(222, 15);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(100, 20);
+            this.textBox13.TabIndex = 66;
+            this.textBox13.Text = "Process Stage";
+            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(222, 39);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(100, 20);
+            this.textBox12.TabIndex = 65;
+            this.textBox12.Text = "Oven";
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(222, 65);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(100, 20);
+            this.textBox11.TabIndex = 64;
+            this.textBox11.Text = "Fan";
+            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(222, 91);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 20);
+            this.textBox10.TabIndex = 63;
+            this.textBox10.Text = "Aux";
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TemperatureText
+            // 
+            this.TemperatureText.Location = new System.Drawing.Point(116, 13);
+            this.TemperatureText.Name = "TemperatureText";
+            this.TemperatureText.Size = new System.Drawing.Size(100, 20);
+            this.TemperatureText.TabIndex = 62;
+            // 
+            // SetpointText
+            // 
+            this.SetpointText.Location = new System.Drawing.Point(116, 39);
+            this.SetpointText.Name = "SetpointText";
+            this.SetpointText.Size = new System.Drawing.Size(100, 20);
+            this.SetpointText.TabIndex = 61;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(116, 65);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.TabIndex = 60;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(116, 91);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 59;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(10, 91);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 58;
+            this.textBox5.Text = "Elapsed Time";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(10, 65);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 57;
+            this.textBox4.Text = "Stage Time";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(10, 39);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 56;
+            this.textBox3.Text = "Setpoint °C";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(10, 13);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 55;
+            this.textBox2.Text = "Temperature °C";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // StageText
+            // 
+            this.StageText.Location = new System.Drawing.Point(328, 15);
+            this.StageText.Name = "StageText";
+            this.StageText.Size = new System.Drawing.Size(100, 20);
+            this.StageText.TabIndex = 54;
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.AutoSize = false;
+            this.toolStripStatusLabel3.MergeAction = System.Windows.Forms.MergeAction.Replace;
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(30, 17);
+            this.toolStripStatusLabel3.Text = "Kp=";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.AutoSize = false;
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(30, 17);
+            this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.AutoSize = false;
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(30, 17);
+            this.toolStripStatusLabel5.Text = "Ki=";
+            // 
+            // toolStripStatusLabel6
+            // 
+            this.toolStripStatusLabel6.AutoSize = false;
+            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(30, 17);
+            this.toolStripStatusLabel6.Text = "toolStripStatusLabel6";
+            // 
+            // toolStripStatusLabel7
+            // 
+            this.toolStripStatusLabel7.AutoSize = false;
+            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(30, 17);
+            this.toolStripStatusLabel7.Text = "Kd=";
+            // 
+            // toolStripStatusLabel8
+            // 
+            this.toolStripStatusLabel8.AutoSize = false;
+            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(30, 17);
+            this.toolStripStatusLabel8.Text = "toolStripStatusLabel8";
+            // 
+            // toolStripStatusLabel9
+            // 
+            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
+            this.toolStripStatusLabel9.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel9.Text = "toolStripStatusLabel9";
+            // 
+            // toolStripStatusLabel10
+            // 
+            this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
+            this.toolStripStatusLabel10.Size = new System.Drawing.Size(124, 17);
+            this.toolStripStatusLabel10.Text = "toolStripStatusLabel10";
+            // 
             // FrmMain
             // 
             this.ClientSize = new System.Drawing.Size(972, 756);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.LstResults);
+            this.Controls.Add(this.fraSendAndGetContinuous);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TxtBytesReceived);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.fraSendAndGetContinuous);
             this.Controls.Add(this.fraInterruptTransfers);
             this.Controls.Add(this.fraDeviceIdentifiers);
             this.Controls.Add(this.fraInputReportBufferSize);
             this.Controls.Add(this.FraBytesReceived);
             this.Controls.Add(this.FraBytesToSend);
-            this.Controls.Add(this.LstResults);
             this.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Location = new System.Drawing.Point(21, 28);
             this.Name = "FrmMain";
@@ -622,6 +890,8 @@ namespace ReflowController
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -646,7 +916,40 @@ namespace ReflowController
 		private Boolean _transferInProgress;
 		private TransferTypes _transferType;
 
-		private static System.Timers.Timer _periodicTransfers;
+        private string state;
+        private Byte State;
+        private string temperature;
+        private Byte Temperature;
+        private string setpoint;
+        private Byte Setpoint;
+        private string oven;
+        private Byte Oven;
+        private string fan;
+        private Byte Fan;
+        private string elapsed1;
+        private Byte Elapsed1;
+        private string elapsed2;
+        private Byte Elapsed2;
+        private string start;
+        private Byte Start;
+        private string kp;
+        private Byte Kp;
+        private string ki;
+        private Byte Ki;
+        private string kd;
+        private Byte Kd;
+        private string cycleTime;
+        private Byte CycleTime;
+        private string pTerm;
+        private Byte PTerm;
+        private string iTerm;
+        private Byte ITerm;
+        private string dTerm;
+        private Byte DTerm;
+        private string output;
+        private Byte Output;
+
+        private static System.Timers.Timer _periodicTransfers;
 
 		private readonly Debugging _myDebugging = new Debugging(); //  For viewing results of API calls via Debug.Write.
 		private readonly DeviceManagement _myDeviceManagement = new DeviceManagement();
@@ -884,15 +1187,207 @@ namespace ReflowController
 			}
 		}
 
-		
+        ///  <summary>
+        ///  Search for a specific device.
+        ///  </summary>
 
-		/// <summary>
-		/// Request to get an Input report retrieved using interrupt transfers.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		/// 
-		private void cmdGetInputReportInterrupt_Click(object sender, EventArgs e)
+        private async void Reflow_ClickAsync(Object sender, EventArgs e)
+        {
+            const Int32 readTimeout = 5000;
+
+            String byteValue = null;
+            Byte[] inputReportBuffer = null;
+            State = 1;
+
+            while (State != 0)
+            {
+                try
+                {
+                    Boolean success = false;
+
+                    //  If the device hasn't been detected, was removed, or timed out on a previous attempt
+                    //  to access it, look for the device.
+
+                    if (!_deviceHandleObtained)
+                    {
+                        _deviceHandleObtained = FindTheHid();
+                    }
+
+                    if (_deviceHandleObtained)
+                    {
+                        //  Don't attempt to exchange reports if valid handles aren't available
+                        //  (as for a mouse or keyboard under Windows 2000 and later.)
+
+                        if (!_hidHandle.IsInvalid)
+                        {
+                            //  Read an Input report.
+
+                            //  Don't attempt to send an Input report if the HID has no Input report.
+                            //  (The HID spec requires all HIDs to have an interrupt IN endpoint,
+                            //  which suggests that all HIDs must support Input reports.)
+
+                            if (_myHid.Capabilities.InputReportByteLength > 0)
+                            {
+                                //  Set the size of the Input report buffer. 
+
+                                inputReportBuffer = new Byte[_myHid.Capabilities.InputReportByteLength];
+
+                                if (_transferType.Equals(TransferTypes.Control))
+                                {
+                                    {
+                                        _transferInProgress = true;
+
+                                        //  Read a report using a control transfer.
+
+                                        success = _myHid.GetInputReportViaControlTransfer(_hidHandle, ref inputReportBuffer);
+                                        //cmdGetInputReportControl.Enabled = true;
+                                        _transferInProgress = false;
+                                    }
+                                }
+                                else
+                                {
+                                    {
+                                        _transferInProgress = true;
+
+                                        //  Read a report using interrupt transfers. 
+                                        //  Timeout if no report available.
+                                        //  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
+
+                                        // Create a delegate to execute on a timeout.
+
+                                        Action onReadTimeoutAction = OnReadTimeout;
+
+                                        // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
+
+                                        var cts = new CancellationTokenSource();
+
+                                        // Cancel the read if it hasn't completed after a timeout.
+
+                                        cts.CancelAfter(readTimeout);
+
+                                        // Specify the function to call on a timeout.
+
+                                        cts.Token.Register(onReadTimeoutAction);
+
+                                        // Stops waiting when data is available or on timeout:
+
+                                        Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
+
+                                        // Arrive here only if the operation completed.
+
+                                        // Dispose to stop the timeout timer. 
+
+                                        cts.Dispose();
+
+                                        _transferInProgress = false;
+                                        cmdGetInputReportInterrupt.Enabled = true;
+
+                                        if (bytesRead > 0)
+                                        {
+                                            success = true;
+                                            Debug.Print("bytes read (includes report ID) = " + Convert.ToString(bytesRead));
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to read an Input report was made.");
+                                MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have an Input report.");
+                            }
+                        }
+                        else
+                        {
+                            MyMarshalDataToForm(FormActions.AddItemToListBox, "Invalid handle.");
+                            MyMarshalDataToForm(FormActions.AddItemToListBox,
+                                                "No attempt to write an Output report or read an Input report was made.");
+                        }
+
+                        if (success)
+                        {
+                            DisplayReportData(inputReportBuffer, ReportTypes.Input, ReportReadOrWritten.Read);
+                        }
+                        else
+                        {
+                            CloseCommunications();
+                            MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
+                            ScrollToBottomOfListBox();
+                        }
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    DisplayException(Name, ex);
+                    throw;
+                }
+
+                State = inputReportBuffer[1];
+                Temperature = inputReportBuffer[2];
+                Setpoint = inputReportBuffer[3];
+                Oven = inputReportBuffer[4];
+                Fan = inputReportBuffer[5];
+                Elapsed1 = inputReportBuffer[6];
+                Elapsed2 = inputReportBuffer[7];
+                Start = inputReportBuffer[8];
+                Kp = inputReportBuffer[9];
+                Ki = inputReportBuffer[10];
+                Kd = inputReportBuffer[11];
+                CycleTime = inputReportBuffer[12];
+                PTerm = inputReportBuffer[13];
+                ITerm = inputReportBuffer[14];
+                DTerm = inputReportBuffer[15];
+                Output = inputReportBuffer[16];
+
+                //Current stage
+                switch (State)
+                {
+                    case 0: StageText.Text = "WAITING"; break;
+                    case 1: StageText.Text = "PREHEAT"; break;
+                    case 2: StageText.Text = "SOAK"; break;
+                    case 3: StageText.Text = "HEATING"; break;
+                    case 4: StageText.Text = "REFLOW"; break;
+                    case 5: StageText.Text = "COOLING"; break;
+                    case 6: StageText.Text = "BAKE"; break;
+                }
+
+                //Current temperature
+                TemperatureText.Text = Convert.ToString(Temperature) + "\u00b0" + "C";
+
+                //Setpoint temperature
+                SetpointText.Text = Convert.ToString(Setpoint) + "\u00b0" + "C";
+
+                //Heater state (On/Off)
+                switch (Oven)
+                {
+                    case 0: OvenText.Text = "OFF"; break;
+                    case 1: OvenText.Text = "ON"; break;
+                }
+
+                //Auxiliary state (On/Off)
+                switch (Fan)
+                {
+                    case 0: FanText.Text = "OFF"; break;
+                    case 1: FanText.Text = "ON"; break;
+                }
+
+                ////Current stage remaining time
+                //if (elapsed == "0000") elapsed = "N/A";
+                //StageTimeLabel.Text = elapsed;
+
+            }
+
+        }
+
+
+        /// <summary>
+        /// Request to get an Input report retrieved using interrupt transfers.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
+        private void cmdGetInputReportInterrupt_Click(object sender, EventArgs e)
 		{
 			try
 			{
