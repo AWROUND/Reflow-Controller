@@ -14,3 +14,4 @@ C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-C
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\Reflow Controller.csproj.GenerateResource.Cache
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\ReflowController.exe
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\ReflowController.pdb
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\Reflow Controller.csprojResolveAssemblyReference.cache

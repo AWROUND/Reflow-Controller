@@ -187,18 +187,8 @@ namespace ReflowController
 		internal System.Windows.Forms.GroupBox fraInputReportBufferSize;
 		internal System.Windows.Forms.TextBox txtInputReportBufferSize;
 		internal System.Windows.Forms.Button cmdInputReportBufferSize;
-		internal System.Windows.Forms.GroupBox fraDeviceIdentifiers;
-		internal System.Windows.Forms.Label lblVendorID;
-		internal System.Windows.Forms.TextBox txtVendorID;
-		internal System.Windows.Forms.Label lblProductID;
-		internal System.Windows.Forms.TextBox txtProductID;
 		private Button cmdGetInputReportInterrupt;
 		public GroupBox fraInterruptTransfers;
-		private Button cmdPeriodicTransfers;
-		public GroupBox fraSendAndGetContinuous;
-		private RadioButton radFeature;
-		private RadioButton radInputOutputControl;
-		private RadioButton radInputOutputInterrupt;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel CommStatustoolStripStatusLabel;
@@ -262,19 +252,9 @@ namespace ReflowController
             this.fraInputReportBufferSize = new System.Windows.Forms.GroupBox();
             this.cmdInputReportBufferSize = new System.Windows.Forms.Button();
             this.txtInputReportBufferSize = new System.Windows.Forms.TextBox();
-            this.fraDeviceIdentifiers = new System.Windows.Forms.GroupBox();
-            this.txtProductID = new System.Windows.Forms.TextBox();
-            this.lblProductID = new System.Windows.Forms.Label();
-            this.txtVendorID = new System.Windows.Forms.TextBox();
-            this.lblVendorID = new System.Windows.Forms.Label();
             this.cmdSendOutputReportInterrupt = new System.Windows.Forms.Button();
             this.cmdGetInputReportInterrupt = new System.Windows.Forms.Button();
             this.fraInterruptTransfers = new System.Windows.Forms.GroupBox();
-            this.cmdPeriodicTransfers = new System.Windows.Forms.Button();
-            this.fraSendAndGetContinuous = new System.Windows.Forms.GroupBox();
-            this.radFeature = new System.Windows.Forms.RadioButton();
-            this.radInputOutputControl = new System.Windows.Forms.RadioButton();
-            this.radInputOutputInterrupt = new System.Windows.Forms.RadioButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.CommStatustoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -288,6 +268,14 @@ namespace ReflowController
             this.OutputtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.OvenText = new System.Windows.Forms.TextBox();
             this.FanText = new System.Windows.Forms.TextBox();
@@ -307,19 +295,9 @@ namespace ReflowController
             this.StageText = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FraBytesToSend.SuspendLayout();
             this.fraInputReportBufferSize.SuspendLayout();
-            this.fraDeviceIdentifiers.SuspendLayout();
             this.fraInterruptTransfers.SuspendLayout();
-            this.fraSendAndGetContinuous.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -450,53 +428,6 @@ namespace ReflowController
             this.txtInputReportBufferSize.Size = new System.Drawing.Size(56, 20);
             this.txtInputReportBufferSize.TabIndex = 0;
             // 
-            // fraDeviceIdentifiers
-            // 
-            this.fraDeviceIdentifiers.Controls.Add(this.txtProductID);
-            this.fraDeviceIdentifiers.Controls.Add(this.lblProductID);
-            this.fraDeviceIdentifiers.Controls.Add(this.txtVendorID);
-            this.fraDeviceIdentifiers.Controls.Add(this.lblVendorID);
-            this.fraDeviceIdentifiers.Location = new System.Drawing.Point(16, 16);
-            this.fraDeviceIdentifiers.Name = "fraDeviceIdentifiers";
-            this.fraDeviceIdentifiers.Size = new System.Drawing.Size(208, 96);
-            this.fraDeviceIdentifiers.TabIndex = 10;
-            this.fraDeviceIdentifiers.TabStop = false;
-            this.fraDeviceIdentifiers.Text = "Device Identifiers";
-            // 
-            // txtProductID
-            // 
-            this.txtProductID.Location = new System.Drawing.Point(120, 56);
-            this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(72, 20);
-            this.txtProductID.TabIndex = 3;
-            this.txtProductID.Text = "1299";
-            this.txtProductID.TextChanged += new System.EventHandler(this.txtProductID_TextChanged);
-            // 
-            // lblProductID
-            // 
-            this.lblProductID.Location = new System.Drawing.Point(16, 56);
-            this.lblProductID.Name = "lblProductID";
-            this.lblProductID.Size = new System.Drawing.Size(112, 23);
-            this.lblProductID.TabIndex = 2;
-            this.lblProductID.Text = "Product ID (hex):";
-            // 
-            // txtVendorID
-            // 
-            this.txtVendorID.Location = new System.Drawing.Point(120, 24);
-            this.txtVendorID.Name = "txtVendorID";
-            this.txtVendorID.Size = new System.Drawing.Size(72, 20);
-            this.txtVendorID.TabIndex = 1;
-            this.txtVendorID.Text = "0925";
-            this.txtVendorID.TextChanged += new System.EventHandler(this.txtVendorID_TextChanged);
-            // 
-            // lblVendorID
-            // 
-            this.lblVendorID.Location = new System.Drawing.Point(16, 24);
-            this.lblVendorID.Name = "lblVendorID";
-            this.lblVendorID.Size = new System.Drawing.Size(112, 23);
-            this.lblVendorID.TabIndex = 0;
-            this.lblVendorID.Text = "Vendor ID (hex):";
-            // 
             // cmdSendOutputReportInterrupt
             // 
             this.cmdSendOutputReportInterrupt.Location = new System.Drawing.Point(10, 27);
@@ -531,69 +462,6 @@ namespace ReflowController
             this.fraInterruptTransfers.TabIndex = 14;
             this.fraInterruptTransfers.TabStop = false;
             this.fraInterruptTransfers.Text = "Interrupt Transfers";
-            // 
-            // cmdPeriodicTransfers
-            // 
-            this.cmdPeriodicTransfers.Location = new System.Drawing.Point(153, 36);
-            this.cmdPeriodicTransfers.Name = "cmdPeriodicTransfers";
-            this.cmdPeriodicTransfers.Size = new System.Drawing.Size(118, 51);
-            this.cmdPeriodicTransfers.TabIndex = 16;
-            this.cmdPeriodicTransfers.Text = "Start";
-            this.cmdPeriodicTransfers.UseVisualStyleBackColor = true;
-            this.cmdPeriodicTransfers.Click += new System.EventHandler(this.cmdPeriodicTransfers_Click);
-            // 
-            // fraSendAndGetContinuous
-            // 
-            this.fraSendAndGetContinuous.BackColor = System.Drawing.SystemColors.Control;
-            this.fraSendAndGetContinuous.Controls.Add(this.radFeature);
-            this.fraSendAndGetContinuous.Controls.Add(this.radInputOutputControl);
-            this.fraSendAndGetContinuous.Controls.Add(this.radInputOutputInterrupt);
-            this.fraSendAndGetContinuous.Controls.Add(this.cmdPeriodicTransfers);
-            this.fraSendAndGetContinuous.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fraSendAndGetContinuous.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(161, 296);
-            this.fraSendAndGetContinuous.Name = "fraSendAndGetContinuous";
-            this.fraSendAndGetContinuous.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fraSendAndGetContinuous.Size = new System.Drawing.Size(295, 112);
-            this.fraSendAndGetContinuous.TabIndex = 17;
-            this.fraSendAndGetContinuous.TabStop = false;
-            this.fraSendAndGetContinuous.Text = "Send and Get Continuous";
-            // 
-            // radFeature
-            // 
-            this.radFeature.AutoSize = true;
-            this.radFeature.Location = new System.Drawing.Point(17, 76);
-            this.radFeature.Name = "radFeature";
-            this.radFeature.Size = new System.Drawing.Size(62, 18);
-            this.radFeature.TabIndex = 19;
-            this.radFeature.TabStop = true;
-            this.radFeature.Text = "Feature";
-            this.radFeature.UseVisualStyleBackColor = true;
-            this.radFeature.CheckedChanged += new System.EventHandler(this.radFeature_CheckedChanged);
-            // 
-            // radInputOutputControl
-            // 
-            this.radInputOutputControl.AutoSize = true;
-            this.radInputOutputControl.Location = new System.Drawing.Point(17, 52);
-            this.radInputOutputControl.Name = "radInputOutputControl";
-            this.radInputOutputControl.Size = new System.Drawing.Size(120, 18);
-            this.radInputOutputControl.TabIndex = 18;
-            this.radInputOutputControl.TabStop = true;
-            this.radInputOutputControl.Text = "Input Output Control";
-            this.radInputOutputControl.UseVisualStyleBackColor = true;
-            this.radInputOutputControl.CheckedChanged += new System.EventHandler(this.radInputOutputControl_CheckedChanged);
-            // 
-            // radInputOutputInterrupt
-            // 
-            this.radInputOutputInterrupt.AutoSize = true;
-            this.radInputOutputInterrupt.Location = new System.Drawing.Point(17, 28);
-            this.radInputOutputInterrupt.Name = "radInputOutputInterrupt";
-            this.radInputOutputInterrupt.Size = new System.Drawing.Size(126, 18);
-            this.radInputOutputInterrupt.TabIndex = 17;
-            this.radInputOutputInterrupt.TabStop = true;
-            this.radInputOutputInterrupt.Text = "Input Output Interrupt";
-            this.radInputOutputInterrupt.UseVisualStyleBackColor = true;
-            this.radInputOutputInterrupt.CheckedChanged += new System.EventHandler(this.radInputOutputInterrupt_CheckedChanged);
             // 
             // statusStrip1
             // 
@@ -722,6 +590,70 @@ namespace ReflowController
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(435, 593);
             this.dataGridView1.TabIndex = 20;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.HeaderText = "     Time";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 120;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column2.HeaderText = "   Current Temp  °C";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 120;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.HeaderText = "     Setpoint °C";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 120;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column4.HeaderText = "    Heater";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 76;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "pTerm";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "iTerm";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "dTerm";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Output";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -903,70 +835,6 @@ namespace ReflowController
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.SaveLogFileButton_Click);
             // 
-            // Column1
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column1.HeaderText = "     Time";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 120;
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column2.HeaderText = "   Current Temp  °C";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 120;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column3.HeaderText = "     Setpoint °C";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 120;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column4.HeaderText = "    Heater";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 76;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "pTerm";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "iTerm";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "dTerm";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Output";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
             // FrmMain
             // 
             this.ClientSize = new System.Drawing.Size(972, 756);
@@ -974,13 +842,11 @@ namespace ReflowController
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.LstResults);
-            this.Controls.Add(this.fraSendAndGetContinuous);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TxtBytesReceived);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.fraInterruptTransfers);
-            this.Controls.Add(this.fraDeviceIdentifiers);
             this.Controls.Add(this.fraInputReportBufferSize);
             this.Controls.Add(this.FraBytesReceived);
             this.Controls.Add(this.FraBytesToSend);
@@ -994,11 +860,7 @@ namespace ReflowController
             this.FraBytesToSend.ResumeLayout(false);
             this.fraInputReportBufferSize.ResumeLayout(false);
             this.fraInputReportBufferSize.PerformLayout();
-            this.fraDeviceIdentifiers.ResumeLayout(false);
-            this.fraDeviceIdentifiers.PerformLayout();
             this.fraInterruptTransfers.ResumeLayout(false);
-            this.fraSendAndGetContinuous.ResumeLayout(false);
-            this.fraSendAndGetContinuous.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1272,257 +1134,7 @@ namespace ReflowController
 			_deviceHandleObtained = false;
 		}
 
-		///  <summary>
-		///  Search for a specific device.
-		///  </summary>
-
-		private void cmdFindDevice_Click(Object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					_deviceDetected = FindDeviceUsingWmi();
-					if (_deviceDetected)
-					{
-						FindTheHid();
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-        ///  <summary>
-        ///  Search for a specific device.
-        ///  </summary>
-
-        private async void Reflow_ClickAsync(Object sender, EventArgs e)
-        {
-            const Int32 readTimeout = 5000;
-
-            String byteValue = null;
-            Byte[] inputReportBuffer = null;
-            State = 1;
-            time = 1;
-
-            while (State != 0)
-            {
-                try
-                {
-                    Boolean success = false;
-
-                    //  If the device hasn't been detected, was removed, or timed out on a previous attempt
-                    //  to access it, look for the device.
-
-                    if (!_deviceHandleObtained)
-                    {
-                        _deviceHandleObtained = FindTheHid();
-                    }
-
-                    if (_deviceHandleObtained)
-                    {
-                        //  Don't attempt to exchange reports if valid handles aren't available
-                        //  (as for a mouse or keyboard under Windows 2000 and later.)
-
-                        if (!_hidHandle.IsInvalid)
-                        {
-                            //  Read an Input report.
-
-                            //  Don't attempt to send an Input report if the HID has no Input report.
-                            //  (The HID spec requires all HIDs to have an interrupt IN endpoint,
-                            //  which suggests that all HIDs must support Input reports.)
-
-                            if (_myHid.Capabilities.InputReportByteLength > 0)
-                            {
-                                //  Set the size of the Input report buffer. 
-
-                                inputReportBuffer = new Byte[_myHid.Capabilities.InputReportByteLength];
-
-                                if (_transferType.Equals(TransferTypes.Control))
-                                {
-                                    {
-                                        _transferInProgress = true;
-
-                                        //  Read a report using a control transfer.
-
-                                        success = _myHid.GetInputReportViaControlTransfer(_hidHandle, ref inputReportBuffer);
-                                        //cmdGetInputReportControl.Enabled = true;
-                                        _transferInProgress = false;
-                                    }
-                                }
-                                else
-                                {
-                                    {
-                                        _transferInProgress = true;
-
-                                        //  Read a report using interrupt transfers. 
-                                        //  Timeout if no report available.
-                                        //  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
-
-                                        // Create a delegate to execute on a timeout.
-
-                                        Action onReadTimeoutAction = OnReadTimeout;
-
-                                        // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
-
-                                        var cts = new CancellationTokenSource();
-
-                                        // Cancel the read if it hasn't completed after a timeout.
-
-                                        cts.CancelAfter(readTimeout);
-
-                                        // Specify the function to call on a timeout.
-
-                                        cts.Token.Register(onReadTimeoutAction);
-
-                                        // Stops waiting when data is available or on timeout:
-
-                                        Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
-
-                                        // Arrive here only if the operation completed.
-
-                                        // Dispose to stop the timeout timer. 
-
-                                        cts.Dispose();
-
-                                        _transferInProgress = false;
-                                        cmdGetInputReportInterrupt.Enabled = true;
-
-                                        if (bytesRead > 0)
-                                        {
-                                            success = true;
-                                            Debug.Print("bytes read (includes report ID) = " + Convert.ToString(bytesRead));
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to read an Input report was made.");
-                                MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have an Input report.");
-                            }
-                        }
-                        else
-                        {
-                            MyMarshalDataToForm(FormActions.AddItemToListBox, "Invalid handle.");
-                            MyMarshalDataToForm(FormActions.AddItemToListBox,
-                                                "No attempt to write an Output report or read an Input report was made.");
-                        }
-
-                        if (success)
-                        {
-                            DisplayReportData(inputReportBuffer, ReportTypes.Input, ReportReadOrWritten.Read);
-                        }
-                        else
-                        {
-                            CloseCommunications();
-                            MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
-                            ScrollToBottomOfListBox();
-                        }
-                    }
-
-                }
-
-                catch (Exception ex)
-                {
-                    DisplayException(Name, ex);
-                    throw;
-                }
-
-                State = inputReportBuffer[1];
-                Temperature = inputReportBuffer[2];
-                Setpoint = inputReportBuffer[3];
-                Oven = inputReportBuffer[4];
-                Fan = inputReportBuffer[5];
-                Elapsed1 = inputReportBuffer[6];
-                Elapsed2 = inputReportBuffer[7];
-                Start = inputReportBuffer[8];
-                Kp = inputReportBuffer[9];
-                Ki = inputReportBuffer[10];
-                Kd = inputReportBuffer[11];
-                CycleTime = inputReportBuffer[12];
-                PTerm = inputReportBuffer[13];
-                ITerm = inputReportBuffer[14];
-                DTerm = inputReportBuffer[15];
-                Output = inputReportBuffer[16];
-
-                //Current stage
-                switch (State)
-                {
-                    case 0: StageText.Text = "WAITING"; break;
-                    case 1: StageText.Text = "PREHEAT"; break;
-                    case 2: StageText.Text = "SOAK"; break;
-                    case 3: StageText.Text = "HEATING"; break;
-                    case 4: StageText.Text = "REFLOW"; break;
-                    case 5: StageText.Text = "COOLING"; break;
-                    case 6: StageText.Text = "BAKE"; break;
-                }
-
-                //Current temperature
-                TemperatureText.Text = Convert.ToString(Temperature) + "\u00b0" + "C";
-
-                //Setpoint temperature
-                SetpointText.Text = Convert.ToString(Setpoint) + "\u00b0" + "C";
-
-                //Heater state (On/Off)
-                switch (Oven)
-                {
-                    case 0: OvenText.Text = "OFF"; break;
-                    case 1: OvenText.Text = "ON"; break;
-                }
-
-                //Auxiliary state (On/Off)
-                switch (Fan)
-                {
-                    case 0: FanText.Text = "OFF"; break;
-                    case 1: FanText.Text = "ON"; break;
-                }
-
-                ////Current stage remaining time
-                //if (elapsed == "0000") elapsed = "N/A";
-                //StageTimeLabel.Text = elapsed;
-
-                //Add time and temperature values
-                dataGridView1.Rows.Add();
-                dataGridView1.Rows[time - 1].Cells[0].Value = time - 1;
-                dataGridView1.Rows[time - 1].Cells[1].Value = Temperature;
-                dataGridView1.Rows[time - 1].Cells[2].Value = Setpoint;
-
-                //Track heater On/Off actions. Off = 0 and High = 20
-                if (Convert.ToString(Oven) == "0") dataGridView1.Rows[time - 1].Cells[3].Value = "0";
-                if (Convert.ToString(Oven) == "1") dataGridView1.Rows[time - 1].Cells[3].Value = "35";
-
-                dataGridView1.Rows[time - 1].Cells[4].Value = PTerm;
-                dataGridView1.Rows[time - 1].Cells[5].Value = ITerm;
-                dataGridView1.Rows[time - 1].Cells[6].Value = DTerm;
-                dataGridView1.Rows[time - 1].Cells[7].Value = Output;
-
-                //Keep cursor on current row data
-                dataGridView1.CurrentCell = dataGridView1.Rows[time - 1].Cells[0];
-
-                KptoolStripStatusLabel.Text = "Kp = " + Convert.ToString(Kp);
-                KitoolStripStatusLabel.Text = "Ki = " + Convert.ToString(Ki);
-                KdtoolStripStatusLabel.Text = "Kd = " + Convert.ToString(Kd);
-                CycleTimetoolStripStatusLabel.Text = "Cycle Time (Secs) = " + Convert.ToString(CycleTime);
-                pTermtoolStripStatusLabel.Text = "pTerm = " + Convert.ToString(PTerm);
-                iTermtoolStripStatusLabel.Text = "iTerm = " + Convert.ToString(ITerm);
-                dTermtoolStripStatusLabel.Text = "dTerm = " + Convert.ToString(DTerm);
-                OutputtoolStripStatusLabel.Text = "Output = " + Convert.ToString(Output);
-
-                time++;
-            }
-
-        }
-
-
+		
         /// <summary>
         /// Request to get an Input report retrieved using interrupt transfers.
         /// </summary>
@@ -1581,41 +1193,7 @@ namespace ReflowController
 			}
 		}
 
-		/// <summary>
-		/// Alternate sending and getting a report.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-
-		private void cmdPeriodicTransfers_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (cmdPeriodicTransfers.Text == "Start")
-				{
-					if (_transferInProgress)
-					{
-						DisplayTransferInProgressMessage();
-					}
-					else
-					{
-						_sendOrGet = SendOrGet.Send;
-						PeriodicTransfersStart();
-					}
-				}
-				else
-				{
-					PeriodicTransfersStop();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		
+				
 		/// <summary>
 		/// Request to send an Output report using an interrupt transfer.		
 		/// </summary>
@@ -1808,28 +1386,7 @@ namespace ReflowController
 			ScrollToBottomOfListBox();
 		}
 
-		///  <summary>
-		///  Do periodic transfers.
-		///  </summary>
-		/// <param name="source"></param>
-		/// <param name="e"></param>
-		///  <remarks>
-		///  The timer is enabled only if continuous (periodic) transfers have been requested.
-		///  </remarks>		  
-
-		private void DoPeriodicTransfers(object source, ElapsedEventArgs e)
-		{
-			try
-			{
-				PeriodicTransfers();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
+		
 		/// <summary>
 		/// Enable the command buttons on the form.
 		/// Needed after attempting a transfer and device not found.
@@ -1838,7 +1395,6 @@ namespace ReflowController
 		private void EnableFormControls()
 		{
 			cmdGetInputReportInterrupt.Enabled = true;
-			cmdPeriodicTransfers.Enabled = true;
 			cmdSendOutputReportInterrupt.Enabled = true;
 		}
 
@@ -1917,10 +1473,6 @@ namespace ReflowController
 			{
 				_deviceHandleObtained = false;
 				CloseCommunications();
-
-				//  Get the device's Vendor ID and Product ID from the form's text boxes.
-
-				GetVendorAndProductIDsFromTextBoxes(ref _myVendorId, ref _myProductId);
 
 				// Get the HID-class GUID.
 
@@ -2073,40 +1625,9 @@ namespace ReflowController
 			}
 		}
 
-		///  <summary>
-		///  Perform shutdown operations.
-		///  </summary>
+		
 
-		private void frmMain_Closed(Object eventSender, EventArgs eventArgs)
-		{
-			try
-			{
-				Shutdown();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
-		///  Perform startup operations.
-		///  </summary>
-
-		private void frmMain_Load(Object eventSender, EventArgs eventArgs)
-		{
-			try
-			{
-				FrmMy = this;
-				Startup();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
+		
 
 		private void GetBytesToSend()
 		{
@@ -2177,20 +1698,7 @@ namespace ReflowController
 		///  <param name="myVendorId"> the Vendor ID</param>
 		///  <param name="myProductId"> the Product ID</param>
 
-		private void GetVendorAndProductIDsFromTextBoxes(ref Int32 myVendorId, ref Int32 myProductId)
-		{
-			try
-			{
-				myVendorId = Int32.Parse(txtVendorID.Text, NumberStyles.AllowHexSpecifier);
-				myProductId = Int32.Parse(txtProductID.Text, NumberStyles.AllowHexSpecifier);
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
+		
 		///  <summary>
 		///  Initialize the elements on the form.
 		///  </summary>
@@ -2214,7 +1722,6 @@ namespace ReflowController
 
 				FrmMy.CboByte0.SelectedIndex = 0;
 				FrmMy.CboByte1.SelectedIndex = 128;
-				FrmMy.radInputOutputInterrupt.Checked = true;
 
 				//  Check the autoincrement box to increment the values each time a report is sent.
 
@@ -2340,84 +1847,9 @@ namespace ReflowController
 			}
 		}
 
-		/// <summary>
-		/// Start doing periodic transfers.
-		/// </summary>
+		
 
-		private void PeriodicTransfersStart()
-		{
-			// Don't allow changing the transfer type while transfers are in progress.
 
-			if (radFeature.Checked)
-			{
-				radInputOutputControl.Enabled = false;
-				radInputOutputInterrupt.Enabled = false;
-			}
-			else if (radInputOutputControl.Checked)
-			{
-				radFeature.Enabled = false;
-				radInputOutputInterrupt.Enabled = false;
-			}
-			else if (radInputOutputInterrupt.Checked)
-			{
-				radFeature.Enabled = false;
-				radInputOutputControl.Enabled = false;
-			}
-
-			//  Change the command button's text.
-
-			cmdPeriodicTransfers.Text = "Stop";
-
-			//  Enable the timer event to trigger a set of transfers.
-
-			_periodicTransfers.Start();
-
-			cmdPeriodicTransfers.Enabled = true;
-
-			if (radInputOutputInterrupt.Checked)
-			{
-				_transferType = TransferTypes.Interrupt;
-				_reportType = ReportTypes.Output;
-			}
-			else if (radInputOutputControl.Checked)
-			{
-				_transferType = TransferTypes.Control;
-				_reportType = ReportTypes.Output;
-			}
-			else if (radFeature.Checked)
-			{
-				_transferType = TransferTypes.Control;
-				_reportType = ReportTypes.Feature;
-			}
-			_periodicTransfersRequested = true;
-			PeriodicTransfers();
-		}
-
-		/// <summary>
-		/// Stop doing periodic transfers.
-		/// </summary>
-
-		private void PeriodicTransfersStop()
-		{
-			//  Stop doing continuous transfers.
-
-			_periodicTransfersRequested = false;
-
-			// Disable the timer that triggers the transfers.	
-
-			_periodicTransfers.Stop();
-			cmdPeriodicTransfers.Enabled = true;
-
-			//  Change the command button's text.
-
-			cmdPeriodicTransfers.Text = "Start";
-
-			// Re-allow changing the transfer type.
-
-			radFeature.Enabled = true;
-			radInputOutputControl.Enabled = true;
-			radInputOutputInterrupt.Enabled = true;
-		}
 
 		private void radInputOutputControl_CheckedChanged(object sender, EventArgs e)
 		{
@@ -2698,6 +2130,473 @@ namespace ReflowController
 			}
 		}
 
+        
+
+        ///  <summary>
+        ///  Scroll to the bottom of the list box and trim as needed.
+        ///  </summary>
+
+        private void ScrollToBottomOfListBox()
+		{
+			try
+			{
+				LstResults.SelectedIndex = LstResults.Items.Count - 1;
+
+				//  If the list box is getting too large, trim its contents by removing the earliest data.
+
+				if (LstResults.Items.Count > 1000)
+				{
+					Int32 count;
+					for (count = 1; count <= 500; count++)
+					{
+						LstResults.Items.RemoveAt(4);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				DisplayException(Name, ex);
+				throw;
+			}
+		}
+
+
+		/// <summary>
+		/// Request to send an Output report or get an Input report.
+		/// </summary>
+
+		private void SendOutputReportOrGetInputReport()
+		{
+			try
+			{
+				//  If the device hasn't been detected, was removed, or timed out on a previous attempt
+				//  to access it, look for the device.
+
+				if (!_deviceHandleObtained)
+				{
+					_deviceHandleObtained = FindTheHid();
+				}
+
+				if (_deviceHandleObtained)
+				{
+					if (_sendOrGet == SendOrGet.Send)
+					{
+						RequestToSendOutputReport();
+						_sendOrGet = SendOrGet.Get;
+					}
+					else
+					{
+						RequestToGetInputReport();
+						_sendOrGet = SendOrGet.Send;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				DisplayException(Name, ex);
+				throw;
+			}
+		}
+
+		///  <summary>
+		///  Set the number of Input buffers (the number of Input reports 
+		///  the host will store) from the value in the text box.
+		///  </summary>
+
+		private void SetInputReportBufferSize()
+		{
+			try
+			{
+				if (!_transferInProgress)
+				{
+					//  Get the number of buffers from the text box.
+
+					Int32 numberOfInputBuffers = Convert.ToInt32(txtInputReportBufferSize.Text);
+
+					//  Set the number of buffers.
+
+					_myHid.SetNumberOfInputBuffers(_hidHandle, numberOfInputBuffers);
+
+					//  Verify and display the result.
+
+					GetInputReportBufferSize();
+				}
+				else
+				{
+					DisplayTransferInProgressMessage();
+				}
+			}
+			catch (Exception ex)
+			{
+				DisplayException(Name, ex);
+				throw;
+			}
+		}
+
+		
+
+	
+
+		
+
+		///  <summary>
+		///  Provides a central mechanism for exception handling.
+		///  Displays a message box that describes the exception.
+		///  </summary>
+		///  
+		///  <param name="moduleName"> the module where the exception occurred. </param>
+		///  <param name="e"> the exception </param>
+
+		internal static void DisplayException(String moduleName, Exception e)
+		{
+			//  Create an error message.
+
+			String message = "Exception: " + e.Message + Environment.NewLine + "Module: " + moduleName + Environment.NewLine + "Method: " + e.TargetSite.Name;
+
+			const String caption = "Unexpected Exception";
+
+			MessageBox.Show(message, caption, MessageBoxButtons.OK);
+			Debug.Write(message);
+
+			// Get the last error and display it. 
+
+			Int32 error = Marshal.GetLastWin32Error();
+
+			Debug.WriteLine("The last Win32 Error was: " + error);
+		}
+
+		[STAThread]
+		internal static void Main() { Application.Run(new FrmMain()); }
+		private static FrmMain _transDefaultFormFrmMain;
+		internal static FrmMain TransDefaultFormFrmMain
+		{
+			get
+			{
+				if (_transDefaultFormFrmMain == null)
+				{
+					_transDefaultFormFrmMain = new FrmMain();
+				}
+				return _transDefaultFormFrmMain;
+			}
+		}
+
+        ///<summary>
+        /// Project: Reflow Controller
+        /// 
+        /// ***********************************************************************
+        /// 
+
+
+        ///  <summary>
+        ///  Perform startup operations.
+        ///  </summary>
+
+        private void frmMain_Load(Object eventSender, EventArgs eventArgs)
+        {
+            try
+            {
+                FrmMy = this;
+                Startup();
+            }
+            catch (Exception ex)
+            {
+                DisplayException(Name, ex);
+                throw;
+            }
+        }
+
+
+        ///  <summary>
+        ///  Perform shutdown operations.
+        ///  </summary>
+
+        private void frmMain_Closed(Object eventSender, EventArgs eventArgs)
+        {
+            try
+            {
+                Shutdown();
+            }
+            catch (Exception ex)
+            {
+                DisplayException(Name, ex);
+                throw;
+            }
+        }
+
+        ///  <summary>
+        ///  Perform actions that must execute when the program ends.
+        ///  </summary>
+
+        private void Shutdown()
+        {
+            try
+            {
+                CloseCommunications();
+                DeviceNotificationsStop();
+            }
+            catch (Exception ex)
+            {
+                DisplayException(Name, ex);
+                throw;
+            }
+        }
+
+
+        ///  <summary>
+        ///  Perform actions that must execute when the program starts.
+        ///  </summary>
+
+        private void Startup()
+        {
+            
+            try
+            {
+                _myHid = new Hid();
+                InitializeDisplay();
+
+               //  Default USB Vendor ID and Product ID:
+
+                _myVendorId = 0x04DB;
+                _myProductId = 0x1234;
+
+                DeviceNotificationsStart();
+                FindDeviceUsingWmi();
+                FindTheHid();
+            }
+            catch (Exception ex)
+            {
+                DisplayException(Name, ex);
+                throw;
+            }
+        }
+
+
+
+
+
+        ///  <summary>
+        ///  Log and display input from reflow controller board.
+        ///  </summary>
+
+        private async void Reflow_ClickAsync(Object sender, EventArgs e)
+        {
+            const Int32 readTimeout = 2000;
+
+            String byteValue = null;
+            Byte[] inputReportBuffer = null;
+            State = 1;  //Need to fix this so that start and stop works properly
+            time = 1;
+
+            while (State != 0)
+            {
+                try
+                {
+                    Boolean success = false;
+
+                    //  If the device hasn't been detected, was removed, or timed out on a previous attempt
+                    //  to access it, look for the device.
+
+                    if (!_deviceHandleObtained)
+                    {
+                        _deviceHandleObtained = FindTheHid();
+                    }
+
+                    if (_deviceHandleObtained)
+                    {
+                        //  Don't attempt to exchange reports if valid handles aren't available
+                        //  (as for a mouse or keyboard under Windows 2000 and later.)
+
+                        if (!_hidHandle.IsInvalid)
+                        {
+                            //  Read an Input report.
+
+                            //  Don't attempt to send an Input report if the HID has no Input report.
+                            //  (The HID spec requires all HIDs to have an interrupt IN endpoint,
+                            //  which suggests that all HIDs must support Input reports.)
+
+                            if (_myHid.Capabilities.InputReportByteLength > 0)
+                            {
+                                //  Set the size of the Input report buffer. 
+
+                                inputReportBuffer = new Byte[_myHid.Capabilities.InputReportByteLength];
+
+                                if (_transferType.Equals(TransferTypes.Control))
+                                {
+                                    {
+                                        _transferInProgress = true;
+
+                                        //  Read a report using a control transfer.
+
+                                        success = _myHid.GetInputReportViaControlTransfer(_hidHandle, ref inputReportBuffer);
+                                        //cmdGetInputReportControl.Enabled = true;
+                                        _transferInProgress = false;
+                                    }
+                                }
+                                else
+                                {
+                                    {
+                                        _transferInProgress = true;
+
+                                        //  Read a report using interrupt transfers. 
+                                        //  Timeout if no report available.
+                                        //  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
+
+                                        // Create a delegate to execute on a timeout.
+
+                                        Action onReadTimeoutAction = OnReadTimeout;
+
+                                        // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
+
+                                        var cts = new CancellationTokenSource();
+
+                                        // Cancel the read if it hasn't completed after a timeout.
+
+                                        cts.CancelAfter(readTimeout);
+
+                                        // Specify the function to call on a timeout.
+
+                                        cts.Token.Register(onReadTimeoutAction);
+
+                                        // Stops waiting when data is available or on timeout:
+
+                                        Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
+
+                                        // Arrive here only if the operation completed.
+
+                                        // Dispose to stop the timeout timer. 
+
+                                        cts.Dispose();
+
+                                        _transferInProgress = false;
+                                        cmdGetInputReportInterrupt.Enabled = true;
+
+                                        if (bytesRead > 0)
+                                        {
+                                            success = true;
+                                            Debug.Print("bytes read (includes report ID) = " + Convert.ToString(bytesRead));
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to read an Input report was made.");
+                                MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have an Input report.");
+                            }
+                        }
+                        else
+                        {
+                            MyMarshalDataToForm(FormActions.AddItemToListBox, "Invalid handle.");
+                            MyMarshalDataToForm(FormActions.AddItemToListBox,
+                                                "No attempt to write an Output report or read an Input report was made.");
+                        }
+
+                        if (success)
+                        {
+                            DisplayReportData(inputReportBuffer, ReportTypes.Input, ReportReadOrWritten.Read);
+                        }
+                        else
+                        {
+                            CloseCommunications();
+                            MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
+                            ScrollToBottomOfListBox();
+                        }
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    DisplayException(Name, ex);
+                    throw;
+                }
+
+                State = inputReportBuffer[1];
+                Temperature = inputReportBuffer[2];
+                Setpoint = inputReportBuffer[3];
+                Oven = inputReportBuffer[4];
+                Fan = inputReportBuffer[5];
+                Elapsed1 = inputReportBuffer[6];
+                Elapsed2 = inputReportBuffer[7];
+                Start = inputReportBuffer[8];
+                Kp = inputReportBuffer[9];
+                Ki = inputReportBuffer[10];
+                Kd = inputReportBuffer[11];
+                CycleTime = inputReportBuffer[12];
+                PTerm = inputReportBuffer[13];
+                ITerm = inputReportBuffer[14];
+                DTerm = inputReportBuffer[15];
+                Output = inputReportBuffer[16];
+
+                //Current stage
+                switch (State)
+                {
+                    case 0: StageText.Text = "WAITING"; break;
+                    case 1: StageText.Text = "PREHEAT"; break;
+                    case 2: StageText.Text = "SOAK"; break;
+                    case 3: StageText.Text = "HEATING"; break;
+                    case 4: StageText.Text = "REFLOW"; break;
+                    case 5: StageText.Text = "COOLING"; break;
+                    case 6: StageText.Text = "BAKE"; break;
+                }
+
+                //Current temperature
+                TemperatureText.Text = Convert.ToString(Temperature) + "\u00b0" + "C";
+
+                //Setpoint temperature
+                SetpointText.Text = Convert.ToString(Setpoint) + "\u00b0" + "C";
+
+                //Heater state (On/Off)
+                switch (Oven)
+                {
+                    case 0: OvenText.Text = "OFF"; break;
+                    case 1: OvenText.Text = "ON"; break;
+                }
+
+                //Auxiliary state (On/Off)
+                switch (Fan)
+                {
+                    case 0: FanText.Text = "OFF"; break;
+                    case 1: FanText.Text = "ON"; break;
+                }
+
+                ////Current stage remaining time
+                //if (elapsed == "0000") elapsed = "N/A";
+                //StageTimeLabel.Text = elapsed;
+
+                //Add time and temperature values
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[time - 1].Cells[0].Value = time - 1;
+                dataGridView1.Rows[time - 1].Cells[1].Value = Temperature;
+                dataGridView1.Rows[time - 1].Cells[2].Value = Setpoint;
+
+                //Track heater On/Off actions. Off = 0 and High = 20
+                if (Convert.ToString(Oven) == "0") dataGridView1.Rows[time - 1].Cells[3].Value = "0";
+                if (Convert.ToString(Oven) == "1") dataGridView1.Rows[time - 1].Cells[3].Value = "35";
+
+                dataGridView1.Rows[time - 1].Cells[4].Value = PTerm;
+                dataGridView1.Rows[time - 1].Cells[5].Value = ITerm;
+                dataGridView1.Rows[time - 1].Cells[6].Value = DTerm;
+                dataGridView1.Rows[time - 1].Cells[7].Value = Output;
+
+                //Keep cursor on current row data
+                dataGridView1.CurrentCell = dataGridView1.Rows[time - 1].Cells[0];
+
+                KptoolStripStatusLabel.Text = "Kp = " + Convert.ToString(Kp);
+                KitoolStripStatusLabel.Text = "Ki = " + Convert.ToString(Ki);
+                KdtoolStripStatusLabel.Text = "Kd = " + Convert.ToString(Kd);
+                CycleTimetoolStripStatusLabel.Text = "Cycle Time (Secs) = " + Convert.ToString(CycleTime);
+                pTermtoolStripStatusLabel.Text = "pTerm = " + Convert.ToString(PTerm);
+                iTermtoolStripStatusLabel.Text = "iTerm = " + Convert.ToString(ITerm);
+                dTermtoolStripStatusLabel.Text = "dTerm = " + Convert.ToString(DTerm);
+                OutputtoolStripStatusLabel.Text = "Output = " + Convert.ToString(Output);
+
+                time++;
+            }
+
+        }
+
+
         private void ClearData_Click(object sender, EventArgs e)
         {
             //Clear data grid contents
@@ -2801,235 +2700,7 @@ namespace ReflowController
             }
         }
 
-        ///  <summary>
-        ///  Scroll to the bottom of the list box and trim as needed.
-        ///  </summary>
-
-        private void ScrollToBottomOfListBox()
-		{
-			try
-			{
-				LstResults.SelectedIndex = LstResults.Items.Count - 1;
-
-				//  If the list box is getting too large, trim its contents by removing the earliest data.
-
-				if (LstResults.Items.Count > 1000)
-				{
-					Int32 count;
-					for (count = 1; count <= 500; count++)
-					{
-						LstResults.Items.RemoveAt(4);
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
 
 
-		/// <summary>
-		/// Request to send an Output report or get an Input report.
-		/// </summary>
-
-		private void SendOutputReportOrGetInputReport()
-		{
-			try
-			{
-				//  If the device hasn't been detected, was removed, or timed out on a previous attempt
-				//  to access it, look for the device.
-
-				if (!_deviceHandleObtained)
-				{
-					_deviceHandleObtained = FindTheHid();
-				}
-
-				if (_deviceHandleObtained)
-				{
-					if (_sendOrGet == SendOrGet.Send)
-					{
-						RequestToSendOutputReport();
-						_sendOrGet = SendOrGet.Get;
-					}
-					else
-					{
-						RequestToGetInputReport();
-						_sendOrGet = SendOrGet.Send;
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
-		///  Set the number of Input buffers (the number of Input reports 
-		///  the host will store) from the value in the text box.
-		///  </summary>
-
-		private void SetInputReportBufferSize()
-		{
-			try
-			{
-				if (!_transferInProgress)
-				{
-					//  Get the number of buffers from the text box.
-
-					Int32 numberOfInputBuffers = Convert.ToInt32(txtInputReportBufferSize.Text);
-
-					//  Set the number of buffers.
-
-					_myHid.SetNumberOfInputBuffers(_hidHandle, numberOfInputBuffers);
-
-					//  Verify and display the result.
-
-					GetInputReportBufferSize();
-				}
-				else
-				{
-					DisplayTransferInProgressMessage();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
-		///  Perform actions that must execute when the program ends.
-		///  </summary>
-
-		private void Shutdown()
-		{
-			try
-			{
-				CloseCommunications();
-				DeviceNotificationsStop();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
-		///  Perform actions that must execute when the program starts.
-		///  </summary>
-
-		private void Startup()
-		{
-			const Int32 periodicTransferInterval = 1000;
-			try
-			{
-				_myHid = new Hid();
-				InitializeDisplay();
-
-				_periodicTransfers = new System.Timers.Timer(periodicTransferInterval);
-				_periodicTransfers.Elapsed += DoPeriodicTransfers;
-				_periodicTransfers.Stop();
-				_periodicTransfers.SynchronizingObject = this;
-
-				//  Default USB Vendor ID and Product ID:
-
-				txtVendorID.Text = "04DB";
-				txtProductID.Text = "1234";
-
-				GetVendorAndProductIDsFromTextBoxes(ref _myVendorId, ref _myProductId);
-
-				DeviceNotificationsStart();
-				FindDeviceUsingWmi();
-				FindTheHid();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
-		///  The Product ID has changed in the text box. Call a routine to handle it.
-		///  </summary>
-
-		private void txtProductID_TextChanged(Object sender, EventArgs e)
-		{
-			try
-			{
-				DeviceHasChanged();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
-		///  The Vendor ID has changed in the text box. Call a routine to handle it.
-		///  </summary>
-
-		private void txtVendorID_TextChanged(Object sender, EventArgs e)
-		{
-			try
-			{
-				DeviceHasChanged();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
-		///  Provides a central mechanism for exception handling.
-		///  Displays a message box that describes the exception.
-		///  </summary>
-		///  
-		///  <param name="moduleName"> the module where the exception occurred. </param>
-		///  <param name="e"> the exception </param>
-
-		internal static void DisplayException(String moduleName, Exception e)
-		{
-			//  Create an error message.
-
-			String message = "Exception: " + e.Message + Environment.NewLine + "Module: " + moduleName + Environment.NewLine + "Method: " + e.TargetSite.Name;
-
-			const String caption = "Unexpected Exception";
-
-			MessageBox.Show(message, caption, MessageBoxButtons.OK);
-			Debug.Write(message);
-
-			// Get the last error and display it. 
-
-			Int32 error = Marshal.GetLastWin32Error();
-
-			Debug.WriteLine("The last Win32 Error was: " + error);
-		}
-
-		[STAThread]
-		internal static void Main() { Application.Run(new FrmMain()); }
-		private static FrmMain _transDefaultFormFrmMain;
-		internal static FrmMain TransDefaultFormFrmMain
-		{
-			get
-			{
-				if (_transDefaultFormFrmMain == null)
-				{
-					_transDefaultFormFrmMain = new FrmMain();
-				}
-				return _transDefaultFormFrmMain;
-			}
-		}
-
-       
     }
 }
