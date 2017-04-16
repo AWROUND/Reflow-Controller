@@ -174,14 +174,6 @@ namespace ReflowController
 		// Required by the Windows Form Designer
 		private System.ComponentModel.IContainer components;
 		public System.Windows.Forms.ToolTip ToolTip1;
-		public System.Windows.Forms.TextBox TxtBytesReceived;
-		public System.Windows.Forms.GroupBox FraBytesReceived;
-		public System.Windows.Forms.CheckBox ChkAutoincrement;
-		public System.Windows.Forms.ComboBox CboByte1;
-		public System.Windows.Forms.ComboBox CboByte0;
-		public System.Windows.Forms.GroupBox FraBytesToSend;
-		private Button cmdGetInputReportInterrupt;
-		public GroupBox fraInterruptTransfers;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel CommStatustoolStripStatusLabel;
@@ -222,7 +214,6 @@ namespace ReflowController
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
-        private Button cmdSendOutputReportInterrupt;
 
 		[System.Diagnostics.DebuggerStepThrough()]
 		private void InitializeComponent()
@@ -235,15 +226,6 @@ namespace ReflowController
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.FraBytesReceived = new System.Windows.Forms.GroupBox();
-            this.TxtBytesReceived = new System.Windows.Forms.TextBox();
-            this.FraBytesToSend = new System.Windows.Forms.GroupBox();
-            this.ChkAutoincrement = new System.Windows.Forms.CheckBox();
-            this.CboByte1 = new System.Windows.Forms.ComboBox();
-            this.CboByte0 = new System.Windows.Forms.ComboBox();
-            this.cmdSendOutputReportInterrupt = new System.Windows.Forms.Button();
-            this.cmdGetInputReportInterrupt = new System.Windows.Forms.Button();
-            this.fraInterruptTransfers = new System.Windows.Forms.GroupBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.CommStatustoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -284,131 +266,10 @@ namespace ReflowController
             this.StageText = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.FraBytesToSend.SuspendLayout();
-            this.fraInterruptTransfers.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // FraBytesReceived
-            // 
-            this.FraBytesReceived.BackColor = System.Drawing.SystemColors.Control;
-            this.FraBytesReceived.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FraBytesReceived.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FraBytesReceived.Location = new System.Drawing.Point(16, 272);
-            this.FraBytesReceived.Name = "FraBytesReceived";
-            this.FraBytesReceived.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FraBytesReceived.Size = new System.Drawing.Size(112, 136);
-            this.FraBytesReceived.TabIndex = 4;
-            this.FraBytesReceived.TabStop = false;
-            this.FraBytesReceived.Text = "Bytes Received";
-            // 
-            // TxtBytesReceived
-            // 
-            this.TxtBytesReceived.AcceptsReturn = true;
-            this.TxtBytesReceived.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtBytesReceived.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtBytesReceived.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBytesReceived.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtBytesReceived.Location = new System.Drawing.Point(0, 478);
-            this.TxtBytesReceived.MaxLength = 0;
-            this.TxtBytesReceived.Multiline = true;
-            this.TxtBytesReceived.Name = "TxtBytesReceived";
-            this.TxtBytesReceived.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TxtBytesReceived.Size = new System.Drawing.Size(440, 34);
-            this.TxtBytesReceived.TabIndex = 5;
-            // 
-            // FraBytesToSend
-            // 
-            this.FraBytesToSend.BackColor = System.Drawing.SystemColors.Control;
-            this.FraBytesToSend.Controls.Add(this.ChkAutoincrement);
-            this.FraBytesToSend.Controls.Add(this.CboByte1);
-            this.FraBytesToSend.Controls.Add(this.CboByte0);
-            this.FraBytesToSend.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FraBytesToSend.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FraBytesToSend.Location = new System.Drawing.Point(16, 128);
-            this.FraBytesToSend.Name = "FraBytesToSend";
-            this.FraBytesToSend.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FraBytesToSend.Size = new System.Drawing.Size(160, 136);
-            this.FraBytesToSend.TabIndex = 1;
-            this.FraBytesToSend.TabStop = false;
-            this.FraBytesToSend.Text = "Bytes to Send";
-            // 
-            // ChkAutoincrement
-            // 
-            this.ChkAutoincrement.BackColor = System.Drawing.SystemColors.Control;
-            this.ChkAutoincrement.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ChkAutoincrement.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkAutoincrement.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ChkAutoincrement.Location = new System.Drawing.Point(6, 95);
-            this.ChkAutoincrement.Name = "ChkAutoincrement";
-            this.ChkAutoincrement.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ChkAutoincrement.Size = new System.Drawing.Size(201, 35);
-            this.ChkAutoincrement.TabIndex = 6;
-            this.ChkAutoincrement.Text = "Autoincrement values";
-            this.ChkAutoincrement.UseVisualStyleBackColor = false;
-            // 
-            // CboByte1
-            // 
-            this.CboByte1.BackColor = System.Drawing.SystemColors.Window;
-            this.CboByte1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CboByte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboByte1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CboByte1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CboByte1.Location = new System.Drawing.Point(8, 64);
-            this.CboByte1.Name = "CboByte1";
-            this.CboByte1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CboByte1.Size = new System.Drawing.Size(101, 22);
-            this.CboByte1.TabIndex = 3;
-            // 
-            // CboByte0
-            // 
-            this.CboByte0.BackColor = System.Drawing.SystemColors.Window;
-            this.CboByte0.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CboByte0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboByte0.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CboByte0.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CboByte0.Location = new System.Drawing.Point(8, 24);
-            this.CboByte0.Name = "CboByte0";
-            this.CboByte0.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CboByte0.Size = new System.Drawing.Size(101, 22);
-            this.CboByte0.TabIndex = 2;
-            // 
-            // cmdSendOutputReportInterrupt
-            // 
-            this.cmdSendOutputReportInterrupt.Location = new System.Drawing.Point(10, 27);
-            this.cmdSendOutputReportInterrupt.Name = "cmdSendOutputReportInterrupt";
-            this.cmdSendOutputReportInterrupt.Size = new System.Drawing.Size(118, 50);
-            this.cmdSendOutputReportInterrupt.TabIndex = 12;
-            this.cmdSendOutputReportInterrupt.Text = "Send Output Report";
-            this.cmdSendOutputReportInterrupt.UseVisualStyleBackColor = true;
-            this.cmdSendOutputReportInterrupt.Click += new System.EventHandler(this.cmdSendOutputReportInterrupt_Click);
-            // 
-            // cmdGetInputReportInterrupt
-            // 
-            this.cmdGetInputReportInterrupt.Location = new System.Drawing.Point(10, 83);
-            this.cmdGetInputReportInterrupt.Name = "cmdGetInputReportInterrupt";
-            this.cmdGetInputReportInterrupt.Size = new System.Drawing.Size(118, 50);
-            this.cmdGetInputReportInterrupt.TabIndex = 13;
-            this.cmdGetInputReportInterrupt.Text = "Get Input Report";
-            this.cmdGetInputReportInterrupt.UseVisualStyleBackColor = true;
-            this.cmdGetInputReportInterrupt.Click += new System.EventHandler(this.cmdGetInputReportInterrupt_Click);
-            // 
-            // fraInterruptTransfers
-            // 
-            this.fraInterruptTransfers.BackColor = System.Drawing.SystemColors.Control;
-            this.fraInterruptTransfers.Controls.Add(this.cmdSendOutputReportInterrupt);
-            this.fraInterruptTransfers.Controls.Add(this.cmdGetInputReportInterrupt);
-            this.fraInterruptTransfers.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fraInterruptTransfers.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraInterruptTransfers.Location = new System.Drawing.Point(194, 128);
-            this.fraInterruptTransfers.Name = "fraInterruptTransfers";
-            this.fraInterruptTransfers.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fraInterruptTransfers.Size = new System.Drawing.Size(145, 152);
-            this.fraInterruptTransfers.TabIndex = 14;
-            this.fraInterruptTransfers.TabStop = false;
-            this.fraInterruptTransfers.Text = "Interrupt Transfers";
             // 
             // statusStrip1
             // 
@@ -498,7 +359,7 @@ namespace ReflowController
             this.button1.TabIndex = 19;
             this.button1.Text = "Reflow";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Reflow_ClickAsync);
+            this.button1.Click += new System.EventHandler(this.Reflow_Click);
             // 
             // dataGridView1
             // 
@@ -789,12 +650,8 @@ namespace ReflowController
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.TxtBytesReceived);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.fraInterruptTransfers);
-            this.Controls.Add(this.FraBytesReceived);
-            this.Controls.Add(this.FraBytesToSend);
             this.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Location = new System.Drawing.Point(21, 28);
             this.Name = "FrmMain";
@@ -802,8 +659,6 @@ namespace ReflowController
             this.Text = "Reflow Controller";
             this.Closed += new System.EventHandler(this.frmMain_Closed);
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.FraBytesToSend.ResumeLayout(false);
-            this.fraInterruptTransfers.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -852,10 +707,10 @@ namespace ReflowController
         private Byte Output;
         private int time;
         private Byte Command;
+        Byte[] inputReportBuffer;
 
-        private static System.Timers.Timer _periodicTransfers;
 
-		private readonly Debugging _myDebugging = new Debugging(); //  For viewing results of API calls via Debug.Write.
+        private readonly Debugging _myDebugging = new Debugging(); //  For viewing results of API calls via Debug.Write.
 		private readonly DeviceManagement _myDeviceManagement = new DeviceManagement();
 		private Hid _myHid = new Hid();
 
@@ -932,32 +787,9 @@ namespace ReflowController
 
 				switch (action)
 				{
-					case FormActions.DisableInputReportBufferSize:
-
-						//cmdInputReportBufferSize.Enabled = false;
-						break;
-
-					case FormActions.EnableGetInputReportInterruptTransfer:
-
-						cmdGetInputReportInterrupt.Enabled = true;
-						break;
-
-					case FormActions.EnableInputReportBufferSize:
-
-						//cmdInputReportBufferSize.Enabled = true;
-						break;
-
-					case FormActions.EnableSendOutputReportInterrupt:
-
-						cmdSendOutputReportInterrupt.Enabled = true;
-						break;
-
-					case FormActions.SetInputReportBufferSize:
-
-						//txtInputReportBufferSize.Text = formText;
-						break;
-
-                    case FormActions.ChangeBackgroundRed:
+					
+										
+					case FormActions.ChangeBackgroundRed:
 
                         CommStatustoolStripStatusLabel.BackColor = System.Drawing.Color.Red;
                         break;
@@ -1054,78 +886,7 @@ namespace ReflowController
 		}
 
 		
-        /// <summary>
-        /// Request to get an Input report retrieved using interrupt transfers.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// 
-        private void cmdGetInputReportInterrupt_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					//DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					//  Don't allow another transfer request until this one completes.
-					//  Move the focus away from the button to prevent the focus from 
-					//  switching to the next control in the tab order on disabling the button.
-
-					fraInterruptTransfers.Focus();
-					cmdGetInputReportInterrupt.Enabled = false;
-					_transferType = TransferTypes.Interrupt;
-					RequestToGetInputReport();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
-		///  Set the number of Input reports the HID driver will store.
-		///  </summary>
-
-				
-		/// <summary>
-		/// Request to send an Output report using an interrupt transfer.		
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-
-		private void cmdSendOutputReportInterrupt_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					//DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					//  Don't allow another transfer request until this one completes.
-					//  Move the focus away from the button to prevent the focus from 
-					//  switching to the next control in the tab order on disabling the button.
-
-					fraInterruptTransfers.Focus();
-					cmdSendOutputReportInterrupt.Enabled = false;
-					_transferType = TransferTypes.Interrupt;
-					RequestToSendOutputReport();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		///  <summary>
+ 		///  <summary>
 		///  Called on arrival of any device.
 		///  Calls a routine that searches to see if the desired device is present.
 		///  </summary>
@@ -1226,21 +987,6 @@ namespace ReflowController
 				DisplayException(Name, ex);
 				throw;
 			}
-		}
-
-		
-
-
-		
-		/// <summary>
-		/// Enable the command buttons on the form.
-		/// Needed after attempting a transfer and device not found.
-		/// </summary>
-		/// 
-		private void EnableFormControls()
-		{
-			cmdGetInputReportInterrupt.Enabled = true;
-			cmdSendOutputReportInterrupt.Enabled = true;
 		}
 
 		///  <summary>
@@ -1458,7 +1204,6 @@ namespace ReflowController
 				{
 					MyMarshalDataToForm(FormActions.AddItemToListBox, "Device not found.");
 					MyMarshalDataToForm(FormActions.DisableInputReportBufferSize, "");
-					EnableFormControls();
 					MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
 				}
 				return _deviceHandleObtained;
@@ -1636,64 +1381,19 @@ namespace ReflowController
 			}
 		}
 
-		/// <summary>
-		/// Alternat sending and getting a report.
-		/// </summary>
-
-		private void PeriodicTransfers()
-		{
-			try
-			{
-				if (!_transferInProgress)
-				{
-					if (_reportType == ReportTypes.Feature)
-					{
-						//SendOrGetFeatureReport();
-					}
-					else
-					{
-						// Output and Input reports
-
-						SendOutputReportOrGetInputReport();
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		
-
-
-
-		private void radInputOutputControl_CheckedChanged(object sender, EventArgs e)
-		{
-		}
-
-		private void radInputOutputInterrupt_CheckedChanged(object sender, EventArgs e)
-		{
-		}
-
-		private void radFeature_CheckedChanged(object sender, EventArgs e)
-		{
-		}
-
-	
 
 		///  <summary>
-		///  Request an Input report.
+		///  Request an Interupt Input report.
 		///  Assumes report ID = 0.
 		///  </summary>
 
 		private async void RequestToGetInputReport()
 		{
-			const Int32 readTimeout = 5000;
+			const Int32 readTimeout = 2000;
 
 			String byteValue = null;
-			Byte[] inputReportBuffer = null;
+
+            inputReportBuffer = null;
 
 			try
 			{
@@ -1709,111 +1409,71 @@ namespace ReflowController
 
 				if (_deviceHandleObtained)
 				{
-					//  Don't attempt to exchange reports if valid handles aren't available
-					//  (as for a mouse or keyboard under Windows 2000 and later.)
+                    //  Don't attempt to exchange reports if valid handles aren't available
+                    //  (as for a mouse or keyboard under Windows 2000 and later.)
 
-					if (!_hidHandle.IsInvalid)
-					{
-						//  Read an Input report.
+                    if (!_hidHandle.IsInvalid)
+                    {
+                        //  Read an Input report.
 
-						//  Don't attempt to send an Input report if the HID has no Input report.
-						//  (The HID spec requires all HIDs to have an interrupt IN endpoint,
-						//  which suggests that all HIDs must support Input reports.)
+                        inputReportBuffer = new Byte[_myHid.Capabilities.InputReportByteLength];
 
-						if (_myHid.Capabilities.InputReportByteLength > 0)
-						{
-							//  Set the size of the Input report buffer. 
+                        //  Read a report using interrupt transfers. 
+                        //  Timeout if no report available.
+                        //  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
 
-							inputReportBuffer = new Byte[_myHid.Capabilities.InputReportByteLength];
+                        // Create a delegate to execute on a timeout.
 
-							if (_transferType.Equals(TransferTypes.Control))
-							{
-								{
-									_transferInProgress = true;
+                        Action onReadTimeoutAction = OnReadTimeout;
 
-									//  Read a report using a control transfer.
+                        // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
 
-									success = _myHid.GetInputReportViaControlTransfer(_hidHandle, ref inputReportBuffer);
-									//cmdGetInputReportControl.Enabled = true;
-									_transferInProgress = false;
-								}
-							}
-							else
-							{
-								{
-									_transferInProgress = true;
+                        var cts = new CancellationTokenSource();
 
-									//  Read a report using interrupt transfers. 
-									//  Timeout if no report available.
-									//  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
+                        // Cancel the read if it hasn't completed after a timeout.
 
-									// Create a delegate to execute on a timeout.
+                        cts.CancelAfter(readTimeout);
 
-									Action onReadTimeoutAction = OnReadTimeout;
+                        // Specify the function to call on a timeout.
 
-									// The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
+                        cts.Token.Register(onReadTimeoutAction);
 
-									var cts = new CancellationTokenSource();
+                        // Stops waiting when data is available or on timeout:
 
-									// Cancel the read if it hasn't completed after a timeout.
+                        Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
 
-									cts.CancelAfter(readTimeout);
+                        
+                        // Arrive here only if the operation completed.
 
-									// Specify the function to call on a timeout.
+                        // Dispose to stop the timeout timer. 
 
-									cts.Token.Register(onReadTimeoutAction);
+                        cts.Dispose();
 
-									// Stops waiting when data is available or on timeout:
+                        if (bytesRead > 0)
+                        {
+                            success = true;
+                            Debug.Print("bytes read (includes report ID) = " + Convert.ToString(bytesRead));
+                        }
+                    }
+                    else
+                    {
+                        Debug.Print("Invalid handle");
+                        Debug.Print("No attempt to read an Input report was made");
+                    }
 
-									Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
+                    if (!success)
+                    {
+                        CloseCommunications();
+                        Debug.Print("The attempt to read an Input report has failed");
+                    }
+                }
 
-									// Arrive here only if the operation completed.
+            }
 
-									// Dispose to stop the timeout timer. 
-
-									cts.Dispose();
-
-									_transferInProgress = false;
-									cmdGetInputReportInterrupt.Enabled = true;
-
-									if (bytesRead > 0)
-									{
-										success = true;
-										Debug.Print("bytes read (includes report ID) = " + Convert.ToString(bytesRead));
-									}
-								}
-							}
-						}
-						else
-						{
-							MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to read an Input report was made.");
-							MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have an Input report.");
-						}
-					}
-					else
-					{
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "Invalid handle.");
-						MyMarshalDataToForm(FormActions.AddItemToListBox,
-											"No attempt to write an Output report or read an Input report was made.");
-					}
-
-					if (success)
-					{
-						//DisplayReportData(inputReportBuffer, ReportTypes.Input, ReportReadOrWritten.Read);
-					}
-					else
-					{
-						CloseCommunications();
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
-						//ScrollToBottomOfListBox();
-					}
-				}
-			}
-
-			catch (Exception ex)
+            catch (Exception ex)
 			{
 				DisplayException(Name, ex);
-				throw;
+			throw;
 			}
 		}
 
@@ -1821,13 +1481,13 @@ namespace ReflowController
 
 
 		///  <summary>
-		///  Sends an Output report.
+		///  Sends an interupt Output report.
 		///  Assumes report ID = 0.
 		///  </summary>
 
 		private async void RequestToSendOutputReport()
 		{
-			const Int32 writeTimeout = 5000;
+			const Int32 writeTimeout = 2000;
 			String byteValue = null;
 
 			try
@@ -1870,69 +1530,44 @@ namespace ReflowController
 
 						Boolean success;
 
-						if (_transferType.Equals(TransferTypes.Control))
-						{
-							{
-								_transferInProgress = true;
+						Debug.Print("interrupt");
 
-								//  Use a control transfer to send the report,
-								//  even if the HID has an interrupt OUT endpoint.
+						// The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
 
-								success = _myHid.SendOutputReportViaControlTransfer(_hidHandle, outputReportBuffer);
+						var cts = new CancellationTokenSource();
 
-								_transferInProgress = false;
-								//cmdSendOutputReportControl.Enabled = true;
-							}
-						}
-						else
-						{
-							Debug.Print("interrupt");
-							_transferInProgress = true;
+                        // Create a delegate to execute on a timeout.
 
-							// The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
+                        Action onWriteTimeoutAction = OnWriteTimeout;
 
-							var cts = new CancellationTokenSource();
+						// Cancel the read if it hasn't completed after a timeout.
 
-							// Create a delegate to execute on a timeout.
+						cts.CancelAfter(writeTimeout);
 
-							Action onWriteTimeoutAction = OnWriteTimeout;
+						// Specify the function to call on a timeout.
 
-							// Cancel the read if it hasn't completed after a timeout.
+						cts.Token.Register(onWriteTimeoutAction);
 
-							cts.CancelAfter(writeTimeout);
+						// Send an Output report and wait for completion or timeout.
 
-							// Specify the function to call on a timeout.
+						success = await _myHid.SendOutputReportViaInterruptTransfer(_deviceData, _hidHandle, outputReportBuffer, cts);
 
-							cts.Token.Register(onWriteTimeoutAction);
+						// Get here only if the operation completes without a timeout.
 
-							// Send an Output report and wait for completion or timeout.
+						// Dispose to stop the timeout timer.
 
-							success = await _myHid.SendOutputReportViaInterruptTransfer(_deviceData, _hidHandle, outputReportBuffer, cts);
-
-							// Get here only if the operation completes without a timeout.
-
-							_transferInProgress = false;
-							cmdSendOutputReportInterrupt.Enabled = true;
-
-							// Dispose to stop the timeout timer.
-
-							cts.Dispose();
-						}
-						if (success)
-						{
-							//DisplayReportData(outputReportBuffer, ReportTypes.Output, ReportReadOrWritten.Written);
-						}
-						else
+						cts.Dispose();
+						
+						if (!success)
 						{
 							CloseCommunications();
-							AccessForm(FormActions.AddItemToListBox, "The attempt to write an Output report failed.");
-							//ScrollToBottomOfListBox();
+							Debug.Print("The attempt to write an Output report failed");
 						}
 					}
 				}
 				else
 				{
-					AccessForm(FormActions.AddItemToListBox, "The HID doesn't have an Output report.");
+					Debug.Print("The HID doesn't have an Output report");
 				}
 			}
 
@@ -1943,45 +1578,7 @@ namespace ReflowController
 			}
 		}
 
-        
-
-        /// <summary>
-		/// Request to send an Output report or get an Input report.
-		/// </summary>
-
-		private void SendOutputReportOrGetInputReport()
-		{
-			try
-			{
-				//  If the device hasn't been detected, was removed, or timed out on a previous attempt
-				//  to access it, look for the device.
-
-				if (!_deviceHandleObtained)
-				{
-					_deviceHandleObtained = FindTheHid();
-				}
-
-				if (_deviceHandleObtained)
-				{
-					if (_sendOrGet == SendOrGet.Send)
-					{
-						RequestToSendOutputReport();
-						_sendOrGet = SendOrGet.Get;
-					}
-					else
-					{
-						RequestToGetInputReport();
-						_sendOrGet = SendOrGet.Send;
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
+ 
 		///  <summary>
 		///  Provides a central mechanism for exception handling.
 		///  Displays a message box that describes the exception.
@@ -2029,6 +1626,7 @@ namespace ReflowController
         /// ***********************************************************************
         /// Project specific code
         /// ***********************************************************************
+        ///
         ///  </summary>
 
         ///  <summary>
@@ -2048,8 +1646,7 @@ namespace ReflowController
                 throw;
             }
         }
-
-
+        
         ///  <summary>
         ///  Perform shutdown operations.
         ///  </summary>
@@ -2085,7 +1682,6 @@ namespace ReflowController
             }
         }
 
-
         ///  <summary>
         ///  Perform actions that must execute when the program starts.
         ///  </summary>
@@ -2113,32 +1709,31 @@ namespace ReflowController
                 throw;
             }
         }
-
-
-
-
-
+        
         ///  <summary>
         ///  Start reflow cycle
-        ///  Log and display input recieved from reflow controller board.
+        ///  Log and display input received from reflow controller board
         ///  </summary>
 
-        private async void Reflow_ClickAsync(Object sender, EventArgs e)
+        private async void Reflow_Click(Object sender, EventArgs e)
         {
-            const Int32 readTimeout = 2000;
-
-            String byteValue = null;
-            Byte[] inputReportBuffer = null;
+           
             State = 1;  //Need to fix this so that start and stop works properly
             time = 1;
 
             Command = 0;  //Start reflow cycle command
-            _transferType = TransferTypes.Interrupt;
-            RequestToSendOutputReport();
 
+            RequestToSendOutputReport();
 
             while (State != 0)
             {
+
+                const Int32 readTimeout = 2000;
+
+                String byteValue = null;
+
+                Byte [] inputReportBuffer = null;
+
                 try
                 {
                     Boolean success = false;
@@ -2160,96 +1755,55 @@ namespace ReflowController
                         {
                             //  Read an Input report.
 
-                            //  Don't attempt to send an Input report if the HID has no Input report.
-                            //  (The HID spec requires all HIDs to have an interrupt IN endpoint,
-                            //  which suggests that all HIDs must support Input reports.)
+                            inputReportBuffer = new Byte[_myHid.Capabilities.InputReportByteLength];
 
-                            if (_myHid.Capabilities.InputReportByteLength > 0)
+                            //  Read a report using interrupt transfers. 
+                            //  Timeout if no report available.
+                            //  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
+
+                            // Create a delegate to execute on a timeout.
+
+                            Action onReadTimeoutAction = OnReadTimeout;
+
+                            // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
+
+                            var cts = new CancellationTokenSource();
+
+                            // Cancel the read if it hasn't completed after a timeout.
+
+                            cts.CancelAfter(readTimeout);
+
+                            // Specify the function to call on a timeout.
+
+                            cts.Token.Register(onReadTimeoutAction);
+
+                            // Stops waiting when data is available or on timeout:
+
+                            Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
+
+
+                            // Arrive here only if the operation completed.
+
+                            // Dispose to stop the timeout timer. 
+
+                            cts.Dispose();
+
+                            if (bytesRead > 0)
                             {
-                                //  Set the size of the Input report buffer. 
-
-                                inputReportBuffer = new Byte[_myHid.Capabilities.InputReportByteLength];
-
-                                if (_transferType.Equals(TransferTypes.Control))
-                                {
-                                    {
-                                        _transferInProgress = true;
-
-                                        //  Read a report using a control transfer.
-
-                                        success = _myHid.GetInputReportViaControlTransfer(_hidHandle, ref inputReportBuffer);
-                                        //cmdGetInputReportControl.Enabled = true;
-                                        _transferInProgress = false;
-                                    }
-                                }
-                                else
-                                {
-                                    {
-                                        _transferInProgress = true;
-
-                                        //  Read a report using interrupt transfers. 
-                                        //  Timeout if no report available.
-                                        //  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
-
-                                        // Create a delegate to execute on a timeout.
-
-                                        Action onReadTimeoutAction = OnReadTimeout;
-
-                                        // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
-
-                                        var cts = new CancellationTokenSource();
-
-                                        // Cancel the read if it hasn't completed after a timeout.
-
-                                        cts.CancelAfter(readTimeout);
-
-                                        // Specify the function to call on a timeout.
-
-                                        cts.Token.Register(onReadTimeoutAction);
-
-                                        // Stops waiting when data is available or on timeout:
-
-                                        Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
-
-                                        // Arrive here only if the operation completed.
-
-                                        // Dispose to stop the timeout timer. 
-
-                                        cts.Dispose();
-
-                                        _transferInProgress = false;
-                                        cmdGetInputReportInterrupt.Enabled = true;
-
-                                        if (bytesRead > 0)
-                                        {
-                                            success = true;
-                                            Debug.Print("bytes read (includes report ID) = " + Convert.ToString(bytesRead));
-                                        }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to read an Input report was made.");
-                                MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have an Input report.");
+                                success = true;
+                                Debug.Print("bytes read (includes report ID) = " + Convert.ToString(bytesRead));
                             }
                         }
                         else
                         {
-                            MyMarshalDataToForm(FormActions.AddItemToListBox, "Invalid handle.");
-                            MyMarshalDataToForm(FormActions.AddItemToListBox,
-                                                "No attempt to write an Output report or read an Input report was made.");
+                            Debug.Print("Invalid handle");
+                            Debug.Print("No attempt to read an Input report was made");
                         }
 
-                        if (success)
-                        {
-                           // DisplayReportData(inputReportBuffer, ReportTypes.Input, ReportReadOrWritten.Read);
-                        }
-                        else
+                        if (!success)
                         {
                             CloseCommunications();
-                            MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
-                            //ScrollToBottomOfListBox();
+                            Debug.Print("The attempt to read an Input report has failed");
                         }
                     }
 
@@ -2260,7 +1814,7 @@ namespace ReflowController
                     DisplayException(Name, ex);
                     throw;
                 }
-
+            
                 State = inputReportBuffer[1];
                 Temperature = inputReportBuffer[2];
                 Setpoint = inputReportBuffer[3];
@@ -2303,7 +1857,7 @@ namespace ReflowController
                     case 1: OvenText.Text = "ON"; break;
                 }
 
-                //Auxiliary state (On/Off)
+                //Fan state (On/Off)
                 switch (Fan)
                 {
                     case 0: FanText.Text = "OFF"; break;
@@ -2322,8 +1876,9 @@ namespace ReflowController
 
                 //Track heater On/Off actions. Off = 0 and High = 20
                 if (Convert.ToString(Oven) == "0") dataGridView1.Rows[time - 1].Cells[3].Value = "0";
-                if (Convert.ToString(Oven) == "1") dataGridView1.Rows[time - 1].Cells[3].Value = "35";
+                if (Convert.ToString(Oven) == "1") dataGridView1.Rows[time - 1].Cells[3].Value = "100";
 
+                //Add PID and output values
                 dataGridView1.Rows[time - 1].Cells[4].Value = PTerm;
                 dataGridView1.Rows[time - 1].Cells[5].Value = ITerm;
                 dataGridView1.Rows[time - 1].Cells[6].Value = DTerm;
