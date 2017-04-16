@@ -707,8 +707,6 @@ namespace ReflowController
         private Byte Output;
         private int time;
         private Byte Command;
-        Byte[] inputReportBuffer;
-
 
         private readonly Debugging _myDebugging = new Debugging(); //  For viewing results of API calls via Debug.Write.
 		private readonly DeviceManagement _myDeviceManagement = new DeviceManagement();
@@ -770,6 +768,7 @@ namespace ReflowController
 
 		private delegate void MarshalDataToForm(FormActions action, String textToAdd);
 
+
 		///  <summary>
 		///  Performs various application-specific functions that
 		///  involve accessing the application's form.
@@ -787,8 +786,6 @@ namespace ReflowController
 
 				switch (action)
 				{
-					
-										
 					case FormActions.ChangeBackgroundRed:
 
                         CommStatustoolStripStatusLabel.BackColor = System.Drawing.Color.Red;
@@ -806,6 +803,7 @@ namespace ReflowController
 				throw;
 			}
 		}
+
 
 		///  <summary>
 		///  Add a handler to detect arrival of devices using WMI.
@@ -836,6 +834,7 @@ namespace ReflowController
 			}
 		}
 
+
 		///  <summary>
 		///  Add a handler to detect removal of devices using WMI.
 		///  </summary>
@@ -863,6 +862,7 @@ namespace ReflowController
 					_deviceRemovedWatcher.Stop();
 			}
 		}
+
 
 		/// <summary>
 		/// Close the handle and FileStreams for a device.
@@ -906,6 +906,7 @@ namespace ReflowController
 			}
 		}
 
+
 		///  <summary>
 		///  Called if the user changes the Vendor ID or Product ID in the text box.
 		///  </summary>
@@ -933,6 +934,7 @@ namespace ReflowController
 			}
 		}
 
+
 		///  <summary>
 		///  Add handlers to detect device arrival and removal.
 		///  </summary>
@@ -942,6 +944,7 @@ namespace ReflowController
 			AddDeviceArrivedHandler();
 			AddDeviceRemovedHandler();
 		}
+
 
 		///  <summary>
 		///  Stop receiving notifications about device arrival and removal
@@ -962,6 +965,7 @@ namespace ReflowController
 				throw;
 			}
 		}
+
 
 		///  <summary>
 		///  Called on removal of any device.
@@ -988,6 +992,7 @@ namespace ReflowController
 				throw;
 			}
 		}
+
 
 		///  <summary>
 		///  Use the System.Management class to find a device by Vendor ID and Product ID using WMI. If found, display device properties.
@@ -1045,6 +1050,7 @@ namespace ReflowController
 				throw;
 			}
 		}
+
 
 		///  <summary>
 		///  Call HID functions that use Win32 API functions to locate a HID-class device
@@ -1214,7 +1220,6 @@ namespace ReflowController
 				throw;
 			}
 		}
-
 		
 
 		///  <summary>
@@ -1244,69 +1249,6 @@ namespace ReflowController
 			}
 		}
 
-		///  <summary>
-		///  Retrieve a Vendor ID and Product ID in hexadecimal 
-		///  from the form's text boxes and convert the text to Int32s.
-		///  </summary>
-		///  
-		///  <param name="myVendorId"> the Vendor ID</param>
-		///  <param name="myProductId"> the Product ID</param>
-
-		
-		///  <summary>
-		///  Initialize the elements on the form.
-		///  </summary>
-
-		private void InitializeDisplay()
-		{
-			try
-			{
-                TemperatureText.Text = "000" + "\u00b0" + "C";
-                SetpointText.Text = "000" + "\u00b0" + "C";
-                StageTimeText.Text = "N/A";
-                StageText.Text = "WAITING";
-                ElapsedTimeText.Text = "00:00:00";
-                OvenText.Text = "OFF";
-                FanText.Text = "OFF";
-                AuxText.Text = "OFF";
-
-                ////  Create a dropdown list box for each byte to send in a report.
-                ////  Display the values as 2-character hex strings.
-
-                //Int16 count;
-                //for (count = 0; count <= 255; count++)
-                //{
-                //	String byteValue = String.Format("{0:X2} ", count);
-                //	FrmMy.CboByte0.Items.Insert(count, byteValue);
-                //	FrmMy.CboByte1.Items.Insert(count, byteValue);
-                //}
-
-                ////  Select a default value for each box
-
-                //FrmMy.CboByte0.SelectedIndex = 0;
-                //FrmMy.CboByte1.SelectedIndex = 128;
-
-                ////  Check the autoincrement box to increment the values each time a report is sent.
-
-                //ChkAutoincrement.CheckState = CheckState.Checked;
-
-                ////  Don't allow the user to select an input report buffer size until there is
-                ////  a handle to a HID.
-
-                //cmdInputReportBufferSize.Focus();
-                //cmdInputReportBufferSize.Enabled = false;
-
-                //LstResults.Items.Add("For a more detailed event log, view debug statements in Visual Studio's Output window:");
-                //LstResults.Items.Add("Click Build > Configuration Manager > Active Solution Configuration > Debug > Close.");
-                //LstResults.Items.Add("Then click View > Output.");
-                //LstResults.Items.Add("");
-            }
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
 
 		///  <summary>
 		///  Enables accessing a form's controls from another thread 
@@ -1337,6 +1279,7 @@ namespace ReflowController
 			}
 		}
 
+
 		/// <summary>
 		/// Timeout if read via interrupt transfer doesn't return.
 		/// </summary>
@@ -1358,6 +1301,7 @@ namespace ReflowController
 				throw;
 			}
 		}
+
 
 		/// <summary>
 		/// Timeout if write via interrupt transfer doesn't return.
@@ -1393,7 +1337,7 @@ namespace ReflowController
 
 			String byteValue = null;
 
-            inputReportBuffer = null;
+            Byte [] inputReportBuffer = null;
 
 			try
 			{
@@ -1476,8 +1420,6 @@ namespace ReflowController
 			throw;
 			}
 		}
-
-	
 
 
 		///  <summary>
@@ -1620,6 +1562,7 @@ namespace ReflowController
 			}
 		}
 
+
         ///<summary>
         /// Project: Reflow Controller
         /// 
@@ -1628,6 +1571,7 @@ namespace ReflowController
         /// ***********************************************************************
         ///
         ///  </summary>
+
 
         ///  <summary>
         ///  Perform startup operations.
@@ -1646,6 +1590,7 @@ namespace ReflowController
                 throw;
             }
         }
+  
         
         ///  <summary>
         ///  Perform shutdown operations.
@@ -1664,6 +1609,7 @@ namespace ReflowController
             }
         }
 
+
         ///  <summary>
         ///  Perform actions that must execute when the program ends.
         ///  </summary>
@@ -1681,6 +1627,7 @@ namespace ReflowController
                 throw;
             }
         }
+
 
         ///  <summary>
         ///  Perform actions that must execute when the program starts.
@@ -1709,7 +1656,33 @@ namespace ReflowController
                 throw;
             }
         }
-        
+
+
+        ///  <summary>
+        ///  Initialize the elements on the form.
+        ///  </summary>
+
+        private void InitializeDisplay()
+        {
+            try
+            {
+                TemperatureText.Text = "000" + "\u00b0" + "C";
+                SetpointText.Text = "000" + "\u00b0" + "C";
+                StageTimeText.Text = "N/A";
+                StageText.Text = "WAITING";
+                ElapsedTimeText.Text = "00:00:00";
+                OvenText.Text = "OFF";
+                FanText.Text = "OFF";
+                AuxText.Text = "OFF";
+            }
+            catch (Exception ex)
+            {
+                DisplayException(Name, ex);
+                throw;
+            }
+        }
+
+
         ///  <summary>
         ///  Start reflow cycle
         ///  Log and display input received from reflow controller board
@@ -1902,6 +1875,8 @@ namespace ReflowController
         }
 
 
+
+
         private void ClearData_Click(object sender, EventArgs e)
         {
             //Clear data grid contents
@@ -1918,6 +1893,7 @@ namespace ReflowController
             //CreateChart();
         }
 
+
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Button to export gridview data to CSV file
@@ -1925,10 +1901,12 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+
         private void SaveLogFileButton_Click(object sender, EventArgs e)
         {
             SaveLogFile();
         }
+
 
 
         private void SaveLogFile()
