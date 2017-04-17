@@ -9,6 +9,8 @@ using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
 using System.Text;
+using System.Reflection;
+using FileLib;
 
 namespace ReflowController
 {
@@ -177,7 +179,6 @@ namespace ReflowController
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel CommStatustoolStripStatusLabel;
-        private Button button1;
         private DataGridView dataGridView1;
         private GroupBox groupBox1;
         private TextBox OvenText;
@@ -213,6 +214,30 @@ namespace ReflowController
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem pageSetupToolStripMenuItem;
+        private ToolStripMenuItem printPreviewToolStripMenuItem;
+        private ToolStripMenuItem printToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem runToolStripMenuItem;
+        private ToolStripMenuItem startReflowToolStripMenuItem;
+        private ToolStripMenuItem startBakeToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripMenuItem resetControllerToolStripMenuItem;
+        private ToolStripMenuItem configureToolStripMenuItem;
+        private ToolStripMenuItem getPIDGainsToolStripMenuItem;
+        private ToolStripMenuItem creatEditPIDGainsToolStripMenuItem;
+        private ToolStripMenuItem uploadPIDGainsToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripMenuItem creatEditProfileToolStripMenuItem;
+        private ToolStripMenuItem uploadProfileToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem helpTopicsToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
         private DataGridViewTextBoxColumn Column8;
 
 		[System.Diagnostics.DebuggerStepThrough()]
@@ -237,7 +262,6 @@ namespace ReflowController
             this.iTermtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.dTermtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.OutputtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -266,9 +290,34 @@ namespace ReflowController
             this.StageText = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startReflowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startBakeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.resetControllerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getPIDGainsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creatEditPIDGainsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uploadPIDGainsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.creatEditProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uploadProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpTopicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -350,16 +399,6 @@ namespace ReflowController
             this.OutputtoolStripStatusLabel.Name = "OutputtoolStripStatusLabel";
             this.OutputtoolStripStatusLabel.Size = new System.Drawing.Size(53, 17);
             this.OutputtoolStripStatusLabel.Text = "Output=";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(525, 679);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Reflow";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Reflow_Click);
             // 
             // dataGridView1
             // 
@@ -643,6 +682,187 @@ namespace ReflowController
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.SaveLogFileButton_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.runToolStripMenuItem,
+            this.configureToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(972, 24);
+            this.menuStrip1.TabIndex = 57;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.pageSetupToolStripMenuItem,
+            this.printPreviewToolStripMenuItem,
+            this.printToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // pageSetupToolStripMenuItem
+            // 
+            this.pageSetupToolStripMenuItem.Name = "pageSetupToolStripMenuItem";
+            this.pageSetupToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.pageSetupToolStripMenuItem.Text = "Page Setup";
+            // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printPreviewToolStripMenuItem.Text = "Print Preview";
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printToolStripMenuItem.Text = "Print";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // runToolStripMenuItem
+            // 
+            this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startReflowToolStripMenuItem,
+            this.startBakeToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.resetControllerToolStripMenuItem});
+            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.runToolStripMenuItem.Text = "Run";
+            // 
+            // startReflowToolStripMenuItem
+            // 
+            this.startReflowToolStripMenuItem.Name = "startReflowToolStripMenuItem";
+            this.startReflowToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.startReflowToolStripMenuItem.Text = "Start Reflow";
+            this.startReflowToolStripMenuItem.Click += new System.EventHandler(this.startReflowToolStripMenuItem_Click);
+            // 
+            // startBakeToolStripMenuItem
+            // 
+            this.startBakeToolStripMenuItem.Name = "startBakeToolStripMenuItem";
+            this.startBakeToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.startBakeToolStripMenuItem.Text = "Start Bake";
+            this.startBakeToolStripMenuItem.Click += new System.EventHandler(this.startBakeToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(155, 6);
+            // 
+            // resetControllerToolStripMenuItem
+            // 
+            this.resetControllerToolStripMenuItem.Name = "resetControllerToolStripMenuItem";
+            this.resetControllerToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.resetControllerToolStripMenuItem.Text = "Reset Controller";
+            this.resetControllerToolStripMenuItem.Click += new System.EventHandler(this.resetControllerToolStripMenuItem_Click);
+            // 
+            // configureToolStripMenuItem
+            // 
+            this.configureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.getPIDGainsToolStripMenuItem,
+            this.creatEditPIDGainsToolStripMenuItem,
+            this.uploadPIDGainsToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.creatEditProfileToolStripMenuItem,
+            this.uploadProfileToolStripMenuItem});
+            this.configureToolStripMenuItem.Name = "configureToolStripMenuItem";
+            this.configureToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.configureToolStripMenuItem.Text = "Configure";
+            // 
+            // getPIDGainsToolStripMenuItem
+            // 
+            this.getPIDGainsToolStripMenuItem.Name = "getPIDGainsToolStripMenuItem";
+            this.getPIDGainsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.getPIDGainsToolStripMenuItem.Text = "Get PID Gains";
+            this.getPIDGainsToolStripMenuItem.Click += new System.EventHandler(this.getPIDGainsToolStripMenuItem_Click);
+            // 
+            // creatEditPIDGainsToolStripMenuItem
+            // 
+            this.creatEditPIDGainsToolStripMenuItem.Name = "creatEditPIDGainsToolStripMenuItem";
+            this.creatEditPIDGainsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.creatEditPIDGainsToolStripMenuItem.Text = "Create/Edit PID Gains";
+            this.creatEditPIDGainsToolStripMenuItem.Click += new System.EventHandler(this.createEditPIDGainsToolStripMenuItem_Click);
+            // 
+            // uploadPIDGainsToolStripMenuItem
+            // 
+            this.uploadPIDGainsToolStripMenuItem.Name = "uploadPIDGainsToolStripMenuItem";
+            this.uploadPIDGainsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.uploadPIDGainsToolStripMenuItem.Text = "Upload PID Gains";
+            this.uploadPIDGainsToolStripMenuItem.Click += new System.EventHandler(this.uploadPIDGainsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(183, 6);
+            // 
+            // creatEditProfileToolStripMenuItem
+            // 
+            this.creatEditProfileToolStripMenuItem.Name = "creatEditProfileToolStripMenuItem";
+            this.creatEditProfileToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.creatEditProfileToolStripMenuItem.Text = "Creat/Edit Profile";
+            this.creatEditProfileToolStripMenuItem.Click += new System.EventHandler(this.creatEditProfileToolStripMenuItem_Click);
+            // 
+            // uploadProfileToolStripMenuItem
+            // 
+            this.uploadProfileToolStripMenuItem.Name = "uploadProfileToolStripMenuItem";
+            this.uploadProfileToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.uploadProfileToolStripMenuItem.Text = "Upload Profile";
+            this.uploadProfileToolStripMenuItem.Click += new System.EventHandler(this.uploadProfileToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpTopicsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // helpTopicsToolStripMenuItem
+            // 
+            this.helpTopicsToolStripMenuItem.Name = "helpTopicsToolStripMenuItem";
+            this.helpTopicsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.helpTopicsToolStripMenuItem.Text = "Help Topics";
+            this.helpTopicsToolStripMenuItem.Click += new System.EventHandler(this.helpTopicsToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.ClientSize = new System.Drawing.Size(972, 756);
@@ -650,10 +870,11 @@ namespace ReflowController
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Location = new System.Drawing.Point(21, 28);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Reflow Controller";
@@ -664,6 +885,8 @@ namespace ReflowController
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,7 +930,7 @@ namespace ReflowController
         private Byte Output;
         private int time;
         private Byte Command;
-
+       
         private readonly Debugging _myDebugging = new Debugging(); //  For viewing results of API calls via Debug.Write.
 		private readonly DeviceManagement _myDeviceManagement = new DeviceManagement();
 		private Hid _myHid = new Hid();
@@ -1688,7 +1911,7 @@ namespace ReflowController
         ///  Log and display input received from reflow controller board
         ///  </summary>
 
-        private async void Reflow_Click(Object sender, EventArgs e)
+        private async void startReflowToolStripMenuItem_Click(object sender, EventArgs e)
         {
            
             State = 1;  //Need to fix this so that start and stop works properly
@@ -1705,7 +1928,7 @@ namespace ReflowController
 
                 String byteValue = null;
 
-                Byte [] inputReportBuffer = null;
+                Byte[] inputReportBuffer = null;
 
                 try
                 {
@@ -1787,7 +2010,7 @@ namespace ReflowController
                     DisplayException(Name, ex);
                     throw;
                 }
-            
+
                 State = inputReportBuffer[1];
                 Temperature = inputReportBuffer[2];
                 Setpoint = inputReportBuffer[3];
@@ -1983,7 +2206,158 @@ namespace ReflowController
             }
         }
 
+        private void resetControllerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Command = 7;
+            RequestToSendOutputReport();
+             
+        }
+
+        private void startBakeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void getPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Command = 5;
+
+            RequestToSendOutputReport();
+
+            const Int32 readTimeout = 2000;
+
+            String byteValue = null;
+
+            Byte[] inputReportBuffer = null;
+
+            try
+            {
+                Boolean success = false;
+
+                //  If the device hasn't been detected, was removed, or timed out on a previous attempt
+                //  to access it, look for the device.
+
+                if (!_deviceHandleObtained)
+                {
+                    _deviceHandleObtained = FindTheHid();
+                }
+
+                if (_deviceHandleObtained)
+                {
+                    //  Don't attempt to exchange reports if valid handles aren't available
+                    //  (as for a mouse or keyboard under Windows 2000 and later.)
+
+                    if (!_hidHandle.IsInvalid)
+                    {
+                        //  Read an Input report.
+
+                        inputReportBuffer = new Byte[_myHid.Capabilities.InputReportByteLength];
+
+                        //  Read a report using interrupt transfers. 
+                        //  Timeout if no report available.
+                        //  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
+
+                        // Create a delegate to execute on a timeout.
+
+                        Action onReadTimeoutAction = OnReadTimeout;
+
+                        // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
+
+                        var cts = new CancellationTokenSource();
+
+                        // Cancel the read if it hasn't completed after a timeout.
+
+                        cts.CancelAfter(readTimeout);
+
+                        // Specify the function to call on a timeout.
+
+                        cts.Token.Register(onReadTimeoutAction);
+
+                        // Stops waiting when data is available or on timeout:
+
+                        Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
 
 
+                        // Arrive here only if the operation completed.
+
+                        // Dispose to stop the timeout timer. 
+
+                        cts.Dispose();
+
+                        if (bytesRead > 0)
+                        {
+                            success = true;
+                            Debug.Print("bytes read (includes report ID) = " + Convert.ToString(bytesRead));
+                        }
+                    }
+                    else
+                    {
+                        Debug.Print("Invalid handle");
+                        Debug.Print("No attempt to read an Input report was made");
+                    }
+
+                    if (!success)
+                    {
+                        CloseCommunications();
+                        Debug.Print("The attempt to read an Input report has failed");
+                    }
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                DisplayException(Name, ex);
+                throw;
+            }
+
+            Kp = inputReportBuffer[9];
+            Ki = inputReportBuffer[10];
+            Kd = inputReportBuffer[11];
+            CycleTime = inputReportBuffer[12];
+
+            KptoolStripStatusLabel.Text = "Kp = " + Convert.ToString(Kp);
+            KitoolStripStatusLabel.Text = "Ki = " + Convert.ToString(Ki);
+            KdtoolStripStatusLabel.Text = "Kd = " + Convert.ToString(Kd);
+            CycleTimetoolStripStatusLabel.Text = "Cycle Time (Secs) = " + Convert.ToString(CycleTime);
+        }
+
+        private void creatEditPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void uploadPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void creatEditProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uploadProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void helpTopicsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createEditPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPIDSettings PIDSettingsWindow = new frmPIDSettings();
+            PIDSettingsWindow.ShowDialog();
+        }
     }
+
 }
