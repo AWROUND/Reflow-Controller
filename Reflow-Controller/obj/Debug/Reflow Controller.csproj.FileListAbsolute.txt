@@ -9,12 +9,28 @@ C:\Users\Adrian\documents\visual studio 2017\Projects\generic_hid_cs_v62\generic
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\ReflowController.exe.config
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\ReflowController.exe
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\ReflowController.pdb
-C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\Reflow Controller.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\FileLib.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\FileLib.pdb
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\ReflowController.FrmMain.resources
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\ReflowController.frmPIDSettings.resources
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\ReflowController.Properties.Resources.resources
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\Reflow Controller.csproj.GenerateResource.Cache
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\ReflowController.exe
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\ReflowController.pdb
-C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\FileLib.dll
-C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\FileLib.pdb
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\Reflow Controller.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\ReflowController.frmProfileSettings.resources
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\ZedGraph.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\ZedGraph.xml
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\zh-tw\ZedGraph.resources.dll

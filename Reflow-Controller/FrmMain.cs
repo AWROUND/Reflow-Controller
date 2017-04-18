@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Text;
 using System.Reflection;
 using FileLib;
+using ZedGraph;
+using System.Drawing;
 
 namespace ReflowController
 {
@@ -233,11 +235,12 @@ namespace ReflowController
         private ToolStripMenuItem creatEditPIDGainsToolStripMenuItem;
         private ToolStripMenuItem uploadPIDGainsToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator3;
-        private ToolStripMenuItem creatEditProfileToolStripMenuItem;
+        private ToolStripMenuItem createEditProfileToolStripMenuItem;
         private ToolStripMenuItem uploadProfileToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem helpTopicsToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
+        private ZedGraph.ZedGraphControl zedGraphControl1;
         private DataGridViewTextBoxColumn Column8;
 
 		[System.Diagnostics.DebuggerStepThrough()]
@@ -309,11 +312,12 @@ namespace ReflowController
             this.creatEditPIDGainsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadPIDGainsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.creatEditProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createEditProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpTopicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -335,7 +339,7 @@ namespace ReflowController
             this.OutputtoolStripStatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 734);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(972, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1324, 22);
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -430,7 +434,7 @@ namespace ReflowController
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Location = new System.Drawing.Point(525, 16);
+            this.dataGridView1.Location = new System.Drawing.Point(866, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -520,9 +524,9 @@ namespace ReflowController
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.StageText);
-            this.groupBox1.Location = new System.Drawing.Point(12, 591);
+            this.groupBox1.Location = new System.Drawing.Point(22, 579);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(435, 120);
+            this.groupBox1.Size = new System.Drawing.Size(449, 131);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             // 
@@ -664,7 +668,7 @@ namespace ReflowController
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(525, 630);
+            this.button2.Location = new System.Drawing.Point(866, 644);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 55;
@@ -674,7 +678,7 @@ namespace ReflowController
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(651, 629);
+            this.button3.Location = new System.Drawing.Point(1214, 644);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(87, 23);
             this.button3.TabIndex = 56;
@@ -691,7 +695,7 @@ namespace ReflowController
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(972, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1324, 24);
             this.menuStrip1.TabIndex = 57;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -712,43 +716,44 @@ namespace ReflowController
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // pageSetupToolStripMenuItem
             // 
             this.pageSetupToolStripMenuItem.Name = "pageSetupToolStripMenuItem";
-            this.pageSetupToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.pageSetupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pageSetupToolStripMenuItem.Text = "Page Setup";
             // 
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // runToolStripMenuItem
             // 
@@ -794,7 +799,7 @@ namespace ReflowController
             this.creatEditPIDGainsToolStripMenuItem,
             this.uploadPIDGainsToolStripMenuItem,
             this.toolStripSeparator3,
-            this.creatEditProfileToolStripMenuItem,
+            this.createEditProfileToolStripMenuItem,
             this.uploadProfileToolStripMenuItem});
             this.configureToolStripMenuItem.Name = "configureToolStripMenuItem";
             this.configureToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
@@ -826,12 +831,12 @@ namespace ReflowController
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(183, 6);
             // 
-            // creatEditProfileToolStripMenuItem
+            // createEditProfileToolStripMenuItem
             // 
-            this.creatEditProfileToolStripMenuItem.Name = "creatEditProfileToolStripMenuItem";
-            this.creatEditProfileToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.creatEditProfileToolStripMenuItem.Text = "Creat/Edit Profile";
-            this.creatEditProfileToolStripMenuItem.Click += new System.EventHandler(this.creatEditProfileToolStripMenuItem_Click);
+            this.createEditProfileToolStripMenuItem.Name = "createEditProfileToolStripMenuItem";
+            this.createEditProfileToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.createEditProfileToolStripMenuItem.Text = "Creat/Edit Profile";
+            this.createEditProfileToolStripMenuItem.Click += new System.EventHandler(this.createEditProfileToolStripMenuItem_Click);
             // 
             // uploadProfileToolStripMenuItem
             // 
@@ -863,9 +868,27 @@ namespace ReflowController
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // zedGraphControl1
+            // 
+            this.zedGraphControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.zedGraphControl1.Location = new System.Drawing.Point(22, 27);
+            this.zedGraphControl1.Name = "zedGraphControl1";
+            this.zedGraphControl1.ScrollGrace = 0D;
+            this.zedGraphControl1.ScrollMaxX = 0D;
+            this.zedGraphControl1.ScrollMaxY = 0D;
+            this.zedGraphControl1.ScrollMaxY2 = 0D;
+            this.zedGraphControl1.ScrollMinX = 0D;
+            this.zedGraphControl1.ScrollMinY = 0D;
+            this.zedGraphControl1.ScrollMinY2 = 0D;
+            this.zedGraphControl1.Size = new System.Drawing.Size(826, 546);
+            this.zedGraphControl1.TabIndex = 58;
+            // 
             // FrmMain
             // 
-            this.ClientSize = new System.Drawing.Size(972, 756);
+            this.ClientSize = new System.Drawing.Size(1324, 756);
+            this.Controls.Add(this.zedGraphControl1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
@@ -930,12 +953,19 @@ namespace ReflowController
         private Byte Output;
         private int time;
         private Byte Command;
-       
+        private Byte Program_State;
+        private Boolean Reset_Flag;
+
+        Byte [] DataToSend = new Byte[8] { 0,0,0,0,0,0,0,0 };
+
         private readonly Debugging _myDebugging = new Debugging(); //  For viewing results of API calls via Debug.Write.
 		private readonly DeviceManagement _myDeviceManagement = new DeviceManagement();
-		private Hid _myHid = new Hid();
 
-		private enum FormActions
+        private Hid _myHid = new Hid();
+
+        private INI_File ini = new INI_File();
+
+        private enum FormActions
 		{
 			AddItemToListBox,
 			DisableInputReportBufferSize,
@@ -1556,7 +1586,7 @@ namespace ReflowController
 
 		private async void RequestToGetInputReport()
 		{
-			const Int32 readTimeout = 2000;
+			const Int32 readTimeout = 5000;
 
 			String byteValue = null;
 
@@ -1652,9 +1682,9 @@ namespace ReflowController
 
 		private async void RequestToSendOutputReport()
 		{
-			const Int32 writeTimeout = 2000;
+			const Int32 writeTimeout = 5000;
 			String byteValue = null;
-
+            
 			try
 			{
 				//  If the device hasn't been detected, was removed, or timed out on a previous attempt
@@ -1688,8 +1718,15 @@ namespace ReflowController
 
                         if (outputReportBuffer.GetUpperBound(0) > 1)
 						{
-							outputReportBuffer[2] = 0;
-						}
+                            outputReportBuffer[2] = DataToSend[0];
+                            outputReportBuffer[3] = DataToSend[1];
+                            outputReportBuffer[4] = DataToSend[2];
+                            outputReportBuffer[5] = DataToSend[3];
+                            outputReportBuffer[6] = DataToSend[4];
+                            outputReportBuffer[7] = DataToSend[5];
+                            outputReportBuffer[8] = DataToSend[6];
+
+                        }
 
 						//  Write a report.
 
@@ -1872,6 +1909,8 @@ namespace ReflowController
                 DeviceNotificationsStart();
                 FindDeviceUsingWmi();
                 FindTheHid();
+                CreateChart();
+
             }
             catch (Exception ex)
             {
@@ -1897,12 +1936,124 @@ namespace ReflowController
                 OvenText.Text = "OFF";
                 FanText.Text = "OFF";
                 AuxText.Text = "OFF";
+                Reset_Flag = false;
+                Program_State = 0;
             }
             catch (Exception ex)
             {
                 DisplayException(Name, ex);
                 throw;
             }
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Create chart control
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        public void CreateChart()
+        {
+            GraphPane myPane = zedGraphControl1.GraphPane;
+
+            //Set title axis labels and font color
+            myPane.Title.Text = "Temperature vs. Time";
+            myPane.Title.FontSpec.FontColor = Color.Black;
+
+            myPane.XAxis.Title.Text = "Time (Sec)";
+            myPane.XAxis.Title.FontSpec.FontColor = Color.Black;
+
+            myPane.YAxis.Title.Text = "Temperature (Celcius)";
+            myPane.YAxis.Title.FontSpec.FontColor = Color.Black;
+
+            //Fill the chart background with a color gradient
+            myPane.Fill = new Fill(Color.FromArgb(255, 255, 245), Color.FromArgb(255, 255, 190), 90F);
+            myPane.Chart.Fill = new Fill(Color.FromArgb(255, 255, 245), Color.FromArgb(255, 255, 190), 90F);
+
+            //Add grid lines to the plot and make them gray
+            myPane.XAxis.MajorGrid.IsVisible = true;
+            myPane.XAxis.MajorGrid.Color = Color.LightGray;
+
+            myPane.YAxis.MajorGrid.IsVisible = true;
+            myPane.YAxis.MajorGrid.Color = Color.LightGray;
+
+            //Enable point value tooltips and handle point value event
+            zedGraphControl1.IsShowPointValues = true;
+            zedGraphControl1.PointValueEvent += new ZedGraphControl.PointValueHandler(PointValueHandler);
+
+            //Show the horizontal scroll bar
+            zedGraphControl1.IsShowHScrollBar = false;
+
+            //Automatically set the scrollable range to cover the data range from the curves
+            zedGraphControl1.IsAutoScrollRange = true;
+
+            //Add 10% to scale range
+            zedGraphControl1.ScrollGrace = 0.1;
+
+            //Horizontal pan and zoom allowed
+            zedGraphControl1.IsEnableHPan = true;
+            zedGraphControl1.IsEnableHZoom = true;
+
+            //Vertical pan and zoom not allowed
+            zedGraphControl1.IsEnableVPan = false;
+            zedGraphControl1.IsEnableVZoom = false;
+
+            //Set the initial viewed range
+            //zedGraphControl1.GraphPane.XAxis.Scale.MinAuto = true;
+            //zedGraphControl1.GraphPane.XAxis.Scale.MaxAuto = true;
+
+            //Let Y-Axis range adjust to data range
+            zedGraphControl1.GraphPane.IsBoundedRanges = true;
+
+            //Set the margins to 10 points
+            myPane.Margin.All = 10;
+
+            //Hide the legend
+            myPane.Legend.IsVisible = false;
+
+            //Set start point for XAxis scale
+            myPane.XAxis.Scale.BaseTic = 0;
+
+            //Set start point for YAxis scale
+            myPane.YAxis.Scale.BaseTic = 0;
+
+            //Set max/min XAxis range
+            myPane.XAxis.Scale.Min = 0;
+            myPane.XAxis.Scale.Max = 300;
+            myPane.XAxis.Scale.MinorStep = 10;
+            myPane.XAxis.Scale.MajorStep = 30;
+
+            //Set max/min YAxis range
+            myPane.YAxis.Scale.Min = 0;
+            myPane.YAxis.Scale.Max = 250;
+            myPane.YAxis.Scale.MinorStep = 10;
+            myPane.YAxis.Scale.MajorStep = 20;
+
+            //Save 7400 points.  The RollingPointPairList is an efficient storage class that always
+            //keeps a rolling set of point data without needing to shift any data values
+            RollingPointPairList list = new RollingPointPairList(7400);
+
+            //Initially, a curve is added with no data points (list is empty)
+            //Color is red, and there will be no symbols
+            LineItem curve = myPane.AddCurve("Temperature", list, Color.Red, SymbolType.None);
+
+            //Scale the axis
+            myPane.AxisChange();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Show tooltips when the mouse hovers over a point
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private string PointValueHandler(ZedGraphControl control, GraphPane pane, CurveItem curve, int Pt)
+        {
+            //Get the point pair that is under the mouse
+            PointPair pt = curve[Pt];
+            return "Time: " + pt.X.ToString() + " Temp: " + pt.Y.ToString();
         }
 
 
@@ -1915,6 +2066,7 @@ namespace ReflowController
         {
            
             State = 1;  //Need to fix this so that start and stop works properly
+            Program_State = 1;
             time = 1;
 
             Command = 0;  //Start reflow cycle command
@@ -1923,7 +2075,11 @@ namespace ReflowController
 
             while (State != 0)
             {
-
+                if (Reset_Flag == true)
+                {
+                   Reset();
+                   break;
+                }
                 const Int32 readTimeout = 2000;
 
                 String byteValue = null;
@@ -2092,9 +2248,37 @@ namespace ReflowController
                 dTermtoolStripStatusLabel.Text = "dTerm = " + Convert.ToString(DTerm);
                 OutputtoolStripStatusLabel.Text = "Output = " + Convert.ToString(Output);
 
+                //Make sure the curve list has at least one curve value
+                if (zedGraphControl1.GraphPane.CurveList.Count <= 0) return;
+
+                //Get the furst curve item in the graph
+                LineItem curve = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+
+                //Set line thickness
+                curve.Line.Width = 2.0F;
+
+                //Make sure there is at least one curve value
+                if (curve == null) return;
+
+                //Get the point pair list
+                IPointListEdit list = curve.Points as IPointListEdit;
+
+                //If this is null it means the reference at curve.Points does not
+                //support IPointListEdit so, we won't be able to modify it
+                if (list == null) return;
+
+                //Add time and temperature values to list
+                list.Add(time, Convert.ToDouble(Temperature));
+
+                //Make sure each axis is rescaled to accommodate actual data
+                zedGraphControl1.AxisChange();
+
+                //Force a redraw
+                zedGraphControl1.Invalidate();
+
                 time++;
             }
-
+            Program_State = 0;
         }
 
 
@@ -2109,11 +2293,11 @@ namespace ReflowController
             time = 1;
 
             ////Clear all the curve items and recreate the chart
-            //zedGraphControl1.GraphPane.CurveList.Clear();
+            zedGraphControl1.GraphPane.CurveList.Clear();
 
             ////Reset chart control
-            //zedGraphControl1.Invalidate();
-            //CreateChart();
+            zedGraphControl1.Invalidate();
+            CreateChart();
         }
 
 
@@ -2206,11 +2390,46 @@ namespace ReflowController
             }
         }
 
-        private void resetControllerToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void Reset()
         {
+            Program_State = 0;
+
             Command = 7;
             RequestToSendOutputReport();
-             
+
+            Shutdown();
+            Startup();
+
+            //Clear data grid contents
+            this.dataGridView1.Rows.Clear();
+
+            KptoolStripStatusLabel.Text = "Kp = ";
+            KitoolStripStatusLabel.Text = "Ki = ";
+            KdtoolStripStatusLabel.Text = "Kd = ";
+            CycleTimetoolStripStatusLabel.Text = "Cycle Time (Secs) = ";
+            pTermtoolStripStatusLabel.Text = "pTerm = ";
+            iTermtoolStripStatusLabel.Text = "iTerm = ";
+            dTermtoolStripStatusLabel.Text = "dTerm = ";
+            OutputtoolStripStatusLabel.Text = "Output = ";
+
+            //Reset time variable
+            time = 1;
+
+            ////Clear all the curve items and recreate the chart
+            zedGraphControl1.GraphPane.CurveList.Clear();
+
+            ////Reset chart control
+            zedGraphControl1.Invalidate();
+            CreateChart();
+        }
+
+        private void resetControllerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Program_State == 1)
+            {
+            Reset_Flag = true;
+            }
         }
 
         private void startBakeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2220,11 +2439,11 @@ namespace ReflowController
 
         private async void getPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Command = 5;
+            Command = 4;
 
             RequestToSendOutputReport();
 
-            const Int32 readTimeout = 2000;
+            const Int32 readTimeout = 5000;
 
             String byteValue = null;
 
@@ -2322,25 +2541,74 @@ namespace ReflowController
             CycleTimetoolStripStatusLabel.Text = "Cycle Time (Secs) = " + Convert.ToString(CycleTime);
         }
 
-        private void creatEditPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
+       
+
+        private void createEditProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-
-        }
-
-        private void uploadPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void creatEditProfileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            frmProfileSettings ProfileSettingsWindow = new frmProfileSettings();
+            ProfileSettingsWindow.ShowDialog();
         }
 
         private void uploadProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            UploadProfile();
+        }
 
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Uploads selected profile to controller
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+ 
+        private void UploadProfile()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            string path = Environment.CurrentDirectory;
+
+            if (Directory.Exists(path))
+            {
+                if (Directory.Exists(path)) //ComPort.IsPortOpen() == true)
+                {
+                    openFileDialog.Title = "Upload Profile";
+                    openFileDialog.InitialDirectory = path;
+                    openFileDialog.Filter = "INI (*.ini)|*.ini";
+
+                    if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+                    {
+                        path = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
+
+                        string filename = openFileDialog.SafeFileName;
+                        string fileType = ini.ReadINI(filename, "FILE TYPE", "VALUE", path);
+
+                        if (fileType == "Profile")
+                        {
+                            //ComPort.UploadProfile(openFileDialog.SafeFileName, path);
+                            Command = 3;  //Upload Profile command
+
+                            DataToSend[0] = Convert.ToByte(ini.ReadINI(filename, "SOAK TEMPERATURE", "VALUE", path));
+                            DataToSend[1] = Convert.ToByte(ini.ReadINI(filename, "SOAK TIME", "VALUE", path));
+                            DataToSend[2] = Convert.ToByte(ini.ReadINI(filename, "REFLOW TEMPERATURE", "VALUE", path));
+                            DataToSend[3] = Convert.ToByte(ini.ReadINI(filename, "REFLOW TIME", "VALUE", path));
+                            DataToSend[4] = Convert.ToByte(ini.ReadINI(filename, "BAKE TEMPERATURE", "VALUE", path));
+                            DataToSend[5] = Convert.ToByte(ini.ReadINI(filename, "BAKE TIME", "VALUE", path).Substring(0, 2));
+                            DataToSend[6] = Convert.ToByte(ini.ReadINI(filename, "BAKE TIME", "VALUE", path).Substring(2, 2));
+
+                            RequestToSendOutputReport();
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("The file you are attempting to upload is not a Profile.\n" +
+                                     "Please check the file type.  The upload has been cancelled.",
+                                     "Error Uploading File",
+                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
         }
 
         private void helpTopicsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2357,6 +2625,74 @@ namespace ReflowController
         {
             frmPIDSettings PIDSettingsWindow = new frmPIDSettings();
             PIDSettingsWindow.ShowDialog();
+        }
+
+        private void uploadPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UploadPID();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Upload PID gains to controller
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void UploadPID()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            string path = Environment.CurrentDirectory;
+
+
+            //for (int i = 0; i < 8; i++) {
+            //    DataToSend[i] = 0;
+            //}
+
+            if (Directory.Exists(path))
+            {
+                if (Directory.Exists(path))//ComPort.IsPortOpen() == true)
+                {
+                    openFileDialog.Title = "Upload PID Gains";
+                    openFileDialog.InitialDirectory = path;
+                    openFileDialog.Filter = "INI (*.ini)|*.ini";
+
+                    if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+                    {
+                        path = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
+
+                        string filename = openFileDialog.SafeFileName;
+                        string fileType = ini.ReadINI(filename, "FILE TYPE", "VALUE", path);
+
+                        if (fileType == "PID")
+                        {
+                            Command = 5;  //Upload PID command
+
+                            DataToSend[0] = Convert.ToByte(ini.ReadINI(filename, "KP", "VALUE", path));
+                            DataToSend[1] = Convert.ToByte(ini.ReadINI(filename, "KI", "VALUE", path));
+                            DataToSend[2] = Convert.ToByte(ini.ReadINI(filename, "KD", "VALUE", path));
+                            DataToSend[3] = Convert.ToByte(ini.ReadINI(filename, "CYCLE TIME", "VALUE", path));
+
+                            RequestToSendOutputReport();
+
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("The file you are attempting to upload is not a PID file.\n" +
+                                     "Please check the file type.  The upload has been cancelled.",
+                                     "Error Uploading File",
+                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

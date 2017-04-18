@@ -3,3 +3,8 @@ c:\users\curtis\documents\visual studio 2010\Projects\FileLib\FileLib\bin\Debug\
 c:\users\curtis\documents\visual studio 2010\Projects\FileLib\FileLib\obj\Debug\ResolveAssemblyReference.cache
 c:\users\curtis\documents\visual studio 2010\Projects\FileLib\FileLib\obj\Debug\FileLib.dll
 c:\users\curtis\documents\visual studio 2010\Projects\FileLib\FileLib\obj\Debug\FileLib.pdb
+C:\Users\Adrian\Documents\Visual Studio 2017\Projects\Reflow Controller\FileLib\FileLib\bin\Debug\FileLib.dll
+C:\Users\Adrian\Documents\Visual Studio 2017\Projects\Reflow Controller\FileLib\FileLib\bin\Debug\FileLib.pdb
+C:\Users\Adrian\Documents\Visual Studio 2017\Projects\Reflow Controller\FileLib\FileLib\obj\Debug\FileLib.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Documents\Visual Studio 2017\Projects\Reflow Controller\FileLib\FileLib\obj\Debug\FileLib.dll
+C:\Users\Adrian\Documents\Visual Studio 2017\Projects\Reflow Controller\FileLib\FileLib\obj\Debug\FileLib.pdb

@@ -107,7 +107,8 @@
   </Target>
   -->
   <ItemGroup>
-    <Reference Include="FileLib">
+    <Reference Include="FileLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\FileLib\FileLib\bin\Debug\FileLib.dll</HintPath>
     </Reference>
     <Reference Include="microsoft.visualbasic" />
@@ -117,6 +118,9 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\zedgraph_dll_v515\zedgraph_dll_v515\zedgraph_dll_v5.1.5\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -133,6 +137,12 @@
     </Compile>
     <Compile Include="frmPIDSettings.Designer.cs">
       <DependentUpon>frmPIDSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProfileSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfileSettings.Designer.cs">
+      <DependentUpon>frmProfileSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="ReflowController.cs" />
     <Compile Include="Hid.cs" />
@@ -155,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPIDSettings.resx">
       <DependentUpon>frmPIDSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProfileSettings.resx">
+      <DependentUpon>frmProfileSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>

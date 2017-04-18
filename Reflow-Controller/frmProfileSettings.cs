@@ -2,14 +2,12 @@
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using ComPorts;
 using FileLib;
 
 namespace ReflowController
 {
     public partial class frmProfileSettings : Form
     {
-        ComPortsLib ComPort = new ComPortsLib();
         INI_File ini = new INI_File();
 
         public frmProfileSettings()
