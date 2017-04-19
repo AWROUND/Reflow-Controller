@@ -932,8 +932,7 @@ namespace ReflowController
 		private ReportTypes _reportType;
 		private SendOrGet _sendOrGet;
 		private Boolean _transferInProgress;
-		private TransferTypes _transferType;
-
+	
 
         private Byte State;
         private Byte Temperature;
@@ -967,14 +966,7 @@ namespace ReflowController
 
         private enum FormActions
 		{
-			AddItemToListBox,
-			DisableInputReportBufferSize,
-			EnableGetInputReportInterruptTransfer,
-			EnableInputReportBufferSize,
-			EnableSendOutputReportInterrupt,
-			ScrollToBottomOfListBox,
-			SetInputReportBufferSize,
-            ChangeBackgroundRed,
+			ChangeBackgroundRed,
             ChangeBackgroundGreen
         }
 
@@ -997,12 +989,7 @@ namespace ReflowController
 			Get
 		}
 
-		private enum TransferTypes
-		{
-			Control,
-			Interrupt
-		}
-
+		
 		private enum WmiDeviceProperties
 		{
 			Name,
@@ -1272,26 +1259,26 @@ namespace ReflowController
 					if (queryObj["PNPDeviceID"].ToString().Contains(deviceIdString))
 					{
 						_deviceDetected = true;
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "--------");
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "My device found (WMI):");
+                        Debug.Print("--------");
+                        Debug.Print("My device found (WMI):");
 
 						// Display device properties.
 
 						foreach (WmiDeviceProperties wmiDeviceProperty in Enum.GetValues(typeof(WmiDeviceProperties)))
 						{
-							MyMarshalDataToForm(FormActions.AddItemToListBox, (wmiDeviceProperty.ToString() + ": " + queryObj[wmiDeviceProperty.ToString()]));
+                            Debug.Print((wmiDeviceProperty.ToString() + ": " + queryObj[wmiDeviceProperty.ToString()]));
 							Debug.WriteLine(wmiDeviceProperty.ToString() + ": {0}", queryObj[wmiDeviceProperty.ToString()]);
 						}
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "--------");
-						MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+                        Debug.Print("--------");
+                        Debug.Print("");
                         CommStatustoolStripStatusLabel.Text = "Controller connected";
                         MyMarshalDataToForm(FormActions.ChangeBackgroundGreen, "");
                     }
 				}
 				if (!_deviceDetected)
 				{
-					MyMarshalDataToForm(FormActions.AddItemToListBox, "My device not found (WMI)");
-					MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+                    Debug.Print("My device not found (WMI)");
+                    Debug.Print("");
                     CommStatustoolStripStatusLabel.Text = "Controller not found";
                     MyMarshalDataToForm(FormActions.ChangeBackgroundRed, "");
                 }
@@ -1372,14 +1359,10 @@ namespace ReflowController
 
 								if ((_myHid.DeviceAttributes.VendorID == _myVendorId) && (_myHid.DeviceAttributes.ProductID == _myProductId))
 								{
-									Debug.WriteLine("  Handle obtained to my device");
-
-									//  Display the information in form's list box.
-
-									MyMarshalDataToForm(FormActions.AddItemToListBox, "Handle obtained to my device:");
-									MyMarshalDataToForm(FormActions.AddItemToListBox, "  Vendor ID= " + Convert.ToString(_myHid.DeviceAttributes.VendorID, 16));
-									MyMarshalDataToForm(FormActions.AddItemToListBox, "  Product ID = " + Convert.ToString(_myHid.DeviceAttributes.ProductID, 16));
-									MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+									Debug.Print("Handle obtained to my device:");
+                                    Debug.Print("  Vendor ID= " + Convert.ToString(_myHid.DeviceAttributes.VendorID, 16));
+                                    Debug.Print("  Product ID = " + Convert.ToString(_myHid.DeviceAttributes.ProductID, 16));
+                                    Debug.Print("");
 
 									_deviceHandleObtained = true;
 
@@ -1424,8 +1407,7 @@ namespace ReflowController
 					//  Get the Input report buffer size.
 
 					GetInputReportBufferSize();
-					MyMarshalDataToForm(FormActions.EnableInputReportBufferSize, "");
-
+					
 					//Close the handle and reopen it with read/write access.
 
 					_hidHandle.Close();
@@ -1434,10 +1416,10 @@ namespace ReflowController
 
 					if (_hidHandle.IsInvalid)
 					{
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "The device is a system " + _hidUsage + ".");
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "Windows 2000 and later obtain exclusive access to Input and Output reports for this devices.");
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "Windows 8 also obtains exclusive access to Feature reports.");
-						MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+                        Debug.Print("The device is a system " + _hidUsage + ".");
+                        Debug.Print("Windows 2000 and later obtain exclusive access to Input and Output reports for this devices.");
+                        Debug.Print("Windows 8 also obtains exclusive access to Feature reports.");
+                        Debug.Print("");
 					}
 					else
 					{
@@ -1461,9 +1443,9 @@ namespace ReflowController
 				}
 				else
 				{
-					MyMarshalDataToForm(FormActions.AddItemToListBox, "Device not found.");
-					MyMarshalDataToForm(FormActions.DisableInputReportBufferSize, "");
-					MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+                    Debug.Print("Device not found.");
+                    Debug.Print("");
+                    Debug.Print("");
 				}
 				return _deviceHandleObtained;
 			}
@@ -1476,7 +1458,7 @@ namespace ReflowController
 		
 
 		///  <summary>
-		///  Find and display the number of Input buffers
+		///  Find the number of Input buffers
 		///  (the number of Input reports the HID driver will store). 
 		///  </summary>
 
@@ -1491,9 +1473,6 @@ namespace ReflowController
 
 				_myHid.GetNumberOfInputBuffers(_hidHandle, ref numberOfInputBuffers);
 
-				//  Display the result in the text box.
-
-				MyMarshalDataToForm(FormActions.SetInputReportBufferSize, Convert.ToString(numberOfInputBuffers));
 			}
 			catch (Exception ex)
 			{
@@ -1541,10 +1520,10 @@ namespace ReflowController
 		{
 			try
 			{
-				MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read a report timed out.");
-				MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+                Debug.Print("The attempt to read a report timed out.");
+                Debug.Print("");
 				CloseCommunications();
-				MyMarshalDataToForm(FormActions.EnableGetInputReportInterruptTransfer, "");
+                Debug.Print("");
 				_transferInProgress = false;
 				_sendOrGet = SendOrGet.Send;
 			}
@@ -1564,10 +1543,10 @@ namespace ReflowController
 		{
 			try
 			{
-				MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to write a report timed out.");
-				MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+                Debug.Print("The attempt to write a report timed out.");
+                Debug.Print("");
 				CloseCommunications();
-				MyMarshalDataToForm(FormActions.EnableSendOutputReportInterrupt, "");
+                Debug.Print("");
 				_transferInProgress = false;
 				_sendOrGet = SendOrGet.Get;
 			}
@@ -2618,7 +2597,8 @@ namespace ReflowController
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmAboutBox AboutBox = new frmAboutBox();
+            AboutBox.ShowDialog();
         }
 
         private void createEditPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)

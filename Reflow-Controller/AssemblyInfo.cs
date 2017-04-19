@@ -3,11 +3,11 @@ using System.Reflection;
 //  set of attributes. Change these attribute values to modify the information
 //  associated with an assembly
 
-[ assembly: AssemblyTitle( "USB test application for HIDs" ) ]
-[ assembly: AssemblyDescription( "www.Lvr.com" ) ]
-[ assembly: AssemblyCompany( "Lakeview Research" ) ]
-[ assembly: AssemblyProduct( "usbhidio" ) ]
-[ assembly: AssemblyCopyright( "c. 1999-2005 by Jan Axelson" ) ]
+[ assembly: AssemblyTitle( "Reflow Controller Interface" ) ]
+[ assembly: AssemblyDescription( "PIC18F4550 Reflow Controller Interface" ) ]
+[ assembly: AssemblyCompany( "Round Innovations" ) ]
+[ assembly: AssemblyProduct( "Reflow Controller" ) ]
+[ assembly: AssemblyCopyright( "" ) ]
 [ assembly: AssemblyTrademark( "" ) ]
 [ assembly: AssemblyCulture( "" ) ]
 
@@ -22,7 +22,7 @@ using System.Reflection;
 //  by using the '*' as shown below
 
 
-[ assembly: AssemblyVersion( "2.2.*" ) ]
+[ assembly: AssemblyVersion( "1.0.*" ) ]
 
 
 

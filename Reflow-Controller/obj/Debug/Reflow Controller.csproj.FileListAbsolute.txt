@@ -33,5 +33,5 @@ C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-C
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\tr\ZedGraph.resources.dll
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\zh-cn\ZedGraph.resources.dll
 C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\zh-tw\ZedGraph.resources.dll
-C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\ReflowController.exe.CodeAnalysisLog.xml
-C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\bin\Debug\ReflowController.exe.lastcodeanalysissucceeded
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\Reflow Controller.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\documents\visual studio 2017\Projects\Reflow Controller\Reflow-Controller\obj\Debug\ReflowController.frmAboutBox.resources
