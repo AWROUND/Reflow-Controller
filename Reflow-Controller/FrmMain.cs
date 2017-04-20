@@ -1015,12 +1015,9 @@ namespace ReflowController
 		private Int32 _myProductId;
 		private Int32 _myVendorId;
 		private Boolean _periodicTransfersRequested;
-		private ReportReadOrWritten _readOrWritten;
-		private ReportTypes _reportType;
 		private SendOrGet _sendOrGet;
 		private Boolean _transferInProgress;
 	
-
         private Byte State;
         private Byte Temperature;
         private Byte Setpoint;
@@ -1051,33 +1048,22 @@ namespace ReflowController
 
         private INI_File ini = new INI_File();
 
+
         private enum FormActions
 		{
 			ChangeBackgroundRed,
             ChangeBackgroundGreen
         }
 
-		private enum ReportReadOrWritten
-		{
-			Read,
-			Written
-		}
 
-		private enum ReportTypes
-		{
-			Input,
-			Output,
-			Feature
-		}
+        private enum SendOrGet
+        {
+            Send,
+            Get
+        }
 
-		private enum SendOrGet
-		{
-			Send,
-			Get
-		}
 
-		
-		private enum WmiDeviceProperties
+        private enum WmiDeviceProperties
 		{
 			Name,
 			Caption,
@@ -1088,7 +1074,9 @@ namespace ReflowController
 			ClassGUID
 		}
 
+
 		internal FrmMain FrmMy;
+
 
 		//  This delegate has the same parameters as AccessForm.
 		//  Used in accessing the application's form from a different thread.
@@ -1194,7 +1182,7 @@ namespace ReflowController
 		/// <summary>
 		/// Close the handle and FileStreams for a device.
 		/// </summary>
-		/// 
+        
 		private void CloseCommunications()
 		{
 			if (_deviceData != null)
@@ -1298,7 +1286,7 @@ namespace ReflowController
 		///  Called on removal of any device.
 		///  Calls a routine that searches to see if the desired device is still present.
 		///  </summary>
-		/// 
+	
 		private void DeviceRemoved(object sender, EventArgs e)
 		{
 			try
@@ -2012,6 +2000,7 @@ namespace ReflowController
             }
         }
 
+
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Create chart control
@@ -2019,6 +2008,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         public void CreateChart()
         {
             GraphPane myPane = zedGraphControl1.GraphPane;
@@ -2108,6 +2098,7 @@ namespace ReflowController
             myPane.AxisChange();
         }
 
+
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Show tooltips when the mouse hovers over a point
@@ -2115,6 +2106,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private string PointValueHandler(ZedGraphControl control, GraphPane pane, CurveItem curve, int Pt)
         {
             //Get the point pair that is under the mouse
@@ -2130,6 +2122,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void SoapSerialize(ZedGraphControl z1, string filename)
         {
             if (z1 != null && !String.IsNullOrEmpty(filename))
@@ -2143,6 +2136,7 @@ namespace ReflowController
             }
         }
 
+
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Load chart data from a file
@@ -2150,6 +2144,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void SoapDeSerialize(ZedGraphControl z1, string filename)
         {
             if (z1 != null && !String.IsNullOrEmpty(filename))
@@ -2171,8 +2166,7 @@ namespace ReflowController
                 myReader.Close();
             }
         }
-
-
+        
 
         ///  <summary>
         ///  Start reflow cycle
@@ -2398,9 +2392,15 @@ namespace ReflowController
             Program_State = 0;
         }
 
-
-
-
+        
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Clears data from list and chart
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+       
         private void ClearData_Click(object sender, EventArgs e)
         {
             //Clear data grid contents
@@ -2417,9 +2417,30 @@ namespace ReflowController
             CreateChart();
         }
 
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to reset reflow controller
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        
+        private void resetControllerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Program_State == 1)
+            {
+                Reset_Flag = true;
+            }
+        }
 
-       
 
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Resets reflow controller
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
 
         private void Reset()
         {
@@ -2454,19 +2475,29 @@ namespace ReflowController
             CreateChart();
         }
 
-        private void resetControllerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Program_State == 1)
-            {
-            Reset_Flag = true;
-            }
-        }
 
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to start Bake profile
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        
         private void startBakeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to read PID gains from reflow controller
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        
         private async void getPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Command = 4;
@@ -2571,14 +2602,30 @@ namespace ReflowController
             CycleTimetoolStripStatusLabel.Text = "Cycle Time (Secs) = " + Convert.ToString(CycleTime);
         }
 
-       
 
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to open create/edit Profile window
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        
         private void createEditProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProfileSettings ProfileSettingsWindow = new frmProfileSettings();
             ProfileSettingsWindow.ShowDialog();
         }
 
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to upload selected profile to reflow controller
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        
         private void uploadProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UploadProfile();
@@ -2586,7 +2633,7 @@ namespace ReflowController
 
         /// <summary>
         /// ------------------------------------------------------------------------------
-        ///  Procedure: Uploads selected profile to controller
+        ///  Procedure: Uploads selected profile to reflow controller
         ///  ins: none
         ///  outs: none
         /// ------------------------------------------------------------------------------
@@ -2641,10 +2688,20 @@ namespace ReflowController
             }
         }
 
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to display Help file
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        
         private void helpTopicsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenHelpFile();
         }
+
 
         /// <summary>
         /// ------------------------------------------------------------------------------
@@ -2653,6 +2710,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void OpenHelpFile()
         {
             //Set default path for help file
@@ -2671,11 +2729,29 @@ namespace ReflowController
             }
         }
 
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to open About window
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAboutBox AboutBox = new frmAboutBox();
             AboutBox.ShowDialog();
         }
+
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to open create/edit PID gains window
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
 
         private void createEditPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2683,6 +2759,15 @@ namespace ReflowController
             PIDSettingsWindow.ShowDialog();
         }
 
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to open upload selected PID gains to reflow controller
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        
         private void uploadPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UploadPID();
@@ -2690,11 +2775,12 @@ namespace ReflowController
 
         /// <summary>
         /// ------------------------------------------------------------------------------
-        ///  Procedure: Upload PID gains to controller
+        ///  Procedure: Upload selected PID gains to reflow controller
         ///  ins: none
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void UploadPID()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -2746,6 +2832,15 @@ namespace ReflowController
             }
         }
 
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to exit application
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -2759,6 +2854,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void openLogFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenLogFile();
@@ -2772,6 +2868,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void OpenLogFile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -2799,6 +2896,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void openProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenProfile();
@@ -2811,6 +2909,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void OpenProfile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -2830,6 +2929,7 @@ namespace ReflowController
             }
         }
 
+
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Menu button to open a PID document for viewing
@@ -2837,6 +2937,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void openPIDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenPIDfile();
@@ -2849,6 +2950,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void OpenPIDfile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -2876,6 +2978,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void openChartFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChartFile();
@@ -2901,6 +3004,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void OpenChartFile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -2924,6 +3028,7 @@ namespace ReflowController
             }
         }
 
+
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Menu button to open a chart image
@@ -2931,10 +3036,12 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void openChartImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChartImage();
         }
+
 
         /// <summary>
         /// ------------------------------------------------------------------------------
@@ -2943,6 +3050,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void OpenChartImage()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -2981,10 +3089,12 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void saveLogFileToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             SaveLogFile();
         }
+
 
         /// <summary>
         /// ------------------------------------------------------------------------------
@@ -2992,7 +3102,8 @@ namespace ReflowController
         ///  ins: none
         ///  outs: none
         /// ------------------------------------------------------------------------------
-        /// </summary>        
+        /// </summary>
+        
         private void SaveLogFile()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -3066,6 +3177,8 @@ namespace ReflowController
                 }
             }
         }
+
+
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Menu button to save chart data file
@@ -3073,10 +3186,12 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void saveChartFileToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             SaveChartFile();
         }
+
 
         /// <summary>
         /// ------------------------------------------------------------------------------
@@ -3085,6 +3200,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void SaveChartFile()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -3106,6 +3222,7 @@ namespace ReflowController
             }
         }
 
+
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Menu button to save a chart image
@@ -3113,10 +3230,12 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void saveChartImageToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             SaveChartImage();
         }
+
 
         /// <summary>
         /// ------------------------------------------------------------------------------
@@ -3125,6 +3244,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void SaveChartImage()
         {
             //Set default path for chart images
@@ -3165,6 +3285,7 @@ namespace ReflowController
             }
         }
 
+
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Menu button to set page settings for printer
@@ -3172,10 +3293,12 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void pageSetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             zedGraphControl1.DoPageSetup();
         }
+
 
         /// <summary>
         /// ------------------------------------------------------------------------------
@@ -3184,10 +3307,12 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             zedGraphControl1.DoPrintPreview();
         }
+
 
         /// <summary>
         /// ------------------------------------------------------------------------------
@@ -3196,6 +3321,7 @@ namespace ReflowController
         ///  outs: none
         /// ------------------------------------------------------------------------------
         /// </summary>
+        
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
             zedGraphControl1.DoPrint();
