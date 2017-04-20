@@ -248,6 +248,9 @@ namespace ReflowController
         private ToolStripMenuItem logFileToolStripMenuItem;
         private ToolStripMenuItem chartFileToolStripMenuItem;
         private ToolStripMenuItem chartImageToolStripMenuItem;
+        private ToolStripMenuItem logFileToolStripMenuItem1;
+        private ToolStripMenuItem chartFileToolStripMenuItem1;
+        private ToolStripMenuItem chartImageToolStripMenuItem1;
         private DataGridViewTextBoxColumn Column8;
 
 		[System.Diagnostics.DebuggerStepThrough()]
@@ -309,6 +312,9 @@ namespace ReflowController
             this.chartFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chartImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartImageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pageSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -696,7 +702,7 @@ namespace ReflowController
             this.button3.TabIndex = 56;
             this.button3.Text = "Save Log File";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.SaveLogFileButton_Click);
+            this.button3.Click += new System.EventHandler(this.saveLogFileToolStripMenuItem1_Click);
             // 
             // menuStrip1
             // 
@@ -740,61 +746,89 @@ namespace ReflowController
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.profileToolStripMenuItem.Text = "Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.openProfileToolStripMenuItem_Click);
             // 
             // pIDToolStripMenuItem
             // 
             this.pIDToolStripMenuItem.Name = "pIDToolStripMenuItem";
-            this.pIDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pIDToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.pIDToolStripMenuItem.Text = "PID File";
             this.pIDToolStripMenuItem.Click += new System.EventHandler(this.openPIDToolStripMenuItem_Click);
             // 
             // logFileToolStripMenuItem
             // 
             this.logFileToolStripMenuItem.Name = "logFileToolStripMenuItem";
-            this.logFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logFileToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.logFileToolStripMenuItem.Text = "Log File";
             this.logFileToolStripMenuItem.Click += new System.EventHandler(this.openLogFileToolStripMenuItem_Click);
             // 
             // chartFileToolStripMenuItem
             // 
             this.chartFileToolStripMenuItem.Name = "chartFileToolStripMenuItem";
-            this.chartFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chartFileToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.chartFileToolStripMenuItem.Text = "Chart File";
             this.chartFileToolStripMenuItem.Click += new System.EventHandler(this.openChartFileToolStripMenuItem_Click);
             // 
             // chartImageToolStripMenuItem
             // 
             this.chartImageToolStripMenuItem.Name = "chartImageToolStripMenuItem";
-            this.chartImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chartImageToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.chartImageToolStripMenuItem.Text = "Chart Image";
             this.chartImageToolStripMenuItem.Click += new System.EventHandler(this.openChartImageToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logFileToolStripMenuItem1,
+            this.chartFileToolStripMenuItem1,
+            this.chartImageToolStripMenuItem1});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // logFileToolStripMenuItem1
+            // 
+            this.logFileToolStripMenuItem1.Name = "logFileToolStripMenuItem1";
+            this.logFileToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.logFileToolStripMenuItem1.Text = "Log File";
+            this.logFileToolStripMenuItem1.Click += new System.EventHandler(this.saveLogFileToolStripMenuItem1_Click);
+            // 
+            // chartFileToolStripMenuItem1
+            // 
+            this.chartFileToolStripMenuItem1.Name = "chartFileToolStripMenuItem1";
+            this.chartFileToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.chartFileToolStripMenuItem1.Text = "Chart File";
+            this.chartFileToolStripMenuItem1.Click += new System.EventHandler(this.saveChartFileToolStripMenuItem1_Click);
+            // 
+            // chartImageToolStripMenuItem1
+            // 
+            this.chartImageToolStripMenuItem1.Name = "chartImageToolStripMenuItem1";
+            this.chartImageToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.chartImageToolStripMenuItem1.Text = "Chart Image";
+            this.chartImageToolStripMenuItem1.Click += new System.EventHandler(this.saveChartImageToolStripMenuItem1_Click);
             // 
             // pageSetupToolStripMenuItem
             // 
             this.pageSetupToolStripMenuItem.Name = "pageSetupToolStripMenuItem";
             this.pageSetupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pageSetupToolStripMenuItem.Text = "Page Setup";
+            this.pageSetupToolStripMenuItem.Click += new System.EventHandler(this.pageSetupToolStripMenuItem_Click);
             // 
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
             this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
+            this.printPreviewToolStripMenuItem.Click += new System.EventHandler(this.printPreviewToolStripMenuItem_Click);
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -2088,86 +2122,7 @@ namespace ReflowController
             return "Time: " + pt.X.ToString() + " Temp: " + pt.Y.ToString();
         }
 
-
-        /// <summary>
-        /// ------------------------------------------------------------------------------
-        ///  Procedure: Saves chart data to a file
-        ///  ins: SoapSerialize() procedure
-        ///  outs: none
-        /// ------------------------------------------------------------------------------
-        /// </summary>
-        private void SaveChartFile()
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            string path = Environment.CurrentDirectory + @"\Charts";
-
-            saveFileDialog.Title = "Save Chart";
-            saveFileDialog.InitialDirectory = path;
-            saveFileDialog.Filter = "Soap (*.soap)|*.soap";
-
-            if (!(Directory.Exists(path)))
-            {
-                Directory.CreateDirectory(path);
-            }
-
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                SoapSerialize(zedGraphControl1, saveFileDialog.FileName);
-            }
-        }
-
-       
-
-        /// <summary>
-        /// ------------------------------------------------------------------------------
-        ///  Procedure: Save a chart image
-        ///  ins: none
-        ///  outs: none
-        /// ------------------------------------------------------------------------------
-        /// </summary>
-        private void SaveChartImage()
-        {
-            //Set default path for chart images
-            string path = Environment.CurrentDirectory + @"\Chart Images";
-
-            //Set save dialog title, initial path and image filters
-            zedGraphControl1.SaveFileDialog.Title = "Save Chart Image";
-            zedGraphControl1.SaveFileDialog.InitialDirectory = path;
-            zedGraphControl1.SaveFileDialog.Filter = "PNG (*.png)|*.png|" +
-                                                     "BMP (*.bmp)|*.bmp|" +
-                                                     "JPEG (*.jpg)|*.jpg|" +
-                                                     "GIF (*.gif)|*.gif|" +
-                                                     "TIF (*.tiff)|*.tiff|" +
-                                                     "EMF (*.emf)|*.emf";
-
-            //Create directory if it does not exist
-            if (!(Directory.Exists(path))) Directory.CreateDirectory(path);
-
-            //If OK button clicked and the file name is not blank then, save image using selected filter
-            if (zedGraphControl1.SaveFileDialog.ShowDialog(this) == DialogResult.OK && zedGraphControl1.SaveFileDialog.FileName != "")
-            {
-                //Create filestream object and save image using OpenFile method
-                System.IO.FileStream fs = (System.IO.FileStream)zedGraphControl1.SaveFileDialog.OpenFile();
-
-                //Save image using the image FilterIndex property
-                switch (zedGraphControl1.SaveFileDialog.FilterIndex)
-                {
-                    case 1: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Png); break;
-                    case 2: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Bmp); break;
-                    case 3: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg); break;
-                    case 4: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Gif); break;
-                    case 5: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Tiff); break;
-                    case 6: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Emf); break;
-                }
-
-                //Close filestream object
-                fs.Close();
-            }
-        }
-
         
-
         /// <summary>
         /// ------------------------------------------------------------------------------
         ///  Procedure: Save chart data to a file
@@ -2463,94 +2418,7 @@ namespace ReflowController
         }
 
 
-        /// <summary>
-        /// ------------------------------------------------------------------------------
-        ///  Procedure: Button to export gridview data to CSV file
-        ///  ins: none
-        ///  outs: none
-        /// ------------------------------------------------------------------------------
-        /// </summary>
-
-        private void SaveLogFileButton_Click(object sender, EventArgs e)
-        {
-            SaveLogFile();
-        }
-
-
-
-        private void SaveLogFile()
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            //Variable to store contents from each datagrid cell
-            string data = string.Empty;
-            State = 0;
-
-            //Only export if disconnected from serial port
-            if ((State == 0))
-            {
-                //Ensure we are not attempting to export an empty log file
-                if (dataGridView1.Rows.Count != 1)
-                {
-                    //Set the default directory path and file extension
-                    string path = Environment.CurrentDirectory + @"\Logs";
-
-                    saveFileDialog.InitialDirectory = path;
-                    saveFileDialog.Filter = "CSV (*.csv)|*.csv";
-
-                    //Make sure the directory exist or create one
-                    if (!(Directory.Exists(path)))
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-
-                    if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-                    {
-                        //Create a file stream write object
-                        using (StreamWriter myFile = new StreamWriter(saveFileDialog.FileName, false, Encoding.Default))
-                        {
-                            //Get the column header text first
-                            foreach (DataGridViewColumn dataColumns in dataGridView1.Columns)
-                            {
-                                data += dataColumns.HeaderText + ",";
-                            }
-
-                            //Get row data
-                            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                            {
-                                for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++)
-                                {
-                                    if (!string.IsNullOrEmpty(dataGridView1[j, i].Value.ToString()))
-                                    {
-                                        if (j > 0)
-                                        {
-                                            data += "," + dataGridView1[j, i].Value.ToString();
-                                        }
-
-                                        else
-                                        {
-                                            if (string.IsNullOrEmpty(data))
-                                            {
-                                                data = dataGridView1[j, i].Value.ToString();
-                                            }
-
-                                            else
-                                            {
-                                                data += Environment.NewLine + dataGridView1[j, i].Value.ToString();
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-
-                            //Write data to file and close file
-                            myFile.Write(data);
-                            myFile.Close();
-                        }
-                    }
-                }
-            }
-        }
+       
 
 
         private void Reset()
@@ -3105,6 +2973,233 @@ namespace ReflowController
             }
         }
 
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to save a excel compatible CSV log file
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void saveLogFileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveLogFile();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Export data from gridview to CSV file (Excel compatible)
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>        
+        private void SaveLogFile()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            //Variable to store contents from each datagrid cell
+            string data = string.Empty;
+            State = 0;
+
+            //Only export if disconnected from serial port
+            if ((State == 0))
+            {
+                //Ensure we are not attempting to export an empty log file
+                if (dataGridView1.Rows.Count != 1)
+                {
+                    //Set the default directory path and file extension
+                    string path = Environment.CurrentDirectory + @"\Logs";
+
+                    saveFileDialog.InitialDirectory = path;
+                    saveFileDialog.Filter = "CSV (*.csv)|*.csv";
+
+                    //Make sure the directory exist or create one
+                    if (!(Directory.Exists(path)))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+                    {
+                        //Create a file stream write object
+                        using (StreamWriter myFile = new StreamWriter(saveFileDialog.FileName, false, Encoding.Default))
+                        {
+                            //Get the column header text first
+                            foreach (DataGridViewColumn dataColumns in dataGridView1.Columns)
+                            {
+                                data += dataColumns.HeaderText + ",";
+                            }
+
+                            //Get row data
+                            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                            {
+                                for (int j = 0; j < dataGridView1.Rows[i].Cells.Count; j++)
+                                {
+                                    if (!string.IsNullOrEmpty(dataGridView1[j, i].Value.ToString()))
+                                    {
+                                        if (j > 0)
+                                        {
+                                            data += "," + dataGridView1[j, i].Value.ToString();
+                                        }
+
+                                        else
+                                        {
+                                            if (string.IsNullOrEmpty(data))
+                                            {
+                                                data = dataGridView1[j, i].Value.ToString();
+                                            }
+
+                                            else
+                                            {
+                                                data += Environment.NewLine + dataGridView1[j, i].Value.ToString();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            //Write data to file and close file
+                            myFile.Write(data);
+                            myFile.Close();
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to save chart data file
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void saveChartFileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveChartFile();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Saves chart data to a file
+        ///  ins: SoapSerialize() procedure
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void SaveChartFile()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            string path = Environment.CurrentDirectory + @"\Charts";
+
+            saveFileDialog.Title = "Save Chart";
+            saveFileDialog.InitialDirectory = path;
+            saveFileDialog.Filter = "Soap (*.soap)|*.soap";
+
+            if (!(Directory.Exists(path)))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                SoapSerialize(zedGraphControl1, saveFileDialog.FileName);
+            }
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to save a chart image
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void saveChartImageToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveChartImage();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Save a chart image
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void SaveChartImage()
+        {
+            //Set default path for chart images
+            string path = Environment.CurrentDirectory + @"\Chart Images";
+
+            //Set save dialog title, initial path and image filters
+            zedGraphControl1.SaveFileDialog.Title = "Save Chart Image";
+            zedGraphControl1.SaveFileDialog.InitialDirectory = path;
+            zedGraphControl1.SaveFileDialog.Filter = "PNG (*.png)|*.png|" +
+                                                     "BMP (*.bmp)|*.bmp|" +
+                                                     "JPEG (*.jpg)|*.jpg|" +
+                                                     "GIF (*.gif)|*.gif|" +
+                                                     "TIF (*.tiff)|*.tiff|" +
+                                                     "EMF (*.emf)|*.emf";
+
+            //Create directory if it does not exist
+            if (!(Directory.Exists(path))) Directory.CreateDirectory(path);
+
+            //If OK button clicked and the file name is not blank then, save image using selected filter
+            if (zedGraphControl1.SaveFileDialog.ShowDialog(this) == DialogResult.OK && zedGraphControl1.SaveFileDialog.FileName != "")
+            {
+                //Create filestream object and save image using OpenFile method
+                System.IO.FileStream fs = (System.IO.FileStream)zedGraphControl1.SaveFileDialog.OpenFile();
+
+                //Save image using the image FilterIndex property
+                switch (zedGraphControl1.SaveFileDialog.FilterIndex)
+                {
+                    case 1: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Png); break;
+                    case 2: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Bmp); break;
+                    case 3: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg); break;
+                    case 4: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Gif); break;
+                    case 5: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Tiff); break;
+                    case 6: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Emf); break;
+                }
+
+                //Close filestream object
+                fs.Close();
+            }
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to set page settings for printer
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void pageSetupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            zedGraphControl1.DoPageSetup();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button print preview
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            zedGraphControl1.DoPrintPreview();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to print chart image
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            zedGraphControl1.DoPrint();
+        }
     }
 
 }
