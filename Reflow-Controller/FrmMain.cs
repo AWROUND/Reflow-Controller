@@ -13,6 +13,8 @@ using System.Reflection;
 using FileLib;
 using ZedGraph;
 using System.Drawing;
+using System.Runtime.Serialization.Formatters.Soap;
+
 
 namespace ReflowController
 {
@@ -241,18 +243,23 @@ namespace ReflowController
         private ToolStripMenuItem helpTopicsToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ZedGraph.ZedGraphControl zedGraphControl1;
+        private ToolStripMenuItem profileToolStripMenuItem;
+        private ToolStripMenuItem pIDToolStripMenuItem;
+        private ToolStripMenuItem logFileToolStripMenuItem;
+        private ToolStripMenuItem chartFileToolStripMenuItem;
+        private ToolStripMenuItem chartImageToolStripMenuItem;
         private DataGridViewTextBoxColumn Column8;
 
 		[System.Diagnostics.DebuggerStepThrough()]
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -296,6 +303,11 @@ namespace ReflowController
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -407,14 +419,14 @@ namespace ReflowController
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -426,14 +438,14 @@ namespace ReflowController
             this.Column7,
             this.Column8});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridView1.Location = new System.Drawing.Point(866, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -444,9 +456,9 @@ namespace ReflowController
             // 
             // Column1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle20;
             this.Column1.HeaderText = "     Time";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -454,9 +466,9 @@ namespace ReflowController
             // 
             // Column2
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle21;
             this.Column2.HeaderText = "   Current Temp  °C";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -464,8 +476,8 @@ namespace ReflowController
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle22;
             this.Column3.HeaderText = "     Setpoint °C";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -474,9 +486,9 @@ namespace ReflowController
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle23;
             this.Column4.HeaderText = "    Heater";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -715,9 +727,50 @@ namespace ReflowController
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.profileToolStripMenuItem,
+            this.pIDToolStripMenuItem,
+            this.logFileToolStripMenuItem,
+            this.chartFileToolStripMenuItem,
+            this.chartImageToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewToolStripMenuItem.Text = "View";
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.profileToolStripMenuItem.Text = "Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.openProfileToolStripMenuItem_Click);
+            // 
+            // pIDToolStripMenuItem
+            // 
+            this.pIDToolStripMenuItem.Name = "pIDToolStripMenuItem";
+            this.pIDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pIDToolStripMenuItem.Text = "PID File";
+            this.pIDToolStripMenuItem.Click += new System.EventHandler(this.openPIDToolStripMenuItem_Click);
+            // 
+            // logFileToolStripMenuItem
+            // 
+            this.logFileToolStripMenuItem.Name = "logFileToolStripMenuItem";
+            this.logFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logFileToolStripMenuItem.Text = "Log File";
+            this.logFileToolStripMenuItem.Click += new System.EventHandler(this.openLogFileToolStripMenuItem_Click);
+            // 
+            // chartFileToolStripMenuItem
+            // 
+            this.chartFileToolStripMenuItem.Name = "chartFileToolStripMenuItem";
+            this.chartFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chartFileToolStripMenuItem.Text = "Chart File";
+            this.chartFileToolStripMenuItem.Click += new System.EventHandler(this.openChartFileToolStripMenuItem_Click);
+            // 
+            // chartImageToolStripMenuItem
+            // 
+            this.chartImageToolStripMenuItem.Name = "chartImageToolStripMenuItem";
+            this.chartImageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chartImageToolStripMenuItem.Text = "Chart Image";
+            this.chartImageToolStripMenuItem.Click += new System.EventHandler(this.openChartImageToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
@@ -2036,6 +2089,136 @@ namespace ReflowController
         }
 
 
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Saves chart data to a file
+        ///  ins: SoapSerialize() procedure
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void SaveChartFile()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            string path = Environment.CurrentDirectory + @"\Charts";
+
+            saveFileDialog.Title = "Save Chart";
+            saveFileDialog.InitialDirectory = path;
+            saveFileDialog.Filter = "Soap (*.soap)|*.soap";
+
+            if (!(Directory.Exists(path)))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                SoapSerialize(zedGraphControl1, saveFileDialog.FileName);
+            }
+        }
+
+       
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Save a chart image
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void SaveChartImage()
+        {
+            //Set default path for chart images
+            string path = Environment.CurrentDirectory + @"\Chart Images";
+
+            //Set save dialog title, initial path and image filters
+            zedGraphControl1.SaveFileDialog.Title = "Save Chart Image";
+            zedGraphControl1.SaveFileDialog.InitialDirectory = path;
+            zedGraphControl1.SaveFileDialog.Filter = "PNG (*.png)|*.png|" +
+                                                     "BMP (*.bmp)|*.bmp|" +
+                                                     "JPEG (*.jpg)|*.jpg|" +
+                                                     "GIF (*.gif)|*.gif|" +
+                                                     "TIF (*.tiff)|*.tiff|" +
+                                                     "EMF (*.emf)|*.emf";
+
+            //Create directory if it does not exist
+            if (!(Directory.Exists(path))) Directory.CreateDirectory(path);
+
+            //If OK button clicked and the file name is not blank then, save image using selected filter
+            if (zedGraphControl1.SaveFileDialog.ShowDialog(this) == DialogResult.OK && zedGraphControl1.SaveFileDialog.FileName != "")
+            {
+                //Create filestream object and save image using OpenFile method
+                System.IO.FileStream fs = (System.IO.FileStream)zedGraphControl1.SaveFileDialog.OpenFile();
+
+                //Save image using the image FilterIndex property
+                switch (zedGraphControl1.SaveFileDialog.FilterIndex)
+                {
+                    case 1: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Png); break;
+                    case 2: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Bmp); break;
+                    case 3: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg); break;
+                    case 4: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Gif); break;
+                    case 5: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Tiff); break;
+                    case 6: this.zedGraphControl1.GetImage().Save(fs, System.Drawing.Imaging.ImageFormat.Emf); break;
+                }
+
+                //Close filestream object
+                fs.Close();
+            }
+        }
+
+        
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Save chart data to a file
+        ///  ins: graph object, file name
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void SoapSerialize(ZedGraphControl z1, string filename)
+        {
+            if (z1 != null && !String.IsNullOrEmpty(filename))
+            {
+                SoapFormatter mySerializer = new SoapFormatter();
+                Stream myWriter = new FileStream(filename, FileMode.Create,
+                      FileAccess.Write, FileShare.None);
+
+                mySerializer.Serialize(myWriter, z1.MasterPane);
+                myWriter.Close();
+            }
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Load chart data from a file
+        ///  ins: graph object, file name
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void SoapDeSerialize(ZedGraphControl z1, string filename)
+        {
+            if (z1 != null && !String.IsNullOrEmpty(filename))
+            {
+                SoapFormatter mySerializer = new SoapFormatter();
+                Stream myReader = new FileStream(filename, FileMode.Open,
+                   FileAccess.Read, FileShare.Read);
+
+                z1.GraphPane.CurveList.Clear();
+                MasterPane master = (MasterPane)mySerializer.Deserialize(myReader);
+
+                z1.MasterPane = master;
+
+                //trigger a resize event
+                z1.Size = z1.Size;
+
+                //z1.Refresh();   
+
+                myReader.Close();
+            }
+        }
+
+
+
         ///  <summary>
         ///  Start reflow cycle
         ///  Log and display input received from reflow controller board
@@ -2592,7 +2775,32 @@ namespace ReflowController
 
         private void helpTopicsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OpenHelpFile();
+        }
 
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Open application help file
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void OpenHelpFile()
+        {
+            //Set default path for help file
+            string path = Environment.CurrentDirectory + @"\Help\Help.pdf";
+
+            if (File.Exists(path))
+            {
+                System.Diagnostics.Process.Start(path);
+            }
+
+            else
+            {
+                DialogResult dlgResult = MessageBox.Show("Help file not found.  " +
+                "Check Help directory for file existence.",
+                "Help", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2674,6 +2882,229 @@ namespace ReflowController
         {
             this.Close();
         }
+
+            
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to open a log file for viewing
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void openLogFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenLogFile();
+        }
+
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Open a log file for viewing
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void OpenLogFile()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            //Set default path for log files
+            string path = Environment.CurrentDirectory + @"\Logs";
+
+            //Set open file dialog title, initial path and document filter
+            openFileDialog.Title = "View Log File";
+            openFileDialog.InitialDirectory = path;
+            openFileDialog.Filter = "CSV (*.csv) |*.csv";
+
+            //Make sure directory exists before attempting to open a log file
+            if (Directory.Exists(path))
+            {
+                if (openFileDialog.ShowDialog(this) == DialogResult.OK) System.Diagnostics.Process.Start(openFileDialog.FileName);
+            }
+        }
+
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to open a profile document for viewing
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void openProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenProfile();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Open a profile for viewing
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void OpenProfile()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            //Set default path for profiles
+            string path = Environment.CurrentDirectory + @"\Profiles";
+
+            //Set open file dialog title, initial path and document filter
+            openFileDialog.Title = "View Profile";
+            openFileDialog.InitialDirectory = path;
+            openFileDialog.Filter = "INI (*.ini)|*.ini";
+
+            //Make sure directory exists before attempting to open a profile document
+            if (Directory.Exists(path))
+            {
+                if (openFileDialog.ShowDialog(this) == DialogResult.OK) System.Diagnostics.Process.Start(openFileDialog.FileName);
+            }
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to open a PID document for viewing
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void openPIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenPIDfile();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Open a PID file for viewing
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void OpenPIDfile()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            //Set default path for profiles
+            string path = Environment.CurrentDirectory + @"\PID";
+
+            //Set open file dialog title, initial path and document filter
+            openFileDialog.Title = "View PID File";
+            openFileDialog.InitialDirectory = path;
+            openFileDialog.Filter = "INI (*.ini)|*.ini";
+
+            //Make sure directory exists before attempting to open a profile document
+            if (Directory.Exists(path))
+            {
+                if (openFileDialog.ShowDialog(this) == DialogResult.OK) System.Diagnostics.Process.Start(openFileDialog.FileName);
+            }
+        }
+
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to open a chart data file
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void openChartFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChartFile();
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.WindowState = FormWindowState.Maximized;
+            }
+
+            else
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Open chart data file
+        ///  ins: SoapDeSerialize() procedure
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void OpenChartFile()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            string path = Environment.CurrentDirectory + @"\Charts";
+
+            openFileDialog.Title = "Save Chart";
+            openFileDialog.InitialDirectory = path;
+            openFileDialog.Filter = "Soap (*.soap)|*.soap";
+
+            if (!(Directory.Exists(path)))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                SoapDeSerialize(zedGraphControl1, openFileDialog.FileName);
+
+                zedGraphControl1.Refresh();
+            }
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Menu button to open a chart image
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void openChartImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChartImage();
+        }
+
+        /// <summary>
+        /// ------------------------------------------------------------------------------
+        ///  Procedure: Open a chart image
+        ///  ins: none
+        ///  outs: none
+        /// ------------------------------------------------------------------------------
+        /// </summary>
+        private void OpenChartImage()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            //Set default path for chart images
+            string path = Environment.CurrentDirectory + @"\Chart Images";
+
+            //Set open file dialog title, initial path and image filters
+            openFileDialog.Title = "Open Chart Image";
+            openFileDialog.InitialDirectory = path;
+            openFileDialog.Filter = "PNG (*.png)|*.png|" +
+                                    "BMP (*.bmp)|*.bmp|" +
+                                    "JPEG (*.jpg)|*.jpg|" +
+                                    "GIF (*.gif)|*.gif|" +
+                                    "TIF (*.tiff)|*.tiff|" +
+                                    "EMF (*.emf)|*.emf|" +
+                                    "All (*.*)|*.*";
+
+            if (!(Directory.Exists(path)))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            //Make sure directory exists before attempting to open an image
+            if (Directory.Exists(path))
+            {
+                if (openFileDialog.ShowDialog(this) == DialogResult.OK) System.Diagnostics.Process.Start(openFileDialog.FileName);
+            }
+        }
+
     }
 
 }
