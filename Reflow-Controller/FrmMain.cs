@@ -1023,8 +1023,9 @@ namespace ReflowController
         private Byte Setpoint;
         private Byte Oven;
         private Byte Fan;
-        private Byte Elapsed1;
-        private Byte Elapsed2;
+        private Byte Elapsed_lbyte;
+        private Byte Elapsed_hbyte;
+        private int  Elapsed;
         private Byte Start;
         private Byte Kp;
         private Byte Ki;
@@ -1034,7 +1035,7 @@ namespace ReflowController
         private Byte ITerm;
         private Byte DTerm;
         private Byte Output;
-        private int time;
+        private int  time;
         private Byte Command;
         private Byte Program_State;
         private Boolean Reset_Flag;
@@ -2780,8 +2781,8 @@ namespace ReflowController
                 Setpoint = inputReportBuffer[3];
                 Oven = inputReportBuffer[4];
                 Fan = inputReportBuffer[5];
-                Elapsed1 = inputReportBuffer[6];
-                Elapsed2 = inputReportBuffer[7];
+                Elapsed_lbyte = inputReportBuffer[6];
+                Elapsed_hbyte = inputReportBuffer[7];
                 Start = inputReportBuffer[8];
                 Kp = inputReportBuffer[9];
                 Ki = inputReportBuffer[10];
@@ -2811,7 +2812,8 @@ namespace ReflowController
                 SetpointText.Text = Convert.ToString(Setpoint) + "\u00b0" + "C";
 
                 //Stage time
-                TimeSpan stageTime = TimeSpan.FromSeconds(Elapsed1);
+                Elapsed = ((Elapsed_hbyte << 8) | Elapsed_lbyte);
+                TimeSpan stageTime = TimeSpan.FromSeconds(Elapsed);
                 StageTimeText.Text = stageTime.ToString(@"hh\:mm\:ss");
 
                 //Elapsed time
@@ -2908,11 +2910,235 @@ namespace ReflowController
         /// ------------------------------------------------------------------------------
         /// </summary>
 
-        private void startBakeToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void startBakeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            State = 1;
+            Program_State = 1;
+            time = 1;
 
+            Command = 1;  //Start bake cycle command
+
+            RequestToSendOutputReport();
+
+            while (State != 0)
+            {
+                if (Reset_Flag == true)
+                {
+                    Reset();
+                    break;
+                }
+                const Int32 readTimeout = 2000;
+
+                String byteValue = null;
+
+                Byte[] inputReportBuffer = null;
+
+                try
+                {
+                    Boolean success = false;
+
+                    //  If the device hasn't been detected, was removed, or timed out on a previous attempt
+                    //  to access it, look for the device.
+
+                    if (!_deviceHandleObtained)
+                    {
+                        _deviceHandleObtained = FindTheHid();
+                    }
+
+                    if (_deviceHandleObtained)
+                    {
+                        //  Don't attempt to exchange reports if valid handles aren't available
+                        //  (as for a mouse or keyboard under Windows 2000 and later.)
+
+                        if (!_hidHandle.IsInvalid)
+                        {
+                            //  Read an Input report.
+
+                            inputReportBuffer = new Byte[_myHid.Capabilities.InputReportByteLength];
+
+                            //  Read a report using interrupt transfers. 
+                            //  Timeout if no report available.
+                            //  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
+
+                            // Create a delegate to execute on a timeout.
+
+                            Action onReadTimeoutAction = OnReadTimeout;
+
+                            // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
+
+                            var cts = new CancellationTokenSource();
+
+                            // Cancel the read if it hasn't completed after a timeout.
+
+                            cts.CancelAfter(readTimeout);
+
+                            // Specify the function to call on a timeout.
+
+                            cts.Token.Register(onReadTimeoutAction);
+
+                            // Stops waiting when data is available or on timeout:
+
+                            Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
+
+
+                            // Arrive here only if the operation completed.
+
+                            // Dispose to stop the timeout timer. 
+
+                            cts.Dispose();
+
+                            if (bytesRead > 0)
+                            {
+                                success = true;
+                                Debug.Print("bytes read (includes report ID) = " + Convert.ToString(bytesRead));
+                            }
+                        }
+                        else
+                        {
+                            Debug.Print("Invalid handle");
+                            Debug.Print("No attempt to read an Input report was made");
+                        }
+
+                        if (!success)
+                        {
+                            CloseCommunications();
+                            Debug.Print("The attempt to read an Input report has failed");
+                        }
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    DisplayException(Name, ex);
+                    throw;
+                }
+
+                State = inputReportBuffer[1];
+                Temperature = inputReportBuffer[2];
+                Setpoint = inputReportBuffer[3];
+                Oven = inputReportBuffer[4];
+                Fan = inputReportBuffer[5];
+                Elapsed_lbyte = inputReportBuffer[6];
+                Elapsed_hbyte = inputReportBuffer[7];
+                Start = inputReportBuffer[8];
+                Kp = inputReportBuffer[9];
+                Ki = inputReportBuffer[10];
+                Kd = inputReportBuffer[11];
+                CycleTime = inputReportBuffer[12];
+                PTerm = inputReportBuffer[13];
+                ITerm = inputReportBuffer[14];
+                DTerm = inputReportBuffer[15];
+                Output = inputReportBuffer[16];
+
+                //Current stage
+                switch (State)
+                {
+                    case 0: StageText.Text = "WAITING"; break;
+                    case 1: StageText.Text = "PREHEAT"; break;
+                    case 2: StageText.Text = "SOAK"; break;
+                    case 3: StageText.Text = "HEATING"; break;
+                    case 4: StageText.Text = "REFLOW"; break;
+                    case 5: StageText.Text = "COOLING"; break;
+                    case 6: StageText.Text = "BAKE"; break;
+                }
+
+                //Current temperature
+                TemperatureText.Text = Convert.ToString(Temperature) + "\u00b0" + "C";
+
+                //Setpoint temperature
+                SetpointText.Text = Convert.ToString(Setpoint) + "\u00b0" + "C";
+
+                //Stage time
+                Elapsed = ((Elapsed_hbyte << 8) | Elapsed_lbyte);
+                TimeSpan stageTime = TimeSpan.FromSeconds(Elapsed);
+                StageTimeText.Text = stageTime.ToString(@"hh\:mm\:ss");
+
+                //Elapsed time
+                TimeSpan elapsedTime = TimeSpan.FromSeconds(time - 1);
+                ElapsedTimeText.Text = elapsedTime.ToString(@"hh\:mm\:ss");
+
+
+                //Heater state (On/Off)
+                switch (Oven)
+                {
+                    case 0: OvenText.Text = "OFF"; break;
+                    case 1: OvenText.Text = "ON"; break;
+                }
+
+                //Fan state (On/Off)
+                switch (Fan)
+                {
+                    case 0: FanText.Text = "OFF"; break;
+                    case 1: FanText.Text = "ON"; break;
+                }
+
+                ////Current stage remaining time
+                //if (elapsed == "0000") elapsed = "N/A";
+                //StageTimeLabel.Text = elapsed;
+
+                //Add time and temperature values
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[time - 1].Cells[0].Value = time - 1;
+                dataGridView1.Rows[time - 1].Cells[1].Value = Temperature;
+                dataGridView1.Rows[time - 1].Cells[2].Value = Setpoint;
+
+                //Track heater On/Off actions. Off = 0 and High = 20
+                if (Convert.ToString(Oven) == "0") dataGridView1.Rows[time - 1].Cells[3].Value = "0";
+                if (Convert.ToString(Oven) == "1") dataGridView1.Rows[time - 1].Cells[3].Value = "100";
+
+                //Add PID and output values
+                dataGridView1.Rows[time - 1].Cells[4].Value = PTerm;
+                dataGridView1.Rows[time - 1].Cells[5].Value = ITerm;
+                dataGridView1.Rows[time - 1].Cells[6].Value = DTerm;
+                dataGridView1.Rows[time - 1].Cells[7].Value = Output;
+
+                //Keep cursor on current row data
+                dataGridView1.CurrentCell = dataGridView1.Rows[time - 1].Cells[0];
+
+                KptoolStripStatusLabel.Text = "Kp = " + Convert.ToString(Kp);
+                KitoolStripStatusLabel.Text = "Ki = " + Convert.ToString(Ki);
+                KdtoolStripStatusLabel.Text = "Kd = " + Convert.ToString(Kd);
+                CycleTimetoolStripStatusLabel.Text = "Cycle Time (Secs) = " + Convert.ToString(CycleTime);
+                pTermtoolStripStatusLabel.Text = "pTerm = " + Convert.ToString(PTerm);
+                iTermtoolStripStatusLabel.Text = "iTerm = " + Convert.ToString(ITerm);
+                dTermtoolStripStatusLabel.Text = "dTerm = " + Convert.ToString(DTerm);
+                OutputtoolStripStatusLabel.Text = "Output = " + Convert.ToString(Output);
+
+                //Make sure the curve list has at least one curve value
+                if (zedGraphControl1.GraphPane.CurveList.Count <= 0) return;
+
+                //Get the furst curve item in the graph
+                LineItem curve = zedGraphControl1.GraphPane.CurveList[0] as LineItem;
+
+                //Set line thickness
+                curve.Line.Width = 2.0F;
+
+                //Make sure there is at least one curve value
+                if (curve == null) return;
+
+                //Get the point pair list
+                IPointListEdit list = curve.Points as IPointListEdit;
+
+                //If this is null it means the reference at curve.Points does not
+                //support IPointListEdit so, we won't be able to modify it
+                if (list == null) return;
+
+                //Add time and temperature values to list
+                list.Add(time, Convert.ToDouble(Temperature));
+
+                //Make sure each axis is rescaled to accommodate actual data
+                zedGraphControl1.AxisChange();
+
+                //Force a redraw
+                zedGraphControl1.Invalidate();
+
+                time++;
+            }
+
+            Program_State = 0;
         }
-
+    
 
         /// <summary>
         /// ------------------------------------------------------------------------------
@@ -3243,8 +3469,8 @@ namespace ReflowController
                             DataToSend[2] = Convert.ToByte(ini.ReadINI(filename, "REFLOW TEMPERATURE", "VALUE", path));
                             DataToSend[3] = Convert.ToByte(ini.ReadINI(filename, "REFLOW TIME", "VALUE", path));
                             DataToSend[4] = Convert.ToByte(ini.ReadINI(filename, "BAKE TEMPERATURE", "VALUE", path));
-                            DataToSend[5] = Convert.ToByte(ini.ReadINI(filename, "BAKE TIME", "VALUE", path).Substring(0, 2));
-                            DataToSend[6] = Convert.ToByte(ini.ReadINI(filename, "BAKE TIME", "VALUE", path).Substring(2, 2));
+                            DataToSend[5] = Convert.ToByte(ini.ReadINI(filename, "BAKE TIME", "VALUE", path).Substring(2, 2));
+                            DataToSend[6] = Convert.ToByte(ini.ReadINI(filename, "BAKE TIME", "VALUE", path).Substring(0, 2));
 
                             RequestToSendOutputReport();
                         }
