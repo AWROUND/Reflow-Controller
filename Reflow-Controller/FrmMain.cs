@@ -181,7 +181,6 @@ namespace ReflowController
 		private System.ComponentModel.IContainer components;
 		public System.Windows.Forms.ToolTip ToolTip1;
         private StatusStrip statusStrip1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel CommStatustoolStripStatusLabel;
         private DataGridView dataGridView1;
         private GroupBox groupBox1;
@@ -251,22 +250,23 @@ namespace ReflowController
         private ToolStripMenuItem logFileToolStripMenuItem1;
         private ToolStripMenuItem chartFileToolStripMenuItem1;
         private ToolStripMenuItem chartImageToolStripMenuItem1;
+        private ToolStripStatusLabel VersiontoolStripStatusLabel;
         private DataGridViewTextBoxColumn Column8;
 
 		[System.Diagnostics.DebuggerStepThrough()]
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.CommStatustoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.VersiontoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.KptoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.KitoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.KdtoolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -345,8 +345,8 @@ namespace ReflowController
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
             this.CommStatustoolStripStatusLabel,
+            this.VersiontoolStripStatusLabel,
             this.KptoolStripStatusLabel,
             this.KitoolStripStatusLabel,
             this.KdtoolStripStatusLabel,
@@ -361,17 +361,17 @@ namespace ReflowController
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(129, 17);
-            this.toolStripStatusLabel1.Text = "Communication Status";
-            // 
             // CommStatustoolStripStatusLabel
             // 
             this.CommStatustoolStripStatusLabel.Name = "CommStatustoolStripStatusLabel";
             this.CommStatustoolStripStatusLabel.Size = new System.Drawing.Size(118, 17);
             this.CommStatustoolStripStatusLabel.Text = "toolStripStatusLabel2";
+            // 
+            // VersiontoolStripStatusLabel
+            // 
+            this.VersiontoolStripStatusLabel.Name = "VersiontoolStripStatusLabel";
+            this.VersiontoolStripStatusLabel.Size = new System.Drawing.Size(53, 17);
+            this.VersiontoolStripStatusLabel.Text = "Version=";
             // 
             // KptoolStripStatusLabel
             // 
@@ -425,14 +425,14 @@ namespace ReflowController
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -444,14 +444,14 @@ namespace ReflowController
             this.Column7,
             this.Column8});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Location = new System.Drawing.Point(866, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -462,9 +462,9 @@ namespace ReflowController
             // 
             // Column1
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "     Time";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -472,9 +472,9 @@ namespace ReflowController
             // 
             // Column2
             // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.HeaderText = "   Current Temp  °C";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -482,8 +482,8 @@ namespace ReflowController
             // 
             // Column3
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column3.HeaderText = "     Setpoint °C";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -492,9 +492,9 @@ namespace ReflowController
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column4.HeaderText = "    Heater";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -740,7 +740,7 @@ namespace ReflowController
             this.chartFileToolStripMenuItem,
             this.chartImageToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // profileToolStripMenuItem
@@ -785,7 +785,7 @@ namespace ReflowController
             this.chartFileToolStripMenuItem1,
             this.chartImageToolStripMenuItem1});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // logFileToolStripMenuItem1
@@ -812,33 +812,33 @@ namespace ReflowController
             // pageSetupToolStripMenuItem
             // 
             this.pageSetupToolStripMenuItem.Name = "pageSetupToolStripMenuItem";
-            this.pageSetupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pageSetupToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.pageSetupToolStripMenuItem.Text = "Page Setup";
             this.pageSetupToolStripMenuItem.Click += new System.EventHandler(this.pageSetupToolStripMenuItem_Click);
             // 
             // printPreviewToolStripMenuItem
             // 
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
             this.printPreviewToolStripMenuItem.Click += new System.EventHandler(this.printPreviewToolStripMenuItem_Click);
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1035,6 +1035,7 @@ namespace ReflowController
         private Byte ITerm;
         private Byte DTerm;
         private Byte Output;
+        private Byte Version;
         private int  time;
         private Byte Command;
         private Byte Program_State;
@@ -2792,6 +2793,7 @@ namespace ReflowController
                 ITerm = inputReportBuffer[14];
                 DTerm = inputReportBuffer[15];
                 Output = inputReportBuffer[16];
+                Version = inputReportBuffer[17];
 
                 //Current stage
                 switch (State)
@@ -2858,6 +2860,7 @@ namespace ReflowController
                 //Keep cursor on current row data
                 dataGridView1.CurrentCell = dataGridView1.Rows[time - 1].Cells[0];
 
+                VersiontoolStripStatusLabel.Text = "Version = " + Convert.ToString(Version);
                 KptoolStripStatusLabel.Text = "Kp = " + Convert.ToString(Kp);
                 KitoolStripStatusLabel.Text = "Ki = " + Convert.ToString(Ki);
                 KdtoolStripStatusLabel.Text = "Kd = " + Convert.ToString(Kd);
@@ -3030,6 +3033,7 @@ namespace ReflowController
                 ITerm = inputReportBuffer[14];
                 DTerm = inputReportBuffer[15];
                 Output = inputReportBuffer[16];
+                Version = inputReportBuffer[17];
 
                 //Current stage
                 switch (State)
@@ -3096,6 +3100,7 @@ namespace ReflowController
                 //Keep cursor on current row data
                 dataGridView1.CurrentCell = dataGridView1.Rows[time - 1].Cells[0];
 
+                VersiontoolStripStatusLabel.Text = "Version = " + Convert.ToString(Version);
                 KptoolStripStatusLabel.Text = "Kp = " + Convert.ToString(Kp);
                 KitoolStripStatusLabel.Text = "Ki = " + Convert.ToString(Ki);
                 KdtoolStripStatusLabel.Text = "Kd = " + Convert.ToString(Kd);
@@ -3169,7 +3174,7 @@ namespace ReflowController
         {
             Program_State = 0;
 
-            Command = 7;
+            Command = 5;
             RequestToSendOutputReport();
 
             Shutdown();
@@ -3178,6 +3183,7 @@ namespace ReflowController
             //Clear data grid contents
             this.dataGridView1.Rows.Clear();
 
+            VersiontoolStripStatusLabel.Text = "Version =";
             KptoolStripStatusLabel.Text = "Kp = ";
             KitoolStripStatusLabel.Text = "Ki = ";
             KdtoolStripStatusLabel.Text = "Kd = ";
@@ -3209,7 +3215,7 @@ namespace ReflowController
         
         private async void getPIDGainsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Command = 4;
+            Command = 3;
 
             RequestToSendOutputReport();
 
@@ -3304,7 +3310,9 @@ namespace ReflowController
             Ki = inputReportBuffer[10];
             Kd = inputReportBuffer[11];
             CycleTime = inputReportBuffer[12];
+            Version = inputReportBuffer[17];
 
+            VersiontoolStripStatusLabel.Text = "Version = " + Convert.ToString(Version);
             KptoolStripStatusLabel.Text = "Kp = " + Convert.ToString(Kp);
             KitoolStripStatusLabel.Text = "Ki = " + Convert.ToString(Ki);
             KdtoolStripStatusLabel.Text = "Kd = " + Convert.ToString(Kd);
@@ -3377,7 +3385,7 @@ namespace ReflowController
 
                         if (fileType == "PID")
                         {
-                            Command = 5;  //Upload PID command
+                            Command = 4;  //Upload PID command
 
                             DataToSend[0] = Convert.ToByte(ini.ReadINI(filename, "KP", "VALUE", path));
                             DataToSend[1] = Convert.ToByte(ini.ReadINI(filename, "KI", "VALUE", path));
@@ -3462,7 +3470,7 @@ namespace ReflowController
                         if (fileType == "Profile")
                         {
                             //ComPort.UploadProfile(openFileDialog.SafeFileName, path);
-                            Command = 3;  //Upload Profile command
+                            Command = 2;  //Upload Profile command
 
                             DataToSend[0] = Convert.ToByte(ini.ReadINI(filename, "SOAK TEMPERATURE", "VALUE", path));
                             DataToSend[1] = Convert.ToByte(ini.ReadINI(filename, "SOAK TIME", "VALUE", path));
